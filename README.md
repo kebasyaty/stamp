@@ -1,8 +1,9 @@
 <div align="center">
+ <br>
   <p align="center">
     <a href="https://github.com/kebasyaty/stamp">
       <img
-        height="90"
+        height="160"
         alt="Logo"
         src="https://raw.githubusercontent.com/kebasyaty/stamp/main/assets/logo.svg">
     </a>
@@ -15,6 +16,10 @@
     </p>
   </p>
 </div>
+
+##
+
+<br>
 
 ## Install for work with Stamp
 
