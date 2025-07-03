@@ -53,10 +53,9 @@ uv sync
 uv run python src/stamp/main.py
 ```
 
-## Contributors
+## Requirements
 
-- [kebasyaty](https://github.com/kebasyaty) Gennady Kostyunin - creator and maintainer
-
+[View the list of requirements.](https://github.com/kebasyaty/stamp/blob/main/REQUIREMENTS.md "View the list of requirements.")
 ## Changelog
 
 [View the change history.](https://github.com/kebasyaty/stamp/blob/main/CHANGELOG.md "Changelog")
