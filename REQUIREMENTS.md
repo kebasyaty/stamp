@@ -4,6 +4,8 @@
 
 ### Dependencies
 
+- [fastapi](https://fastapi.tiangolo.com/ "fastapi")
+- [uvicorn](https://www.uvicorn.org/ "uvicorn")
 - [ramifice](https://pypi.org/project/ramifice/ "ramifice")
 
 ### Dev-Dependencies
