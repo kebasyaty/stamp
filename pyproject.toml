@@ -1,5 +1,5 @@
 [project]
-name = "stamp"
+name = "app"
 version = "0.1.0"
 description = "A template project for creating web applications."
 readme = "README.md"
@@ -20,7 +20,7 @@ package = false
 compile-bytecode = true
 
 [tool.uv.sources]
-services = { workspace = true }
+# services = { workspace = true }
 
 [tool.uv.workspace]
 members = ["packages/*"]

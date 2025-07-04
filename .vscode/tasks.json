@@ -14,9 +14,9 @@
       "problemMatcher": []
     },
     {
-      "label": "UV: Run main.py",
+      "label": "Uvicorn: Run App",
       "type": "shell",
-      "command": ["uv run python src/stamp/main.py"],
+      "command": ["uv run uvicorn src/app/main:app --reload"],
       "problemMatcher": []
     }
   ]
