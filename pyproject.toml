@@ -1,5 +1,5 @@
 [project]
-name = "app"
+name = "stamp"
 version = "0.1.0"
 description = "A template project for creating web applications."
 readme = "README.md"
@@ -10,7 +10,6 @@ dependencies = [
     "fastapi>=0.115.14",
     "ramifice>=0.5.9",
     "uvicorn[standard]>=0.35.0",
-    "accounts",
 ]
 
 [dependency-groups]
@@ -23,26 +22,18 @@ dev = [
 
 [tool.uv]
 package = false
-compile-bytecode = true
-
-[tool.uv.sources]
-accounts = { workspace = true }
-
-[tool.uv.workspace]
-members = ["services/*"]
 
 [tool.ruff]
 fix = true
 line-length = 100
 required-version = ">=0.12.0"
-src = ["src", "services", "tests"]
+src = ["src", "tests"]
 include = [
     "*.py",
     "*.pyi",
     "*.ipynb",
     "**/pyproject.toml",
     "src/**/*.py",
-    "services/**/*.py",
     "tests/**/*.py",
 ]
 
@@ -61,7 +52,7 @@ docstring-code-line-length = 80
 strict = true
 show_error_codes = true
 pretty = true
-files = ["src/**/*.py", "services/**/*.py", "tests/**/*.py",]
+files = ["src/**/*.py", "tests/**/*.py",]
 disable_error_code = ["type-arg", "no-any-return", "attr-defined", "index"]
 
 [[tool.mypy.overrides]]
