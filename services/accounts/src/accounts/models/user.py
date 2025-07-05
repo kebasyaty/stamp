@@ -40,7 +40,7 @@ class User:
             high_quality=True,
             # The maximum size of the original image in bytes.
             # Hint: By default = 2 MB
-            max_size=524288,  # 512 KB = 0.5 MB = 524288 Bytes (in binary)
+            max_size=524288,  # 0.5 MB = 512 KB = 524288 Bytes (in binary)
             warning=[
                 gettext("Maximum size: %s") % to_human_size(524288),
             ],

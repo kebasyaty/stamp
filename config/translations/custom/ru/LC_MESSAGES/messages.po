@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-06-30 19:58+0300\n"
+"POT-Creation-Date: 2025-07-05 09:30+0300\n"
 "PO-Revision-Date: 2025-06-30 20:00+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ru\n"
@@ -19,126 +19,118 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
 
-#: packages/models/src/models/accounts.py:30
+#: services/accounts/src/accounts/models/user.py:30
 msgid "Avatar"
 msgstr "Аватар"
 
-#: packages/models/src/models/accounts.py:31
+#: services/accounts/src/accounts/models/user.py:31
 msgid "Upload your photo"
 msgstr "Загрузите свою фотографию"
 
-#: packages/models/src/models/accounts.py:45
+#: services/accounts/src/accounts/models/user.py:45
 #, python-format
 msgid "Maximum size: %s"
 msgstr "Максимальный размер: %s"
 
-#: packages/models/src/models/accounts.py:49
+#: services/accounts/src/accounts/models/user.py:49
 msgid "Username"
 msgstr "Никнейм"
 
-#: packages/models/src/models/accounts.py:50
+#: services/accounts/src/accounts/models/user.py:50
 msgid "Enter your username"
 msgstr "Введите свое имя пользователя"
 
-#: packages/models/src/models/accounts.py:55
-#: packages/models/src/models/accounts.py:142
+#: services/accounts/src/accounts/models/user.py:55
+#: services/accounts/src/accounts/models/user.py:137
 #, python-format
 msgid "Allowed chars: %s"
 msgstr "Разрешенные символы: %s"
 
-#: packages/models/src/models/accounts.py:59
+#: services/accounts/src/accounts/models/user.py:59
 msgid "First name"
 msgstr "Имя"
 
-#: packages/models/src/models/accounts.py:60
+#: services/accounts/src/accounts/models/user.py:60
 msgid "Enter your First name"
 msgstr "Введите свое имя"
 
-#: packages/models/src/models/accounts.py:66
+#: services/accounts/src/accounts/models/user.py:66
 msgid "Last name"
 msgstr "Фамилия"
 
-#: packages/models/src/models/accounts.py:67
+#: services/accounts/src/accounts/models/user.py:67
 msgid "Enter your Last name"
 msgstr "Введите свою фамилию"
 
-#: packages/models/src/models/accounts.py:73
+#: services/accounts/src/accounts/models/user.py:73
 msgid "Email"
 msgstr "Электронная почта"
 
-#: packages/models/src/models/accounts.py:74
+#: services/accounts/src/accounts/models/user.py:74
 msgid "Enter your email"
 msgstr "Введите свою электронную почту"
 
-#: packages/models/src/models/accounts.py:79
+#: services/accounts/src/accounts/models/user.py:79
 msgid "Phone number"
 msgstr "Номер телефона"
 
-#: packages/models/src/models/accounts.py:80
+#: services/accounts/src/accounts/models/user.py:80
 msgid "Enter your phone number"
 msgstr "Введите свой номер телефона"
 
-#: packages/models/src/models/accounts.py:84
+#: services/accounts/src/accounts/models/user.py:84
 msgid "Birthday"
 msgstr "День рождения"
 
-#: packages/models/src/models/accounts.py:85
+#: services/accounts/src/accounts/models/user.py:85
 msgid "Enter your date of birth"
 msgstr "Введите дату рождения"
 
-#: packages/models/src/models/accounts.py:88
-msgid "About yourself"
-msgstr "О себе"
-
-#: packages/models/src/models/accounts.py:89
-msgid "Tell us a little about yourself ..."
-msgstr "Расскажи нам немного о себе ..."
-
-#: packages/models/src/models/accounts.py:93
+#: services/accounts/src/accounts/models/user.py:88
 msgid "Password"
 msgstr "Пароль"
 
-#: packages/models/src/models/accounts.py:94
+#: services/accounts/src/accounts/models/user.py:89
 msgid "Enter your password"
 msgstr "Введите свой пароль"
 
-#: packages/models/src/models/accounts.py:97
+#: services/accounts/src/accounts/models/user.py:92
 msgid "Confirm password"
 msgstr "Повторите пароль"
 
-#: packages/models/src/models/accounts.py:98
+#: services/accounts/src/accounts/models/user.py:93
 msgid "Repeat your password"
 msgstr "Повторите свой пароль"
 
-#: packages/models/src/models/accounts.py:103
+#: services/accounts/src/accounts/models/user.py:98
 msgid "Is Administrator?"
 msgstr "Администратор?"
 
-#: packages/models/src/models/accounts.py:105
+#: services/accounts/src/accounts/models/user.py:100
 msgid "Can this user access the admin panel?"
 msgstr "Может ли этот пользователь получить доступ к панели администратора?"
 
-#: packages/models/src/models/accounts.py:109
+#: services/accounts/src/accounts/models/user.py:104
 msgid "Is active?"
 msgstr "Активный?"
 
-#: packages/models/src/models/accounts.py:111
+#: services/accounts/src/accounts/models/user.py:106
 msgid "Is this an active account?"
 msgstr "Это активный аккаунт?"
 
-#: packages/models/src/models/accounts.py:115
+#: services/accounts/src/accounts/models/user.py:110
 msgid "Slug"
 msgstr "Слаг"
 
-#: packages/models/src/models/accounts.py:121
+#: services/accounts/src/accounts/models/user.py:116
 msgid "Last login"
 msgstr "Последний логин"
 
-#: packages/models/src/models/accounts.py:125
+#: services/accounts/src/accounts/models/user.py:120
 msgid "Date and time of user last login."
 msgstr "Дата и время последнего входа в аккаунт"
 
-#: packages/models/src/models/accounts.py:145
+#: services/accounts/src/accounts/models/user.py:140
 msgid "Passwords do not match!"
 msgstr "Пароли не совпадают!"
 
