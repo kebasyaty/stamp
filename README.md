@@ -83,7 +83,7 @@ LANGUAGES = frozenset(("en", "ru"))  # For Ramifice by default = ["en", "ru"]
 ```shell
 cd project_name
 # Add your custom translations:
-uv run pybabel extract -o config/translations/custom.pot services
+uv run pybabel extract -o config/translations/custom.pot app
 uv run pybabel init -i config/translations/custom.pot -d config/translations/custom -l en
 uv run pybabel init -i config/translations/custom.pot -d config/translations/custom -l ru
 ...
@@ -91,7 +91,7 @@ uv run pybabel init -i config/translations/custom.pot -d config/translations/cus
 uv run pybabel compile -d config/translations/custom
 
 # Update your custom translations:
-uv run pybabel extract -o config/translations/custom.pot services
+uv run pybabel extract -o config/translations/custom.pot app
 uv run pybabel update -i config/translations/custom.pot -d config/translations/custom
 # Hint: Do not forget to check the translations for existing languages.
 uv run pybabel compile -d config/translations/custom
