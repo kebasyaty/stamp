@@ -4,6 +4,8 @@ from typing import Any
 
 from fastapi import FastAPI
 
+from .services.accounts.models import User
+
 app = FastAPI()
 
 

@@ -4,19 +4,31 @@
     {
       "label": "Ruff: Run Check",
       "type": "shell",
-      "command": ["uv run ruff check --fix --config pyproject.toml;"],
+      "command": ["uv run ruff check --fix --config pyproject.toml"],
       "problemMatcher": []
     },
     {
       "label": "MyPy: Run Check",
       "type": "shell",
-      "command": ["uv run mypy --config-file pyproject.toml;"],
+      "command": ["uv run mypy --config-file pyproject.toml"],
+      "problemMatcher": []
+    },
+    {
+      "label": "UV: Run Lock",
+      "type": "shell",
+      "command": ["uv lock"],
       "problemMatcher": []
     },
     {
       "label": "Uvicorn: Run App",
       "type": "shell",
-      "command": ["uv run uvicorn src.app.main:app --reload"],
+      "command": ["uv run uvicorn app.main:app --reload"],
+      "problemMatcher": []
+    },
+    {
+      "label": "PyTest: Run Tests",
+      "type": "shell",
+      "command": ["uv run pytest tests/"],
       "problemMatcher": []
     }
   ]
