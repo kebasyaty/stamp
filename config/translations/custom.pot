@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-06-30 19:58+0300\n"
+"POT-Creation-Date: 2025-07-05 09:30+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,126 +17,118 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
 
-#: packages/models/src/models/accounts.py:30
+#: services/accounts/src/accounts/models/user.py:30
 msgid "Avatar"
 msgstr ""
 
-#: packages/models/src/models/accounts.py:31
+#: services/accounts/src/accounts/models/user.py:31
 msgid "Upload your photo"
 msgstr ""
 
-#: packages/models/src/models/accounts.py:45
+#: services/accounts/src/accounts/models/user.py:45
 #, python-format
 msgid "Maximum size: %s"
 msgstr ""
 
-#: packages/models/src/models/accounts.py:49
+#: services/accounts/src/accounts/models/user.py:49
 msgid "Username"
 msgstr ""
 
-#: packages/models/src/models/accounts.py:50
+#: services/accounts/src/accounts/models/user.py:50
 msgid "Enter your username"
 msgstr ""
 
-#: packages/models/src/models/accounts.py:55
-#: packages/models/src/models/accounts.py:142
+#: services/accounts/src/accounts/models/user.py:55
+#: services/accounts/src/accounts/models/user.py:137
 #, python-format
 msgid "Allowed chars: %s"
 msgstr ""
 
-#: packages/models/src/models/accounts.py:59
+#: services/accounts/src/accounts/models/user.py:59
 msgid "First name"
 msgstr ""
 
-#: packages/models/src/models/accounts.py:60
+#: services/accounts/src/accounts/models/user.py:60
 msgid "Enter your First name"
 msgstr ""
 
-#: packages/models/src/models/accounts.py:66
+#: services/accounts/src/accounts/models/user.py:66
 msgid "Last name"
 msgstr ""
 
-#: packages/models/src/models/accounts.py:67
+#: services/accounts/src/accounts/models/user.py:67
 msgid "Enter your Last name"
 msgstr ""
 
-#: packages/models/src/models/accounts.py:73
+#: services/accounts/src/accounts/models/user.py:73
 msgid "Email"
 msgstr ""
 
-#: packages/models/src/models/accounts.py:74
+#: services/accounts/src/accounts/models/user.py:74
 msgid "Enter your email"
 msgstr ""
 
-#: packages/models/src/models/accounts.py:79
+#: services/accounts/src/accounts/models/user.py:79
 msgid "Phone number"
 msgstr ""
 
-#: packages/models/src/models/accounts.py:80
+#: services/accounts/src/accounts/models/user.py:80
 msgid "Enter your phone number"
 msgstr ""
 
-#: packages/models/src/models/accounts.py:84
+#: services/accounts/src/accounts/models/user.py:84
 msgid "Birthday"
 msgstr ""
 
-#: packages/models/src/models/accounts.py:85
+#: services/accounts/src/accounts/models/user.py:85
 msgid "Enter your date of birth"
 msgstr ""
 
-#: packages/models/src/models/accounts.py:88
-msgid "About yourself"
-msgstr ""
-
-#: packages/models/src/models/accounts.py:89
-msgid "Tell us a little about yourself ..."
-msgstr ""
-
-#: packages/models/src/models/accounts.py:93
+#: services/accounts/src/accounts/models/user.py:88
 msgid "Password"
 msgstr ""
 
-#: packages/models/src/models/accounts.py:94
+#: services/accounts/src/accounts/models/user.py:89
 msgid "Enter your password"
 msgstr ""
 
-#: packages/models/src/models/accounts.py:97
+#: services/accounts/src/accounts/models/user.py:92
 msgid "Confirm password"
 msgstr ""
 
-#: packages/models/src/models/accounts.py:98
+#: services/accounts/src/accounts/models/user.py:93
 msgid "Repeat your password"
 msgstr ""
 
-#: packages/models/src/models/accounts.py:103
+#: services/accounts/src/accounts/models/user.py:98
 msgid "Is Administrator?"
 msgstr ""
 
-#: packages/models/src/models/accounts.py:105
+#: services/accounts/src/accounts/models/user.py:100
 msgid "Can this user access the admin panel?"
 msgstr ""
 
-#: packages/models/src/models/accounts.py:109
+#: services/accounts/src/accounts/models/user.py:104
 msgid "Is active?"
 msgstr ""
 
-#: packages/models/src/models/accounts.py:111
+#: services/accounts/src/accounts/models/user.py:106
 msgid "Is this an active account?"
 msgstr ""
 
-#: packages/models/src/models/accounts.py:115
+#: services/accounts/src/accounts/models/user.py:110
 msgid "Slug"
 msgstr ""
 
-#: packages/models/src/models/accounts.py:121
+#: services/accounts/src/accounts/models/user.py:116
 msgid "Last login"
 msgstr ""
 
-#: packages/models/src/models/accounts.py:125
+#: services/accounts/src/accounts/models/user.py:120
 msgid "Date and time of user last login."
 msgstr ""
 
-#: packages/models/src/models/accounts.py:145
+#: services/accounts/src/accounts/models/user.py:140
 msgid "Passwords do not match!"
 msgstr ""
 
