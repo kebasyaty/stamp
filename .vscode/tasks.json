@@ -18,6 +18,15 @@
       "type": "shell",
       "command": ["uv run uvicorn src.app.main:app --reload"],
       "problemMatcher": []
+    },
+        {
+      "label": "UnitTest: Run Tests",
+      "type": "shell",
+      "command": [
+        "poetry run python -m unittest tests/test_file_name.py;",
+        "poetry run python -m unittest discover tests/dir_name;",
+      ],
+      "problemMatcher": []
     }
   ]
 }
