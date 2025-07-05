@@ -12,3 +12,5 @@
 
 - [ruff](https://pypi.org/project/ruff/ "ruff")
 - [mypy](https://pypi.org/project/mypy/ "mypy")
+- [pytest](https://docs.pytest.org/en/stable/ "pytest")
+- [pytest-asyncio](https://pypi.org/project/pytest-asyncio/ "pytest-asyncio")
