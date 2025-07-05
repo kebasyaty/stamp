@@ -13,12 +13,7 @@ dependencies = [
 ]
 
 [dependency-groups]
-dev = [
-    "mypy>=1.16.1",
-    "pytest>=8.4.1",
-    "pytest-asyncio>=1.0.0",
-    "ruff>=0.12.0",
-]
+dev = ["mypy>=1.16.1", "pytest>=8.4.1", "pytest-asyncio>=1.0.0", "ruff>=0.12.0"]
 
 [tool.uv]
 package = false
@@ -27,13 +22,13 @@ package = false
 fix = true
 line-length = 100
 required-version = ">=0.12.0"
-src = ["src", "tests"]
+src = ["app", "tests"]
 include = [
     "*.py",
     "*.pyi",
     "*.ipynb",
     "**/pyproject.toml",
-    "src/**/*.py",
+    "app/**/*.py",
     "tests/**/*.py",
 ]
 
@@ -52,7 +47,7 @@ docstring-code-line-length = 80
 strict = true
 show_error_codes = true
 pretty = true
-files = ["src/**/*.py", "tests/**/*.py",]
+files = ["app/**/*.py", "tests/**/*.py"]
 disable_error_code = ["type-arg", "no-any-return", "attr-defined", "index"]
 
 [[tool.mypy.overrides]]

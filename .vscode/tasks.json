@@ -22,15 +22,13 @@
     {
       "label": "Uvicorn: Run App",
       "type": "shell",
-      "command": ["uv run uvicorn src.main:app --reload"],
+      "command": ["uv run uvicorn app.main:app --reload"],
       "problemMatcher": []
     },
     {
       "label": "PyTest: Run Tests",
       "type": "shell",
-      "command": [
-        "uv run pytest tests/",
-      ],
+      "command": ["uv run pytest tests/"],
       "problemMatcher": []
     }
   ]
