@@ -22,7 +22,7 @@
     {
       "label": "Uvicorn: Run App",
       "type": "shell",
-      "command": ["uv run python app/main.py"],
+      "command": ["uv run python run_server.py"],
       "problemMatcher": []
     },
     {
