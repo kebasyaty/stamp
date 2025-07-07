@@ -3,6 +3,24 @@ revision = 2
 requires-python = ">=3.12"
 
 [[package]]
+name = "aiofiles"
+version = "24.1.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/0b/03/a88171e277e8caa88a4c77808c20ebb04ba74cc4681bf1e9416c862de237/aiofiles-24.1.0.tar.gz", hash = "sha256:22a075c9e5a3810f0c2e48f3008c94d68c65d763b9b03857924c99e57355166c", size = 30247, upload-time = "2024-06-24T11:02:03.584Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/a5/45/30bb92d442636f570cb5651bc661f52b610e2eec3f891a5dc3a4c3667db0/aiofiles-24.1.0-py3-none-any.whl", hash = "sha256:b4ec55f4195e3eb5d7abd1bf7e061763e864dd4954231fb8539a0ef8bb8260e5", size = 15896, upload-time = "2024-06-24T11:02:01.529Z" },
+]
+
+[[package]]
+name = "aioshutil"
+version = "1.5"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/75/e4/ef86f1777a9bc0c51d50487b471644ae20941afe503591d3a4c86e456dac/aioshutil-1.5.tar.gz", hash = "sha256:2756d6cd3bb03405dc7348ac11a0b60eb949ebd63cdd15f56e922410231c1201", size = 7770, upload-time = "2024-07-20T07:02:41.364Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/18/3d/eb3c7106c4672c19280515b759b674daafd2d570c952e5491faeca157ffd/aioshutil-1.5-py3-none-any.whl", hash = "sha256:bc2a6cdcf1a8615b62f856154fd81131031d03f2834912ebb06d8a2391253652", size = 4657, upload-time = "2024-07-20T07:02:40.028Z" },
+]
+
+[[package]]
 name = "annotated-types"
 version = "0.7.0"
 source = { registry = "https://pypi.org/simple" }
@@ -545,9 +563,11 @@ wheels = [
 
 [[package]]
 name = "ramifice"
-version = "0.5.9"
+version = "0.6.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
+    { name = "aiofiles" },
+    { name = "aioshutil" },
     { name = "argon2-cffi" },
     { name = "babel" },
     { name = "email-validator" },
@@ -560,7 +580,7 @@ dependencies = [
     { name = "termcolor" },
 ]
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/1e/70/b3294a3aace7e31a90e1ff0d0aa1f9c7ae7b30be61f7c37cccdb7222d8ab/ramifice-0.5.9-py3-none-any.whl", hash = "sha256:c62c8b788d87da45138728e9ffb1149253ca0fde25549601618d85da9e31b467", size = 88728, upload-time = "2025-07-03T11:11:35.503Z" },
+    { url = "https://files.pythonhosted.org/packages/57/66/e7b985115cfc7af7aebc632dd3e51903f8d037570ce0e55b2198186da3b8/ramifice-0.6.1-py3-none-any.whl", hash = "sha256:83b6541b7d62933609fd131a95dfc5525146731ae797acfe1e55e9c8ca10454e", size = 87005, upload-time = "2025-07-07T10:53:19.713Z" },
 ]
 
 [[package]]
