@@ -22,13 +22,13 @@ package = false
 fix = true
 line-length = 100
 required-version = ">=0.12.0"
-src = ["app", "tests"]
+src = ["src", "tests"]
 include = [
     "*.py",
     "*.pyi",
     "*.ipynb",
     "**/pyproject.toml",
-    "app/**/*.py",
+    "src/**/*.py",
     "tests/**/*.py",
 ]
 
@@ -47,7 +47,7 @@ docstring-code-line-length = 80
 strict = true
 show_error_codes = true
 pretty = true
-files = ["app/**/*.py", "tests/**/*.py"]
+files = ["src/**/*.py", "tests/**/*.py"]
 disable_error_code = ["type-arg", "no-any-return", "attr-defined", "index"]
 
 [[tool.mypy.overrides]]
