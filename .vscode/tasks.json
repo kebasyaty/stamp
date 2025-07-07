@@ -28,7 +28,7 @@
     {
       "label": "PyTest: Run Tests",
       "type": "shell",
-      "command": ["uv run pytest tests/"],
+      "command": ["uv run pytest -v tests/"],
       "problemMatcher": []
     }
   ]

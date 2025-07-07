@@ -1,21 +1,17 @@
 """Run App."""
 
-from typing import Any
-
 from fastapi import FastAPI
 
-from .services.accounts.models import User
+# from pymongo import AsyncMongoClient
+# from ramifice import migration, translations
+
+# client: AsyncMongoClient = AsyncMongoClient()
+
+# await migration.Monitor(
+#     database_name="test_basic",
+#     mongo_client=client,
+# ).migrate()
+
+# await client.close()
 
 app = FastAPI()
-
-
-@app.get("/")
-async def read_root() -> dict[str, str]:
-    """???"""
-    return {"Hello": "World"}
-
-
-@app.get("/items/{item_id}")
-async def read_item(item_id: int, q: str | None = None) -> dict[str, Any]:
-    """???"""
-    return {"item_id": item_id, "q": q}
