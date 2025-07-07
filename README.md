@@ -66,7 +66,7 @@ cd stamp
 # Install all dependencies:
 uv sync
 # Run:
-uv run uvicorn src.app.main:app --reload
+uv run python src/run_server.py
 # Open the browser on:
 http://127.0.0.1:8000
 ```
