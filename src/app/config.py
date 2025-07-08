@@ -3,5 +3,12 @@
 # Project status - Development or production.
 DEBUG: bool = True
 
+# Uvicorn Settings.
+UVICORN_APP: str = "app.main:app"
+UVICORN_HOST: str = "0.0.0.0"
+UVICORN_PORT: int = 8000
+UVICORN_RELOAD: bool = DEBUG
+UVICORN_LOG_LEVEL: str = "info"
+
 # MongoDB Settings.
-DATABASE_NAME: str = "test_db"
+MONGO_DATABASE_NAME: str = "test_db"

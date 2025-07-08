@@ -15,13 +15,13 @@ client: AsyncMongoClient = AsyncMongoClient()
 @asynccontextmanager
 async def lifespan(app: FastAPI) -> Any:
     """Define the lifespan context manager."""
-    # Code to run during startup
+    # Code to run during startup.
     await migration.Monitor(
-        database_name=config.DATABASE_NAME,
+        database_name=config.MONGO_DATABASE_NAME,
         mongo_client=client,
     ).migrate()
-    yield  # Yield control to the application
-    # Code to run during shutdown
+    yield  # Yield control to the application.
+    # Code to run during shutdown.
     await client.close()
 
 
