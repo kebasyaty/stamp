@@ -1,6 +1,6 @@
 """App > Config."""
 
-# Project status - Development or production.
+# Project status - Development or Production.
 DEBUG: bool = True
 
 # Uvicorn Settings.
