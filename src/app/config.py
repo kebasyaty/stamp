@@ -11,4 +11,8 @@ UVICORN_RELOAD: bool = DEBUG
 UVICORN_LOG_LEVEL: str = "info"
 
 # MongoDB Settings.
-MONGO_DATABASE_NAME: str = "test_db"
+MONGO_HOST: str = "127.0.0.1"
+MONGO_PORT: int = 27017
+MONGO_USERNAME: str | None = None
+MONGO_PASSWORD: str | None = None
+MONGO_DATABASE: str = "test_db"
