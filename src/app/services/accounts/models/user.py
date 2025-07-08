@@ -1,4 +1,4 @@
-"""User."""
+"""App > Services > Accounts > Models > User."""
 
 import re
 
