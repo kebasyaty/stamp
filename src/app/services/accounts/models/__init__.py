@@ -1,3 +1,3 @@
-"""Models."""
+"""App > Services > Accounts > Models."""
 
-from .user import User
+from app.services.accounts.models.user import User
