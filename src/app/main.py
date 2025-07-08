@@ -7,11 +7,22 @@ from fastapi import FastAPI
 from pymongo import AsyncMongoClient
 from ramifice import migration
 
-from app.config import MONGO_DATABASE_NAME
+from app.config import (
+    MONGO_DATABASE,
+    MONGO_HOST,
+    MONGO_PASSWORD,
+    MONGO_PORT,
+    MONGO_USERNAME,
+)
 from app.models import *
 from app.router import root_router
 
-client: AsyncMongoClient = AsyncMongoClient()
+client: AsyncMongoClient = AsyncMongoClient(
+    host=MONGO_HOST,
+    port=MONGO_PORT,
+    username=MONGO_USERNAME,
+    password=MONGO_PASSWORD,
+)
 
 
 @asynccontextmanager
@@ -21,7 +32,7 @@ async def lifespan(app: FastAPI) -> Any:
     #
     # Migration of models to database.
     await migration.Monitor(
-        database_name=MONGO_DATABASE_NAME,
+        database_name=MONGO_DATABASE,
         mongo_client=client,
     ).migrate()
     yield  # Yield control to the application.
