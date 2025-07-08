@@ -7,8 +7,7 @@ from fastapi import FastAPI
 from pymongo import AsyncMongoClient
 from ramifice import migration
 
-from app.config import DATABASE_NAME
-from app.services import *
+from app import config, models, router
 
 client: AsyncMongoClient = AsyncMongoClient()
 
@@ -18,7 +17,7 @@ async def lifespan(app: FastAPI) -> Any:
     """Define the lifespan context manager."""
     # Code to run during startup
     await migration.Monitor(
-        database_name=DATABASE_NAME,
+        database_name=config.DATABASE_NAME,
         mongo_client=client,
     ).migrate()
     yield  # Yield control to the application
@@ -27,3 +26,4 @@ async def lifespan(app: FastAPI) -> Any:
 
 
 app = FastAPI(lifespan=lifespan)
+app.include_router(router.global_router)
