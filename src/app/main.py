@@ -27,3 +27,9 @@ async def lifespan(app: FastAPI) -> Any:
 
 app = FastAPI(lifespan=lifespan)
 app.include_router(router.global_router)
+
+
+@app.get("/")
+async def root() -> dict:
+    """Home Page."""
+    return {"message": "Hello World"}
