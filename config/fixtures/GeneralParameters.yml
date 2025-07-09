@@ -1,0 +1,11 @@
+title: "General Parameters" # It is recommended not to change this title.
+logo: None
+brand: "Brand Name"
+slogan: "Our cool slogan!"
+bg_image: None
+bg_opacity: 0.8
+contact_email: "brand_name@noreaply.net"
+contact_phone: "+000000000000"
+dark_theme: True
+# grey | blue | teal | pink | green | purple | orange | brown
+color_theme: "blue"
