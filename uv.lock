@@ -87,11 +87,11 @@ wheels = [
 
 [[package]]
 name = "certifi"
-version = "2025.6.15"
+version = "2025.7.9"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/73/f7/f14b46d4bcd21092d7d3ccef689615220d8a08fb25e564b65d20738e672e/certifi-2025.6.15.tar.gz", hash = "sha256:d747aa5a8b9bbbb1bb8c22bb13e22bd1f18e9796defa16bab421f7f7a317323b", size = 158753, upload-time = "2025-06-15T02:45:51.329Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/de/8a/c729b6b60c66a38f590c4e774decc4b2ec7b0576be8f1aa984a53ffa812a/certifi-2025.7.9.tar.gz", hash = "sha256:c1d2ec05395148ee10cf672ffc28cd37ea0ab0d99f9cc74c43e588cbd111b079", size = 160386, upload-time = "2025-07-09T02:13:58.874Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/84/ae/320161bd181fc06471eed047ecce67b693fd7515b16d495d8932db763426/certifi-2025.6.15-py3-none-any.whl", hash = "sha256:2e0c7ce7cb5d8f8634ca55d2ba7e6ec2689a2fd6537d8dec1296a477a4910057", size = 157650, upload-time = "2025-06-15T02:45:49.977Z" },
+    { url = "https://files.pythonhosted.org/packages/66/f3/80a3f974c8b535d394ff960a11ac20368e06b736da395b551a49ce950cce/certifi-2025.7.9-py3-none-any.whl", hash = "sha256:d842783a14f8fdd646895ac26f719a061408834473cfc10203f6a575beb15d39", size = 159230, upload-time = "2025-07-09T02:13:57.007Z" },
 ]
 
 [[package]]
@@ -172,16 +172,16 @@ wheels = [
 
 [[package]]
 name = "fastapi"
-version = "0.115.14"
+version = "0.116.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "pydantic" },
     { name = "starlette" },
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/ca/53/8c38a874844a8b0fa10dd8adf3836ac154082cf88d3f22b544e9ceea0a15/fastapi-0.115.14.tar.gz", hash = "sha256:b1de15cdc1c499a4da47914db35d0e4ef8f1ce62b624e94e0e5824421df99739", size = 296263, upload-time = "2025-06-26T15:29:08.21Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/20/38/e1da78736143fd885c36213a3ccc493c384ae8fea6a0f0bc272ef42ebea8/fastapi-0.116.0.tar.gz", hash = "sha256:80dc0794627af0390353a6d1171618276616310d37d24faba6648398e57d687a", size = 296518, upload-time = "2025-07-07T15:09:27.82Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/53/50/b1222562c6d270fea83e9c9075b8e8600b8479150a18e4516a6138b980d1/fastapi-0.115.14-py3-none-any.whl", hash = "sha256:6c0c8bf9420bd58f565e585036d971872472b4f7d3f6c73b698e10cffdefb3ca", size = 95514, upload-time = "2025-06-26T15:29:06.49Z" },
+    { url = "https://files.pythonhosted.org/packages/2f/68/d80347fe2360445b5f58cf290e588a4729746e7501080947e6cdae114b1f/fastapi-0.116.0-py3-none-any.whl", hash = "sha256:fdcc9ed272eaef038952923bef2b735c02372402d1203ee1210af4eea7a78d2b", size = 95625, upload-time = "2025-07-07T15:09:26.348Z" },
 ]
 
 [[package]]
@@ -404,11 +404,11 @@ wheels = [
 
 [[package]]
 name = "phonenumbers"
-version = "9.0.8"
+version = "9.0.9"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/86/3a/8dd1d5e15ac347db59a43fc623638d8088f9d511e7f8d8eec7d90b3abb4f/phonenumbers-9.0.8.tar.gz", hash = "sha256:16f03f2cf65b5eee99ed25827d810febcab92b5d76f977e425fcd2e4ca6d4865", size = 2297504, upload-time = "2025-06-25T05:41:38.414Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/a3/0b/37acb7b16763991bdb675bef59bc75c6e34dbebf2c3e6bde3b0aca6bae1a/phonenumbers-9.0.9.tar.gz", hash = "sha256:c640545019a07e68b0bea57a5fede6eef45c7391165d28935f45615f9a567a5b", size = 2297605, upload-time = "2025-07-08T06:12:54.899Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/48/2e/23c1eca9f73e332b947c66c431690672783cf49b8418aa650ce06bdf6115/phonenumbers-9.0.8-py2.py3-none-any.whl", hash = "sha256:53d357111c0ead0d6408ae443613b18d3a053431ca1ddf7e881457c0969afcf9", size = 2583252, upload-time = "2025-06-25T05:41:34.815Z" },
+    { url = "https://files.pythonhosted.org/packages/e0/09/1a07ff1a2f1366d445cc68ab53b2d5f1a83e4d9cee1161f5a76c470d400f/phonenumbers-9.0.9-py2.py3-none-any.whl", hash = "sha256:13b91aa153f87675902829b38a556bad54824f9c121b89588bbb5fa8550d97ef", size = 2583343, upload-time = "2025-07-08T06:12:49.907Z" },
 ]
 
 [[package]]
@@ -711,7 +711,7 @@ wheels = [
 
 [[package]]
 name = "ramifice"
-version = "0.6.1"
+version = "0.8.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "aiofiles" },
@@ -719,6 +719,7 @@ dependencies = [
     { name = "argon2-cffi" },
     { name = "babel" },
     { name = "email-validator" },
+    { name = "orjson" },
     { name = "phonenumbers" },
     { name = "pillow" },
     { name = "pymongo" },
@@ -728,7 +729,7 @@ dependencies = [
     { name = "termcolor" },
 ]
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/57/66/e7b985115cfc7af7aebc632dd3e51903f8d037570ce0e55b2198186da3b8/ramifice-0.6.1-py3-none-any.whl", hash = "sha256:83b6541b7d62933609fd131a95dfc5525146731ae797acfe1e55e9c8ca10454e", size = 87005, upload-time = "2025-07-07T10:53:19.713Z" },
+    { url = "https://files.pythonhosted.org/packages/a3/85/819761e0f4750c1a813e57303ca34b562dac36391f11fe5882aea29afc96/ramifice-0.8.2-py3-none-any.whl", hash = "sha256:c2fa3f346839f9d91567f849c32c9b7dd81d9bd1149f42afccb64b449f15c32a", size = 87056, upload-time = "2025-07-09T15:12:35.484Z" },
 ]
 
 [[package]]

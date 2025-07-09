@@ -1,0 +1,4 @@
+title: { "en": "Company", "ru": "Компания" } # It is recommended not to change this title.
+logo: "public/media/default/logo.png"
+brand: "Brand Name"
+slogan: "Our cool slogan!"

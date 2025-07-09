@@ -1,6 +1,9 @@
-"""App > Config."""
+"""App > Config.
 
-# Project status - Development or Production.
+Global Settings.
+"""
+
+# Development or Production.
 DEBUG: bool = True
 
 # Uvicorn Settings.
@@ -15,4 +18,4 @@ MONGO_HOST: str = "127.0.0.1"
 MONGO_PORT: int = 27017
 MONGO_USERNAME: str | None = None
 MONGO_PASSWORD: str | None = None
-MONGO_DATABASE: str = "test_db"
+MONGO_DATABASE: str = "stamp_db"
