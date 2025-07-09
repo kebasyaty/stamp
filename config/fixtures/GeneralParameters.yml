@@ -1,8 +1,8 @@
 title: "General Parameters" # It is recommended not to change this title.
-logo: None
+logo: "public/media/default/logo.png"
 brand: "Brand Name"
 slogan: "Our cool slogan!"
-bg_image: None
+bg_image: "public/media/default/building_site.jpg"
 bg_opacity: 0.8
 contact_email: "brand_name@noreaply.net"
 contact_phone: "+000000000000"
