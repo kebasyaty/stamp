@@ -1,0 +1,6 @@
+title: { "en": "Admin Panel", "ru": "Панель администратора" } # It is recommended not to change this title.
+bg_image: "public/media/default/building_site.jpg"
+bg_opacity: 0.8
+dark_theme: True
+# grey | blue | teal | pink | green | purple | orange | brown
+color_theme: "blue"
