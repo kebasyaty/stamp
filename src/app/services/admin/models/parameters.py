@@ -119,7 +119,7 @@ class GeneralParameters:
         )
         self.bg_opacity = FloatField(
             label=gettext("Level of transparency"),
-            input_type="range",
+            input_type="range",  # number | range
             default=0.8,
             step=0.1,
             max_number=0.9,
