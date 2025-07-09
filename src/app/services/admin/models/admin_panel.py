@@ -32,7 +32,6 @@ class AdminPanelParameters:
             maxlength=60,
             required=True,
             readonly=True,
-            unique=True,
             warning=[
                 gettext("It is recommended not to change this Title."),
             ],
@@ -66,7 +65,7 @@ class AdminPanelParameters:
             target_dir="parameters/background",
             # Available 4 sizes from lg to xs or None.
             # Hint: By default = None
-            thumbnails={"lg": 512, "md": 256, "sm": 128, "xs": 64},
+            thumbnails={"lg": 3840, "md": 1920, "sm": 960, "xs": 480},
             # The maximum size of the original image in bytes.
             # Hint: By default = 2 MB
             max_size=1048576,  # 1 MB = 1024 KB = 1048576 Bytes (in binary)

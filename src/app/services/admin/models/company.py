@@ -29,7 +29,6 @@ class CompanyParameters:
             maxlength=60,
             required=True,
             readonly=True,
-            unique=True,
             warning=[
                 gettext("It is recommended not to change this Title."),
             ],
