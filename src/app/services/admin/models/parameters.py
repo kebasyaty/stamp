@@ -3,13 +3,11 @@
 from ramifice import model, translations
 from ramifice.fields import (
     BooleanField,
-    DateField,
-    DateTimeField,
+    ChoiceTextField,
     EmailField,
+    FloatField,
     ImageField,
-    PasswordField,
     PhoneField,
-    SlugField,
     TextField,
 )
 from ramifice.utils.tools import to_human_size
@@ -46,7 +44,7 @@ class GeneralParameters:
             placeholder=gettext("Upload Logo"),
             default="public/media/default/logo.png",
             # Directory for images inside media directory.
-            target_dir="site_params/logos",
+            target_dir="parameters/logos",
             # Available 4 sizes from lg to xs or None.
             # Hint: By default = None
             thumbnails={"lg": 512, "md": 256, "sm": 128, "xs": 64},
@@ -55,5 +53,79 @@ class GeneralParameters:
             max_size=524288,  # 0.5 MB = 512 KB = 524288 Bytes (in binary)
             warning=[
                 gettext("Maximum size: %s") % to_human_size(524288),
+            ],
+        )
+        self.brand = TextField(
+            label=gettext("Brand"),
+            placeholder=gettext("Enter your Company Name"),
+            warning=[
+                gettext("To apply the change, after saving, restart the browser tab."),
+            ],
+        )
+        self.slogan = TextField(
+            label=gettext("Slogan"),
+            placeholder=gettext("Enter your company slogan"),
+            multi_language=True,  # Support for several language.
+            warning=[
+                gettext("To apply the change, after saving, restart the browser tab."),
+            ],
+        )
+        self.contact_email = EmailField(
+            label=gettext("Feedback Email"),
+            placeholder=gettext("Enter a public email"),
+        )
+        self.contact_phone = PhoneField(
+            label=gettext("Feedback Phone"),
+            placeholder=gettext("Enter a public phone number"),
+        )
+        self.dark_theme = BooleanField(
+            label=gettext("Dark theme?"),
+            default=True,
+            warning=[
+                gettext("Dark or Light theme."),
+            ],
+        )
+        self.color_theme = ChoiceTextField(
+            label=gettext("Color Theme"),
+            default="blue",
+            choices=[
+                ["grey", gettext("Grey")],
+                ["blue", gettext("Blue")],
+                ["teal", gettext("Teal")],
+                ["pink", gettext("Pink")],
+                ["green", gettext("Green")],
+                ["purple", gettext("Purple")],
+                ["orange", gettext("Orange")],
+                ["brown", gettext("Brown")],
+            ],
+        )
+        self.bg_image = ImageField(
+            label=gettext("Background image"),
+            placeholder=gettext("Upload image"),
+            default="public/media/default/building_site.jpg",
+            # Directory for images inside media directory.
+            target_dir="parameters/background",
+            # Available 4 sizes from lg to xs or None.
+            # Hint: By default = None
+            thumbnails={"lg": 512, "md": 256, "sm": 128, "xs": 64},
+            # The maximum size of the original image in bytes.
+            # Hint: By default = 2 MB
+            max_size=1048576,  # 1 MB = 1024 KB = 1048576 Bytes (in binary)
+            warning=[
+                gettext("Background image for administrator panel."),
+                gettext("To apply the change, after saving, restart the browser tab."),
+                gettext("Maximum size: %s") % to_human_size(1048576),
+            ],
+        )
+        self.bg_opacity = FloatField(
+            label=gettext("Level of transparency"),
+            input_type="range",
+            default=0.8,
+            step=0.1,
+            max_number=0.9,
+            min_number=0,
+            warning=[
+                gettext("level of transparency for background image for administrator panel."),
+                gettext("To apply the change, after saving, restart the browser tab."),
             ],
         )
