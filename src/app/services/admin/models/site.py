@@ -39,7 +39,7 @@ class SiteParameters:
         self.banner = ImageField(
             label=gettext("Banner"),
             placeholder=gettext("Upload image"),
-            default="public/media/default/banner.jpg",
+            default="public/media/default/no_banner.jpg",
             # Directory for images inside media directory.
             target_dir="parameters/banners",
             # Available 4 sizes from lg to xs or None.
