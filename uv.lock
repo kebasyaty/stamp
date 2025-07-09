@@ -711,7 +711,7 @@ wheels = [
 
 [[package]]
 name = "ramifice"
-version = "0.8.1"
+version = "0.8.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "aiofiles" },
@@ -729,7 +729,7 @@ dependencies = [
     { name = "termcolor" },
 ]
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/2e/aa/a57035ad64d2af8ca8ad997fe370e93dab5c3318a1b484a91987c341239c/ramifice-0.8.1-py3-none-any.whl", hash = "sha256:c1953cc2b5a9c09a0a31ae2ce63a674cef7a69c57c4b9d79a8099277eaf7586c", size = 87049, upload-time = "2025-07-09T11:11:57.674Z" },
+    { url = "https://files.pythonhosted.org/packages/a3/85/819761e0f4750c1a813e57303ca34b562dac36391f11fe5882aea29afc96/ramifice-0.8.2-py3-none-any.whl", hash = "sha256:c2fa3f346839f9d91567f849c32c9b7dd81d9bd1149f42afccb64b449f15c32a", size = 87056, upload-time = "2025-07-09T15:12:35.484Z" },
 ]
 
 [[package]]
