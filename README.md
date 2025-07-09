@@ -19,6 +19,12 @@
 
 ##
 
+[![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
+<br>
+_Supports MongoDB 3.6, 4.0, 4.2, 4.4, 5.0, 6.0, 7.0, and 8.0._
+<br>
+_For more information see [PyMongo](https://pypi.org/project/pymongo/ "PyMongo")_.
+
 <br>
 
 ## Install for work with Stamp
