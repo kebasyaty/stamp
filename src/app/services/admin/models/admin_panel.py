@@ -81,7 +81,7 @@ class AdminPanelParameters:
             default=0.8,
             step=0.1,
             max_number=0.9,
-            min_number=0,
+            min_number=0.0,
             warning=[
                 gettext("level of transparency for background image for administrator panel."),
                 gettext("To apply the change, after saving, restart the browser tab."),
