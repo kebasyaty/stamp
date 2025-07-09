@@ -27,7 +27,7 @@ client: AsyncMongoClient = AsyncMongoClient(
 
 @asynccontextmanager
 async def lifespan(app: FastAPI) -> Any:
-    """Define the lifespan context manager."""
+    """The lifespan context manager."""
     # Migration of models to database.
     await Migration(
         database_name=MONGO_DATABASE,
