@@ -8,6 +8,7 @@ from pymongo import AsyncMongoClient
 from ramifice import Migration
 
 from app.config import (
+    DEBUG,
     MONGO_DATABASE,
     MONGO_HOST,
     MONGO_PASSWORD,
@@ -37,5 +38,8 @@ async def lifespan(app: FastAPI) -> Any:
     await client.close()
 
 
-app = FastAPI(lifespan=lifespan)
+app = FastAPI(
+    debug=DEBUG,
+    lifespan=lifespan,
+)
 app.include_router(root_router)
