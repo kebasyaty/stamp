@@ -4,16 +4,21 @@ from contextlib import asynccontextmanager
 from typing import Any
 
 from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
 from pymongo import AsyncMongoClient
 from ramifice import Migration
 
 from app.config import (
     DEBUG,
+    MEDIA_DIR,
+    MEDIA_URL,
     MONGO_DATABASE,
     MONGO_HOST,
     MONGO_PASSWORD,
     MONGO_PORT,
     MONGO_USERNAME,
+    STATIC_DIR,
+    STATIC_URL,
 )
 from app.models import *
 from app.router import root_router
@@ -41,5 +46,15 @@ async def lifespan(app: FastAPI) -> Any:
 app = FastAPI(
     debug=DEBUG,
     lifespan=lifespan,
+)
+app.mount(
+    path=STATIC_URL,
+    app=StaticFiles(directory=STATIC_DIR),
+    name="static",
+)
+app.mount(
+    path=MEDIA_URL,
+    app=StaticFiles(directory=MEDIA_DIR),
+    name="media",
 )
 app.include_router(root_router)

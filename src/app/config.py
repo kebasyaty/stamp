@@ -3,6 +3,8 @@
 Global Settings.
 """
 
+from fastapi.templating import Jinja2Templates
+
 # Development -> True
 # Production -> False
 DEBUG: bool = True
@@ -20,3 +22,10 @@ MONGO_PORT: int = 27017
 MONGO_USERNAME: str | None = None
 MONGO_PASSWORD: str | None = None
 MONGO_DATABASE: str = "stamp_db"
+
+# Jinja2
+TEMPLATES = Jinja2Templates(directory="templates")
+STATIC_DIR = "public/static"
+STATIC_URL = "/static"
+MEDIA_DIR = "public/media"
+MEDIA_URL = "/media"
