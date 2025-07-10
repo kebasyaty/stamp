@@ -12,7 +12,12 @@ from fastapi.responses import (
     XMLResponse,
 )
 
-from app.config import STATIC_DIR, TEMPLATES
+from app.config import (
+    STATIC_DIR,
+    TEMPLATES,
+    URI_HOST,
+    URI_SCHEME,
+)
 from app.services.accounts.router import router as accounts_router
 from app.services.admin.router import router as admin_router
 from app.services.auth.router import router as auth_router
@@ -40,8 +45,8 @@ async def get_robots(request: Request) -> Any:
     """Get robots."""
     context = {
         "request": request,
-        "host": "???",
-        "scheme": "???",
+        "host": URI_HOST,
+        "scheme": URI_SCHEME,
     }
     return TEMPLATES.TemplateResponse("robots.txt", context)
 
