@@ -14,7 +14,7 @@ router = APIRouter(tags=["home"])
 
 
 @router.get("/")
-async def root() -> Any:
+async def home_page() -> Any:
     """Home Page."""
     return TEMPLATES.TemplateResponse(
         name="index.html",
