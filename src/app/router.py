@@ -5,10 +5,10 @@ Global Hub of routers
 
 from typing import Any
 
-from fastapi import APIRouter
-from fastapi.responses import FileResponse
+from fastapi import APIRouter, Request
+from fastapi.responses import FileResponse, PlainTextResponse
 
-from app.config import STATIC_DIR
+from app.config import STATIC_DIR, TEMPLATES
 from app.services.accounts.router import router as accounts_router
 from app.services.admin.router import router as admin_router
 from app.services.auth.router import router as auth_router
@@ -25,3 +25,14 @@ root_router.include_router(home_router)
 async def get_favicon() -> Any:
     """Get favicon."""
     return FileResponse(f"{STATIC_DIR}/favicons/favicon.ico")
+
+
+@root_router.get("/robots.txt", response_class=PlainTextResponse, include_in_schema=False)
+async def get_robots(request: Request) -> Any:
+    """Get robots."""
+    context = {
+        "request": request,
+        "host": "???",
+        "scheme": "???",
+    }
+    return TEMPLATES.TemplateResponse("robots.txt", context)
