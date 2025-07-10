@@ -16,6 +16,12 @@ URI_HOST: str = "www.your-domain-name.net" if not DEBUG else "127.0.0.1"
 URI_PORT: int = 5000 if not DEBUG else 8000
 # Application URL
 APP_URL: str = f"{URI_SCHEME}://{URI_HOST}"
+#
+STATIC_URL = "/static"
+STATIC_DIR = "public/static"
+MEDIA_URL = "/media"
+MEDIA_DIR = "public/media"
+TEMPLATES = Jinja2Templates(directory="templates")
 
 # Uvicorn
 UVICORN_APP: str = "app.main:app"
@@ -30,10 +36,3 @@ MONGO_PORT: int = 27017
 MONGO_USERNAME: str | None = None
 MONGO_PASSWORD: str | None = None
 MONGO_DATABASE: str = "stamp_db"
-
-# Jinja2
-STATIC_URL = "/static"
-STATIC_DIR = "public/static"
-MEDIA_URL = "/media"
-MEDIA_DIR = "public/media"
-TEMPLATES = Jinja2Templates(directory="templates")
