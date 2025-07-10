@@ -1,4 +1,7 @@
-"""App > Services > Home > Router."""
+"""App > Services > Home > Router.
+
+Face of Site.
+"""
 
 from fastapi import APIRouter
 
@@ -8,4 +11,4 @@ router = APIRouter(tags=["home"])
 @router.get("/")
 async def root() -> dict:
     """Home Page."""
-    return {"message": "Hello World"}
+    return {"title": "Home Page"}
