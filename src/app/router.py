@@ -1,6 +1,6 @@
 """App > Router.
 
-Hub of routers.
+Global Hub of routers.
 """
 
 from fastapi import APIRouter

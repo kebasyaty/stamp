@@ -1,6 +1,6 @@
 """App > Models.
 
-Hub of models.
+Global Hub of models.
 """
 
 from app.services.accounts.models import *

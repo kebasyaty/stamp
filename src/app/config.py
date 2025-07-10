@@ -3,7 +3,8 @@
 Global Settings.
 """
 
-# Development or Production.
+# Development -> True
+# Production -> False
 DEBUG: bool = True
 
 # Uvicorn Settings.
