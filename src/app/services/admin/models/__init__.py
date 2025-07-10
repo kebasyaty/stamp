@@ -3,6 +3,8 @@
 Local Hub of models.
 """
 
-from app.services.admin.models.admin_panel import AdminPanelParameters
-from app.services.admin.models.company import CompanyParameters
-from app.services.admin.models.site import SiteParameters
+from app.services.admin import models
+
+models.admin_panel.AdminPanelParameters
+models.company.CompanyParameters
+models.site.SiteParameters

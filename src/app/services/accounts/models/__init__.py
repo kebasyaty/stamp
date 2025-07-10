@@ -3,4 +3,6 @@
 Local Hub of models.
 """
 
-from app.services.accounts.models.user import User
+from app.services.accounts import models
+
+models.user.User
