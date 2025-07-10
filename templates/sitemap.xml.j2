@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
-   <%- items.each do |item| -%>
-   <url>
+{% for item in items %} <url>
       <loc>
-         <%= item[:loc] %>
+         {{ item['loc'] }}
       </loc>
       <lastmod>
-         <%= item[:lastmod] %>
+         {{ item['lastmod'] }}
       </lastmod>
       <changefreq>
-         <%= item[:changefreq] %>
+         {{ item['changefreq'] }}
       </changefreq>
       <priority>
-         <%= item[:priority] %>
+         {{ item['priority'] }}
       </priority>
-   </url>
-   <%- end -%>
+   </url> {% endfor %}
 </urlset>

@@ -65,4 +65,4 @@ async def get_sitemap(request: Request) -> Any:
         "request": request,
         "items": items,
     }
-    return TEMPLATES.TemplateResponse("sitemap.xml", context)
+    return TEMPLATES.TemplateResponse("sitemap.xml.j2", context)
