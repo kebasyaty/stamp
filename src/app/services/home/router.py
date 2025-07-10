@@ -24,4 +24,4 @@ async def home_page(request: Request) -> Any:
         "meta_description": "???",
         "message": "Hello World",
     }
-    return TEMPLATES.TemplateResponse("index.html", context)
+    return TEMPLATES.TemplateResponse("index.html.j2", context)

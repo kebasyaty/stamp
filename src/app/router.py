@@ -5,10 +5,19 @@ Global Hub of routers
 
 from typing import Any
 
-from fastapi import APIRouter
-from fastapi.responses import FileResponse
+from fastapi import APIRouter, Request
+from fastapi.responses import (
+    FileResponse,
+    PlainTextResponse,
+    Response,
+)
 
-from app.config import STATIC_DIR
+from app.config import (
+    STATIC_DIR,
+    TEMPLATES,
+    URI_HOST,
+    URI_SCHEME,
+)
 from app.services.accounts.router import router as accounts_router
 from app.services.admin.router import router as admin_router
 from app.services.auth.router import router as auth_router
@@ -25,3 +34,44 @@ root_router.include_router(home_router)
 async def get_favicon() -> Any:
     """Get favicon."""
     return FileResponse(f"{STATIC_DIR}/favicons/favicon.ico")
+
+
+@root_router.get(
+    "/robots.txt",
+    response_class=PlainTextResponse,
+    include_in_schema=False,
+)
+async def get_robots(request: Request) -> Any:
+    """Get robots."""
+    context = {
+        "request": request,
+        "host": URI_HOST,
+        "scheme": URI_SCHEME,
+    }
+    return TEMPLATES.TemplateResponse("robots.txt", context)
+
+
+@root_router.get(
+    "/sitemap.xml",
+    response_class=Response,
+    include_in_schema=False,
+)
+async def get_sitemap(request: Request) -> Any:
+    """Get sitemap."""
+    items = [
+        {
+            "loc": "test_loc",
+            "lastmod": "test_lastmod",
+            "changefreq": "test_changefreq",
+            "priority": 0.5,
+        }
+    ]
+    context = {
+        "request": request,
+        "items": items,
+    }
+    return TEMPLATES.TemplateResponse(
+        "sitemap.xml.j2",
+        context,
+        media_type="application/xml",
+    )
