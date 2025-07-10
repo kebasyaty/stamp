@@ -1,4 +1,4 @@
 """App > Services > Home > Models.
 
-Local Hub of models.
+Local Hub of models
 """
