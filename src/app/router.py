@@ -6,7 +6,11 @@ Global Hub of routers
 from typing import Any
 
 from fastapi import APIRouter, Request
-from fastapi.responses import FileResponse, PlainTextResponse
+from fastapi.responses import (
+    FileResponse,
+    PlainTextResponse,
+    XMLResponse,
+)
 
 from app.config import STATIC_DIR, TEMPLATES
 from app.services.accounts.router import router as accounts_router
@@ -27,7 +31,11 @@ async def get_favicon() -> Any:
     return FileResponse(f"{STATIC_DIR}/favicons/favicon.ico")
 
 
-@root_router.get("/robots.txt", response_class=PlainTextResponse, include_in_schema=False)
+@root_router.get(
+    "/robots.txt",
+    response_class=PlainTextResponse,
+    include_in_schema=False,
+)
 async def get_robots(request: Request) -> Any:
     """Get robots."""
     context = {
@@ -36,3 +44,25 @@ async def get_robots(request: Request) -> Any:
         "scheme": "???",
     }
     return TEMPLATES.TemplateResponse("robots.txt", context)
+
+
+@root_router.get(
+    "/sitemap.xml",
+    response_class=XMLResponse,
+    include_in_schema=False,
+)
+async def get_sitemap(request: Request) -> Any:
+    """Get sitemap."""
+    items = [
+        {
+            "loc": "test_loc",
+            "lastmod": "test_lastmod",
+            "changefreq": "test_changefreq",
+            "priority": 0.5,
+        }
+    ]
+    context = {
+        "request": request,
+        "items": items,
+    }
+    return TEMPLATES.TemplateResponse("sitemap.xml", context)
