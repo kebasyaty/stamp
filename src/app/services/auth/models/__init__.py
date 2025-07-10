@@ -1,1 +1,4 @@
-"""App > Services > Auth > Models."""
+"""App > Services > Auth > Models.
+
+Local Hub of models.
+"""
