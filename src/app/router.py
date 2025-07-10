@@ -9,7 +9,7 @@ from fastapi import APIRouter, Request
 from fastapi.responses import (
     FileResponse,
     PlainTextResponse,
-    XMLResponse,
+    Response,
 )
 
 from app.config import (
@@ -53,7 +53,7 @@ async def get_robots(request: Request) -> Any:
 
 @root_router.get(
     "/sitemap.xml",
-    response_class=XMLResponse,
+    response_class=Response,
     include_in_schema=False,
 )
 async def get_sitemap(request: Request) -> Any:
@@ -70,4 +70,8 @@ async def get_sitemap(request: Request) -> Any:
         "request": request,
         "items": items,
     }
-    return TEMPLATES.TemplateResponse("sitemap.xml.j2", context)
+    return TEMPLATES.TemplateResponse(
+        "sitemap.xml.j2",
+        context,
+        media_type="application/xml",
+    )
