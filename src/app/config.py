@@ -1,6 +1,6 @@
 """App > Config.
 
-Global Settings.
+Global Settings
 """
 
 from fastapi.templating import Jinja2Templates
