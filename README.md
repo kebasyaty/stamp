@@ -127,15 +127,3 @@ uv run pybabel update -i config/translations/ramifice.pot -d config/translations
 # Hint: Do not forget to check the translations for existing languages.
 uv run pybabel compile -d config/translations/ramifice
 ```
-
-## Requirements
-
-[View the list of requirements.](https://github.com/kebasyaty/stamp/blob/main/REQUIREMENTS.md "View the list of requirements.")
-
-## Changelog
-
-[View the change history.](https://github.com/kebasyaty/stamp/blob/main/CHANGELOG.md "Changelog")
-
-## License
-
-**This project is licensed under the** [MIT](https://github.com/kebasyaty/stamp/blob/main/LICENSE "MIT")**.**
