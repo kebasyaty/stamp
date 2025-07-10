@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkadmin_panel"]=self["webpackChunkadmin_panel"]||[]).push([[674],{3674:function(n,e,l){l.r(e),l.d(e,{default:function(){return c}});var u=l(1750),a=function(){var n=this,e=n._self._c;return e(u.A,{attrs:{fluid:""}})},t=[],r={name:"BlankPage"},s=r,f=l(1656),i=(0,f.A)(s,a,t,!1,null,null,null),c=i.exports}}]);
+//# sourceMappingURL=674.f3fcbd6a.js.map
