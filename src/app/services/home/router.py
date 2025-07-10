@@ -1,6 +1,6 @@
 """App > Services > Home > Router.
 
-Face of Site.
+Face of Site
 """
 
 from typing import Any
