@@ -32,7 +32,8 @@ STATIC_ROOT = "public/static"
 # URL to use when referring to
 # static files located in STATIC_ROOT.
 STATIC_URL = "/static"
-# ???
+# Absolute filesystem path to the
+# directory that will hold templates.
 TEMPLATES = Jinja2Templates(directory="templates")
 # A secret key.
 # This is used to provide cryptographic signing,
