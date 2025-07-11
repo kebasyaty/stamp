@@ -6,22 +6,27 @@ from typing import Any
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from pymongo import AsyncMongoClient
-from ramifice import Migration
+from ramifice import Migration, translations
 
 from app.config import (
     DEBUG,
-    MEDIA_DIR,
+    DEFAULT_LOCALE,
+    LANGUAGES,
+    MEDIA_ROOT,
     MEDIA_URL,
     MONGO_DATABASE,
     MONGO_HOST,
     MONGO_PASSWORD,
     MONGO_PORT,
     MONGO_USERNAME,
-    STATIC_DIR,
+    STATIC_ROOT,
     STATIC_URL,
 )
 from app.models import *
 from app.router import root_router
+
+translations.DEFAULT_LOCALE = DEFAULT_LOCALE
+translations.LANGUAGES = LANGUAGES
 
 client: AsyncMongoClient = AsyncMongoClient(
     host=MONGO_HOST,
@@ -49,12 +54,12 @@ app = FastAPI(
 )
 app.mount(
     path=STATIC_URL,
-    app=StaticFiles(directory=STATIC_DIR),
+    app=StaticFiles(directory=STATIC_ROOT),
     name="static",
 )
 app.mount(
     path=MEDIA_URL,
-    app=StaticFiles(directory=MEDIA_DIR),
+    app=StaticFiles(directory=MEDIA_ROOT),
     name="media",
 )
 app.include_router(root_router)
