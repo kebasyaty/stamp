@@ -13,7 +13,7 @@ from fastapi.responses import (
 )
 
 from app.config import (
-    STATIC_DIR,
+    STATIC_ROOT,
     TEMPLATES,
     URI_HOST,
     URI_SCHEME,
@@ -33,7 +33,7 @@ root_router.include_router(home_router)
 @root_router.get("/favicon.ico", include_in_schema=False)
 async def get_favicon() -> Any:
     """Get favicon."""
-    return FileResponse(f"{STATIC_DIR}/favicons/favicon.ico")
+    return FileResponse(f"{STATIC_ROOT}/favicons/favicon.ico")
 
 
 @root_router.get(
