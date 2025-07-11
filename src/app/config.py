@@ -40,15 +40,15 @@ URI_PORT: int = 5000 if not DEBUG else 8000
 APP_URL: str = f"{URI_SCHEME}://{URI_HOST}"
 # Absolute filesystem path to the
 # directory that will hold templates.
-TEMPLATES = Jinja2Templates(directory="templates")
+TEMPLATES: Jinja2Templates = Jinja2Templates(directory="templates")
 # A secret key.
 # This is used to provide cryptographic signing,
 # and should be set to a unique, unpredictable value.
-SECRET_KEY = ""
+SECRET_KEY: str = ""
 # The URL, where requests are redirected for login.
-LOGIN_URL = "/accounts/login/"
+LOGIN_URL: str = "/accounts/login/"
 # The URL, where requests are redirected for login.
-LOGOUT_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL: str = "/"
 
 # Uvicorn
 UVICORN_APP: str = "app.main:app"
