@@ -3,7 +3,28 @@
 Global Settings
 """
 
+import os
+import secrets
+
 from fastapi.templating import Jinja2Templates
+from ramifice.utils.constants import (
+    # Absolute filesystem path to the
+    # directory that will hold user-uploaded files.
+    # Hint: "public/media"
+    MEDIA_ROOT,
+    # URL that handles the media served from MEDIA_ROOT,
+    # used for managing stored files.
+    # Hinr: "/media"
+    MEDIA_URL,
+    # The absolute path to the
+    # directory where static files are located.
+    # Hint: "public/static"
+    STATIC_ROOT,
+    # URL to use when referring to
+    # static files located in STATIC_ROOT.
+    # Hint: "/static"
+    STATIC_URL,
+)
 
 # Development -> True
 # Production -> False
@@ -21,28 +42,19 @@ URI_PORT: int = 5000 if not DEBUG else 8000
 # Application URL
 APP_URL: str = f"{URI_SCHEME}://{URI_HOST}"
 # Absolute filesystem path to the
-# directory that will hold user-uploaded files.
-MEDIA_ROOT = "public/media"
-# URL that handles the media served from MEDIA_ROOT,
-# used for managing stored files.
-MEDIA_URL = "/media"
-# The absolute path to the
-# directory where static files are located.
-STATIC_ROOT = "public/static"
-# URL to use when referring to
-# static files located in STATIC_ROOT.
-STATIC_URL = "/static"
-# Absolute filesystem path to the
 # directory that will hold templates.
-TEMPLATES = Jinja2Templates(directory="templates")
+TEMPLATES: Jinja2Templates = Jinja2Templates(directory="templates")
+# The URL, where requests are redirected for login.
+LOGIN_URL: str = "/accounts/login/"
+# The URL, where requests are redirected for login.
+LOGOUT_REDIRECT_URL: str = "/"
 # A secret key.
 # This is used to provide cryptographic signing,
 # and should be set to a unique, unpredictable value.
-SECRET_KEY = ""
-# The URL, where requests are redirected for login.
-LOGIN_URL = "/accounts/login/"
-# The URL, where requests are redirected for login.
-LOGOUT_REDIRECT_URL = "/"
+SECRET_KEY: str | None = os.getenv("STAMP_SECRET_KEY")
+if not SECRET_KEY:
+    SECRET_KEY = secrets.token_urlsafe(64)
+    os.environ["STAMP_SECRET_KEY"] = SECRET_KEY
 
 # Uvicorn
 UVICORN_APP: str = "app.main:app"
