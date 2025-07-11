@@ -51,10 +51,7 @@ LOGOUT_REDIRECT_URL: str = "/"
 # A secret key.
 # This is used to provide cryptographic signing,
 # and should be set to a unique, unpredictable value.
-SECRET_KEY: str | None = os.getenv("STAMP_SECRET_KEY")
-if not SECRET_KEY:
-    SECRET_KEY = secrets.token_urlsafe(64)
-    os.environ["STAMP_SECRET_KEY"] = SECRET_KEY
+SECRET_KEY: str = secrets.token_urlsafe(64)
 
 # Uvicorn
 UVICORN_APP: str = "app.main:app"
