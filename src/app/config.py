@@ -3,6 +3,9 @@
 Global Settings
 """
 
+import os
+import secrets
+
 from fastapi.templating import Jinja2Templates
 from ramifice.utils.constants import (
     # Absolute filesystem path to the
@@ -41,14 +44,17 @@ APP_URL: str = f"{URI_SCHEME}://{URI_HOST}"
 # Absolute filesystem path to the
 # directory that will hold templates.
 TEMPLATES: Jinja2Templates = Jinja2Templates(directory="templates")
-# A secret key.
-# This is used to provide cryptographic signing,
-# and should be set to a unique, unpredictable value.
-SECRET_KEY: str = ""
 # The URL, where requests are redirected for login.
 LOGIN_URL: str = "/accounts/login/"
 # The URL, where requests are redirected for login.
 LOGOUT_REDIRECT_URL: str = "/"
+# A secret key.
+# This is used to provide cryptographic signing,
+# and should be set to a unique, unpredictable value.
+SECRET_KEY: str | None = os.getenv("STAMP_SECRET_KEY")
+if not SECRET_KEY:
+    SECRET_KEY = secrets.token_urlsafe(64)
+    os.environ["STAMP_SECRET_KEY"] = SECRET_KEY
 
 # Uvicorn
 UVICORN_APP: str = "app.main:app"
