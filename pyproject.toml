@@ -15,6 +15,7 @@ dependencies = [
     "orjson>=3.10.18",
     "pydantic>=2.11.7",
     "pydantic-settings>=2.10.1",
+    "python-dotenv>=1.1.1",
     "python-multipart>=0.0.20",
     "pyyaml>=6.0.2",
     "ramifice>=0.5.9",
