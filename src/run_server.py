@@ -1,7 +1,8 @@
 """Run Server."""
 
+import asyncio
+
 import uvicorn
-from anyio import run
 
 from app.config import (
     UVICORN_APP,
@@ -26,4 +27,4 @@ async def run_server() -> None:
 
 
 if __name__ == "__main__":
-    run(run_server)
+    asyncio.run(run_server())
