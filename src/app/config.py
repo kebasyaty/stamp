@@ -38,7 +38,7 @@ URI_SCHEME: str = f"http{'s' if not DEBUG else ''}"
 # URI Host
 URI_HOST: str = "www.your-domain-name.net" if not DEBUG else "127.0.0.1"
 # URI Port
-URI_PORT: int = 5000 if not DEBUG else 8000
+URI_PORT: int = 3000 if not DEBUG else 8000
 # Application URL
 APP_URL: str = f"{URI_SCHEME}://{URI_HOST}"
 # Absolute filesystem path to the
