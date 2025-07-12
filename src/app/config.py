@@ -3,9 +3,8 @@
 Global Settings
 """
 
-import secrets
+import asyncio
 
-import aiofiles
 from fastapi.templating import Jinja2Templates
 from ramifice.utils.constants import (
     # Absolute filesystem path to the
@@ -25,6 +24,8 @@ from ramifice.utils.constants import (
     # Hint: "/static"
     STATIC_URL,
 )
+
+from app.utils import get_secret_key
 
 # Development -> True
 # Production -> False
@@ -51,7 +52,7 @@ LOGOUT_REDIRECT_URL: str = "/"
 # A secret key.
 # This is used to provide cryptographic signing,
 # and should be set to a unique, unpredictable value.
-SECRET_KEY: str = secrets.token_urlsafe(64)
+SECRET_KEY: str = asyncio.run(get_secret_key())
 
 # Uvicorn
 UVICORN_APP: str = "app.main:app"
