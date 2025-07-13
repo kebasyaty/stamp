@@ -1,4 +1,4 @@
-"""Src > App > Services > Accounts > Models > User.
+"""App > Services > Accounts > Models > User.
 
 Model of User
 """

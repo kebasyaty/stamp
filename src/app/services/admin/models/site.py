@@ -1,4 +1,4 @@
-"""Src > App > Services > Admin > Models > Site Parameters.
+"""App > Services > Admin > Models > Site Parameters.
 
 Model of Site Parameters
 """

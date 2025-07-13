@@ -1,4 +1,4 @@
-"""Src > App > Utils.
+"""App > Utils.
 
 Global Utils
 """

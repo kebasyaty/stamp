@@ -1,4 +1,4 @@
-"""Src > App > Services > Admin > Models > Parameters of admin panel.
+"""App > Services > Admin > Models > Parameters of admin panel.
 
 Model of Admin Panel Parameters
 """

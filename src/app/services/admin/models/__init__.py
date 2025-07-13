@@ -1,8 +1,8 @@
-"""Src > App > Services > Admin > Models.
+"""App > Services > Admin > Models.
 
 Local Hub of models
 """
 
-from src.app.services.admin.models.admin_panel import AdminPanelParameters
-from src.app.services.admin.models.company import CompanyParameters
-from src.app.services.admin.models.site import SiteParameters
+from app.services.admin.models.admin_panel import AdminPanelParameters
+from app.services.admin.models.company import CompanyParameters
+from app.services.admin.models.site import SiteParameters

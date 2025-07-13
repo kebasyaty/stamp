@@ -1,4 +1,0 @@
-"""Src.
-
-Root of Application
-"""

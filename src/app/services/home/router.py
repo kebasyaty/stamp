@@ -1,4 +1,4 @@
-"""Src > App > Services > Home > Router.
+"""App > Services > Home > Router.
 
 Local Hub of routes
 """
@@ -9,7 +9,7 @@ from fastapi import APIRouter, Request
 from fastapi.responses import HTMLResponse
 from ramifice import translations
 
-from src.app.config import TEMPLATES
+from app.config import TEMPLATES
 
 router = APIRouter(tags=["home"])
 

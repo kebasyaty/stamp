@@ -1,4 +1,4 @@
-"""Src > App > Services > Admin > Router.
+"""App > Services > Admin > Router.
 
 Local Hub of routes
 """

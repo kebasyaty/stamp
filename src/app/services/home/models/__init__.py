@@ -1,4 +1,4 @@
-"""Src > App > Services > Home > Models.
+"""App > Services > Home > Models.
 
 Local Hub of models
 """

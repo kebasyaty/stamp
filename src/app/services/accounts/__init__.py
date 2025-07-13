@@ -1,4 +1,4 @@
-"""Src > App > Services > Accounts.
+"""App > Services > Accounts.
 
 Service of Accounts Management
 """

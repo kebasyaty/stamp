@@ -12,16 +12,16 @@ from fastapi.responses import (
     Response,
 )
 
-from src.app.config import (
+from app.config import (
     STATIC_ROOT,
     TEMPLATES,
     URI_HOST,
     URI_SCHEME,
 )
-from src.app.services.accounts.router import router as accounts_router
-from src.app.services.admin.router import router as admin_router
-from src.app.services.auth.router import router as auth_router
-from src.app.services.home.router import router as home_router
+from app.services.accounts.router import router as accounts_router
+from app.services.admin.router import router as admin_router
+from app.services.auth.router import router as auth_router
+from app.services.home.router import router as home_router
 
 root_router = APIRouter(tags=["root"])
 root_router.include_router(accounts_router)

@@ -1,4 +1,4 @@
-"""Src > Server.
+"""Server.
 
 Run Server
 """
@@ -7,7 +7,7 @@ import asyncio
 
 import uvicorn
 
-from src.app.config import (
+from app.config import (
     UVICORN_APP,
     UVICORN_HOST,
     UVICORN_LOG_LEVEL,
