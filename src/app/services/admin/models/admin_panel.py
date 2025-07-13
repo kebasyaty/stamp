@@ -1,6 +1,6 @@
 """Model of Admin Panel Parameters.
 
-App > Services > Admin > Models > AdminPanelParameters
+app > services > admin > models > AdminPanelParameters
 """
 
 from ramifice import model, translations

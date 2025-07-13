@@ -1,6 +1,6 @@
 """Local Hub of routes.
 
-App > Services > Home > Router
+app > services > home > router
 """
 
 from typing import Any

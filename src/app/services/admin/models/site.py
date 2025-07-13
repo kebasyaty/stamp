@@ -1,6 +1,6 @@
 """Model of Site Parameters.
 
-App > Services > Admin > Models > SiteParameters
+app > services > admin > models > SiteParameters
 """
 
 from ramifice import model, translations

@@ -1,4 +1,4 @@
 """Service of Accounts Management.
 
-App > Services > Accounts
+app > services > accounts
 """

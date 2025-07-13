@@ -14,7 +14,7 @@ from app.config import (
 
 
 async def run_server() -> None:
-    """Run App."""
+    """Run Server."""
     config = uvicorn.Config(
         app=UVICORN_APP,
         host=UVICORN_HOST,

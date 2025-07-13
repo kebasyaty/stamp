@@ -1,6 +1,6 @@
 """Local Hub of models.
 
-App > Services > Accounts > Models
+app > services > accounts > models
 """
 
 from app.services.accounts.models.user import User
