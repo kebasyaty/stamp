@@ -1,6 +1,6 @@
 """Model of User.
 
-app > services > accounts > models > User
+app > services > accounts > models > user
 """
 
 import re

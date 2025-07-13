@@ -1,6 +1,6 @@
 """Model of Company Parameters.
 
-app > services > admin > models > CompanyParameters
+app > services > admin > models > company
 """
 
 from ramifice import model, translations
