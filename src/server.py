@@ -1,4 +1,4 @@
-"""Server.
+"""Src > Server.
 
 Run Server
 """
@@ -17,7 +17,7 @@ from app.config import (
 
 
 async def run_server() -> None:
-    """Run Server."""
+    """Run App."""
     config = uvicorn.Config(
         app=UVICORN_APP,
         host=UVICORN_HOST,
