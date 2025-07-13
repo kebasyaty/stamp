@@ -1,4 +1,7 @@
-"""App > Services > Admin > Models > Company Parameters."""
+"""Model of Company Parameters.
+
+app > services > admin > models > CompanyParameters
+"""
 
 from ramifice import model, translations
 from ramifice.fields import (

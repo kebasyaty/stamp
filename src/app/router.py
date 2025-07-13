@@ -1,6 +1,6 @@
-"""App > Router.
+"""Global Hub of routers.
 
-Global Hub of routers
+app > router
 """
 
 from typing import Any

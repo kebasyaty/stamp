@@ -28,7 +28,7 @@
     {
       "label": "Uvicorn: Run App",
       "type": "shell",
-      "command": ["uv run python src/run_server.py"],
+      "command": ["uv run python src/server.py"],
       "problemMatcher": []
     },
     {

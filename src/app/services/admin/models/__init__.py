@@ -1,6 +1,6 @@
-"""App > Services > Admin > Models.
+"""Local Hub of models.
 
-Local Hub of models
+app > services > admin > models
 """
 
 from app.services.admin.models.admin_panel import AdminPanelParameters

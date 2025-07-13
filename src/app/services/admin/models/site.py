@@ -1,4 +1,7 @@
-"""App > Services > Admin > Models > Site Parameters."""
+"""Model of Site Parameters.
+
+app > services > admin > models > SiteParameters
+"""
 
 from ramifice import model, translations
 from ramifice.fields import (
