@@ -52,7 +52,12 @@ LOGOUT_REDIRECT_URL: str = "/"
 # A secret key.
 # This is used to provide cryptographic signing,
 # and should be set to a unique, unpredictable value.
-SECRET_KEY: str = asyncio.run(get_secret_key())
+SECRET_KEY: str = asyncio.run(
+    get_secret_key(
+        dotenv_path=".env",
+        length=64,
+    )
+)
 
 # Uvicorn
 UVICORN_APP: str = "app.main:app"
