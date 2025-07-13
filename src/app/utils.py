@@ -1,6 +1,6 @@
-"""Global Utils.
+"""App > Utils.
 
-app > utils
+Global Utils
 """
 
 import secrets
