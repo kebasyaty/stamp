@@ -1,4 +1,4 @@
 """Src > App > Services > Admin.
 
-Admin Panel
+Service of Admin Panel
 """

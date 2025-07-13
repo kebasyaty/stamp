@@ -1,4 +1,7 @@
-"""Src > App > Services > Admin > Models > Parameters of admin panel."""
+"""Src > App > Services > Admin > Models > Parameters of admin panel.
+
+Model of Admin Panel Parameters
+"""
 
 from ramifice import model, translations
 from ramifice.fields import (

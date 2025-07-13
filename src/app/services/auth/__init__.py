@@ -1,1 +1,4 @@
-"""Src > App > Services > Auth."""
+"""Src > App > Services > Auth.
+
+Service of Authentication
+"""

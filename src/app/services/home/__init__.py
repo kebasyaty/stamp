@@ -1,4 +1,4 @@
 """Src > App > Services > Home.
 
-Face of Site
+Service of Home Page
 """
