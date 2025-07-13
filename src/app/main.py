@@ -1,6 +1,6 @@
 """App.
 
-Run App
+Run Application
 """
 
 from contextlib import asynccontextmanager
