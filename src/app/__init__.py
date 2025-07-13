@@ -1,1 +1,4 @@
-"""App."""
+"""Src > App.
+
+Directory of Application
+"""

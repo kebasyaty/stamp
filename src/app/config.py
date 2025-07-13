@@ -1,4 +1,4 @@
-"""App > Config.
+"""Src > App > Config.
 
 Global Settings
 """
@@ -25,7 +25,7 @@ from ramifice.utils.constants import (
     STATIC_URL,
 )
 
-from app.utils import get_secret_key
+from src.app.utils import get_secret_key
 
 # Development -> True
 # Production -> False

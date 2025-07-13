@@ -1,4 +1,7 @@
-"""Run App."""
+"""Src > App.
+
+Run App
+"""
 
 from contextlib import asynccontextmanager
 from typing import Any
@@ -8,7 +11,7 @@ from fastapi.staticfiles import StaticFiles
 from pymongo import AsyncMongoClient
 from ramifice import Migration, translations
 
-from app.config import (
+from src.app.config import (
     DEBUG,
     DEFAULT_LOCALE,
     LANGUAGES,
@@ -22,8 +25,8 @@ from app.config import (
     STATIC_ROOT,
     STATIC_URL,
 )
-from app.models import *
-from app.router import root_router
+from src.app.models import *
+from src.app.router import root_router
 
 translations.DEFAULT_LOCALE = DEFAULT_LOCALE
 translations.LANGUAGES = LANGUAGES
