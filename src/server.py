@@ -1,7 +1,4 @@
-"""Src > Server.
-
-Run Server
-"""
+"""Run Server."""
 
 import asyncio
 

@@ -1,7 +1,4 @@
-"""App.
-
-Run Application
-"""
+"""Run Application."""
 
 from contextlib import asynccontextmanager
 from typing import Any

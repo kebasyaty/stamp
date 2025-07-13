@@ -1,4 +1,1 @@
-"""App.
-
-Root of Application
-"""
+"""Root of Application."""

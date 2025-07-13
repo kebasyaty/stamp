@@ -1,6 +1,6 @@
-"""App > Config.
+"""Global Settings.
 
-Global Settings
+App > Config
 """
 
 import asyncio

@@ -1,4 +1,4 @@
-"""App > Services.
+"""Directory of Services.
 
-Directory of Services
+App > Services
 """

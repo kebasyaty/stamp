@@ -1,6 +1,6 @@
-"""App > Services > Admin > Router.
+"""Local Hub of routes.
 
-Local Hub of routes
+App > Services > Admin > Router
 """
 
 from fastapi import APIRouter

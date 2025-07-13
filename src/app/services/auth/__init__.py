@@ -1,4 +1,4 @@
-"""App > Services > Auth.
+"""Service of Authentication.
 
-Service of Authentication
+App > Services > Auth.
 """
