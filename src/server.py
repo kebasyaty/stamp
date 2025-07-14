@@ -3,25 +3,26 @@
 import anyio
 import uvicorn
 
-from app.config import (
-    UVICORN_APP,
-    UVICORN_HOST,
-    UVICORN_LOG_LEVEL,
-    UVICORN_PORT,
-    UVICORN_RELOAD,
-)
+from app import config
+from app.utils import get_secret_key
 
 
 async def run_server() -> None:
     """Run Server."""
-    config = uvicorn.Config(
-        app=UVICORN_APP,
-        host=UVICORN_HOST,
-        port=UVICORN_PORT,
-        reload=UVICORN_RELOAD,
-        log_level=UVICORN_LOG_LEVEL,
+    # Get secret key
+    config.SECRET_KEY = await get_secret_key(
+        dotenv_path=".env",
+        length=64,
     )
-    server = uvicorn.Server(config)
+    # Init server
+    config_server = uvicorn.Config(
+        app=config.UVICORN_APP,
+        host=config.UVICORN_HOST,
+        port=config.UVICORN_PORT,
+        reload=config.UVICORN_RELOAD,
+        log_level=config.UVICORN_LOG_LEVEL,
+    )
+    server = uvicorn.Server(config_server)
     await server.serve()
 
 

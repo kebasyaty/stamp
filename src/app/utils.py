@@ -13,8 +13,8 @@ from dotenv import dotenv_values
 async def get_secret_key(
     dotenv_path: str = ".env",
     length: int = 64,
-) -> str:
-    """Get secret key from .env ."""
+) -> str | None:
+    """Get secret key from dotenv file."""
     кey: str = "SECRET_KEY"
     token: str | None = ""
     if await to_thread.run_sync(os.path.exists, dotenv_path):
@@ -30,4 +30,4 @@ async def get_secret_key(
             token = secrets.token_urlsafe(length)
             content = f"{кey}={token}"
             await env_file.write(content)
-    return str(token)
+    return token
