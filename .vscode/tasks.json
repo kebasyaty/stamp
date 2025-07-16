@@ -14,19 +14,19 @@
       "problemMatcher": []
     },
     {
-      "label": "UV: Run uv sync --upgrade",
+      "label": "UV: Run Upgrade",
       "type": "shell",
       "command": ["uv sync --upgrade"],
       "problemMatcher": []
     },
     {
-      "label": "UV: Run uv lock",
+      "label": "UV: Run Lock",
       "type": "shell",
       "command": ["uv lock"],
       "problemMatcher": []
     },
     {
-      "label": "Uvicorn: Run App",
+      "label": "Uvicorn: Run Server",
       "type": "shell",
       "command": ["uv run python src/server.py"],
       "problemMatcher": []
