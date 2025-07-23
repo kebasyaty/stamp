@@ -22,15 +22,22 @@ dependencies = [
     "uvicorn[standard]>=0.35.0",
 ]
 
+[tool.uv]
+package = false
+compile-bytecode = true
+default-groups = ["dev", "test"]
+
 [dependency-groups]
 dev = [
     "mypy>=1.16.1",
-    "pytest>=8.4.1",
     "ruff>=0.12.0",
 ]
-
-[tool.uv]
-package = false
+test = [
+    "pytest>=8.4.1",
+    "pytest-asyncio>=1.1.0",
+    "pytest-httpx>=0.35.0",
+    "pytest-mock>=3.14.1",
+]
 
 [tool.ruff]
 fix = true
@@ -73,3 +80,6 @@ disable_error_code = [
     "func-returns-value",
     "union-attr",
 ]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
