@@ -18,7 +18,6 @@ import config
 from models import *
 from router import global_router
 from server import run_server
-from utils import get_session_secret_key
 
 logging.basicConfig(
     level=logging.INFO,
@@ -72,10 +71,6 @@ app.include_router(global_router)
 
 async def main() -> None:
     """Run Application."""
-    config.SESSION_SECRET_KEY = await get_session_secret_key(
-        dotenv_path=".env",
-        length=64,
-    )
     await run_server()
 
 
