@@ -17,7 +17,7 @@ import config
 from models import *
 from router import global_router
 from server import run_server
-from utils import get_secret_key
+from utils import get_session_secret_key
 
 translations.DEFAULT_LOCALE = config.DEFAULT_LOCALE
 translations.LANGUAGES = config.LANGUAGES
@@ -65,7 +65,7 @@ app.include_router(global_router)
 
 async def main() -> None:
     """Run Application."""
-    config.SECRET_KEY = await get_secret_key(
+    config.SESSION_SECRET_KEY = await get_session_secret_key(
         dotenv_path=".env",
         length=64,
     )

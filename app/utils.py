@@ -3,7 +3,7 @@
 app > utils
 """
 
-__all__ = ("get_secret_key",)
+__all__ = ("get_session_secret_key",)
 
 import os
 import secrets
@@ -12,12 +12,12 @@ from anyio import open_file, to_thread
 from dotenv import dotenv_values
 
 
-async def get_secret_key(
+async def get_session_secret_key(
     dotenv_path: str = ".env",
     length: int = 64,
 ) -> str | None:
     """Get secret key from dotenv file."""
-    кey: str = "SECRET_KEY"
+    кey: str = "SESSION_SECRET_KEY"
     token: str | None = ""
     if await to_thread.run_sync(os.path.exists, dotenv_path):
         config: dict[str, str | None] = dotenv_values(dotenv_path)

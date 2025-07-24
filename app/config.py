@@ -25,7 +25,7 @@ from ramifice.utils.constants import (
     STATIC_URL,
 )
 
-from utils import get_secret_key
+from utils import get_session_secret_key
 
 # Development -> True
 # Production -> False
@@ -52,8 +52,8 @@ LOGOUT_REDIRECT_URL: str = "/"
 # A secret key.
 # This is used to provide cryptographic signing,
 # and should be set to a unique, unpredictable value.
-# The parameter is automatically initialized in `src > server > get_secret_key`.
-SECRET_KEY: str | None = None
+# The parameter is automatically initialized in `app > main > get_session_secret_key`.
+SESSION_SECRET_KEY: str | None = None
 
 # Uvicorn
 UVICORN_APP: str = "main:app"
