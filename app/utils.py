@@ -3,6 +3,8 @@
 app > utils
 """
 
+__all__ = ("get_secret_key",)
+
 import os
 import secrets
 

@@ -4,8 +4,9 @@ app > models
 """
 
 # Accounts
-# Admin Panel
 from services.accounts.models import User
+
+# Admin Panel
 from services.admin.models import (
     AdminPanelParameters,
     CompanyParameters,

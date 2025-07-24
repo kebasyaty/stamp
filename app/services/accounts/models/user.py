@@ -3,6 +3,8 @@
 app > services > accounts > models > user
 """
 
+__all__ = ("User",)
+
 import re
 
 from ramifice import model, translations

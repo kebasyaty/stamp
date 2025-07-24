@@ -3,6 +3,8 @@
 app > services > home > router
 """
 
+__all__ = ("router",)
+
 from typing import Any
 
 from fastapi import APIRouter, Request

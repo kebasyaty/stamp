@@ -3,6 +3,8 @@
 app > services > admin > models > admin_panel
 """
 
+__all__ = ("AdminPanelParameters",)
+
 from ramifice import model, translations
 from ramifice.fields import (
     BooleanField,
