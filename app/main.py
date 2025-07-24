@@ -1,0 +1,76 @@
+"""FastAPI Application.
+
+app > main
+"""
+
+from contextlib import asynccontextmanager
+from typing import Any
+
+import anyio
+from fastapi import FastAPI
+from fastapi.responses import ORJSONResponse
+from fastapi.staticfiles import StaticFiles
+from pymongo import AsyncMongoClient
+from ramifice import Migration, translations
+
+import config
+from models import *
+from router import global_router
+from server import run_server
+from utils import get_secret_key
+
+translations.DEFAULT_LOCALE = config.DEFAULT_LOCALE
+translations.LANGUAGES = config.LANGUAGES
+
+
+client: AsyncMongoClient = AsyncMongoClient(
+    host=config.MONGO_HOST,
+    port=config.MONGO_PORT,
+    username=config.MONGO_USERNAME,
+    password=config.MONGO_PASSWORD,
+)
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI) -> Any:
+    """The lifespan context manager."""
+    # STARTUP
+    # Migration of models to database.
+    await Migration(
+        database_name=config.MONGO_DATABASE,
+        mongo_client=client,
+    ).migrate()
+    yield
+    # SHUTDOWN
+    await client.close()
+
+
+app = FastAPI(
+    debug=config.DEBUG,
+    default_response_class=ORJSONResponse,
+    lifespan=lifespan,
+)
+app.mount(
+    path=config.STATIC_URL,
+    app=StaticFiles(directory=config.STATIC_ROOT),
+    name="static",
+)
+app.mount(
+    path=config.MEDIA_URL,
+    app=StaticFiles(directory=config.MEDIA_ROOT),
+    name="media",
+)
+app.include_router(global_router)
+
+
+async def main() -> None:
+    """Run Application."""
+    config.SECRET_KEY = await get_secret_key(
+        dotenv_path=".env",
+        length=64,
+    )
+    await run_server()
+
+
+if __name__ == "__main__":
+    anyio.run(main)
