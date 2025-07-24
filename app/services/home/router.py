@@ -3,13 +3,15 @@
 app > services > home > router
 """
 
+__all__ = ("router",)
+
 from typing import Any
 
 from fastapi import APIRouter, Request
 from fastapi.responses import HTMLResponse
 from ramifice import translations
 
-from app.config import TEMPLATES
+from config import TEMPLATES
 
 router = APIRouter(tags=["home"])
 

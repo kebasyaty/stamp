@@ -3,6 +3,8 @@
 app > services > admin > models > site
 """
 
+__all__ = ("SiteParameters",)
+
 from ramifice import model, translations
 from ramifice.fields import (
     BooleanField,

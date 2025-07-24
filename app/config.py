@@ -25,7 +25,7 @@ from ramifice.utils.constants import (
     STATIC_URL,
 )
 
-from app.utils import get_secret_key
+from utils import get_secret_key
 
 # Development -> True
 # Production -> False
@@ -56,7 +56,7 @@ LOGOUT_REDIRECT_URL: str = "/"
 SECRET_KEY: str | None = None
 
 # Uvicorn
-UVICORN_APP: str = "app.main:app"
+UVICORN_APP: str = "main:app"
 UVICORN_HOST: str = URI_HOST
 UVICORN_PORT: int = URI_PORT
 UVICORN_RELOAD: bool = DEBUG
