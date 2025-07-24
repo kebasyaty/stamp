@@ -3,6 +3,7 @@
 app > main
 """
 
+import logging
 from contextlib import asynccontextmanager
 from typing import Any
 
@@ -18,6 +19,12 @@ from models import *
 from router import global_router
 from server import run_server
 from utils import get_session_secret_key
+
+logging.basicConfig(
+    level=logging.INFO,
+    datefmt=config.LOG_DATE_FORMAT,
+    format=config.LOG_DEFAULT_FORMAT,
+)
 
 translations.DEFAULT_LOCALE = config.DEFAULT_LOCALE
 translations.LANGUAGES = config.LANGUAGES
