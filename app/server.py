@@ -1,10 +1,11 @@
-"""Run Server.
+"""Uvicorn Server.
 
 app > server
 """
 
 __all__ = ("run_server",)
 
+import anyio
 import uvicorn
 
 from config import (
@@ -27,3 +28,7 @@ async def run_server() -> None:
     )
     server = uvicorn.Server(config_server)
     await server.serve()
+
+
+if __name__ == "__main__":
+    anyio.run(run_server)

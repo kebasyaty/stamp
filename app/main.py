@@ -7,7 +7,6 @@ import logging
 from contextlib import asynccontextmanager
 from typing import Any
 
-import anyio
 from fastapi import FastAPI
 from fastapi.responses import ORJSONResponse
 from fastapi.staticfiles import StaticFiles
@@ -67,12 +66,3 @@ app.mount(
     name="media",
 )
 app.include_router(global_router)
-
-
-async def main() -> None:
-    """Run Application."""
-    await run_server()
-
-
-if __name__ == "__main__":
-    anyio.run(main)
