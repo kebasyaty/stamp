@@ -58,8 +58,8 @@ SESSION_SECRET_KEY: str | None = get_session_secret_key(
 )
 
 # Logging
-LOG_DATE_FORMAT: str = "%Y-%m-%d %H:%M:%S"
-LOG_DEFAULT_FORMAT: str = (
+LOGGING_DATE_FORMAT: str = "%Y-%m-%d %H:%M:%S"
+LOGGING_DEFAULT_FORMAT: str = (
     "[%(asctime)s.%(msecs)03d] %(module)10s:%(lineno)-3d %(levelname)-7s - %(message)s"
 )
 

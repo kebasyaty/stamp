@@ -21,8 +21,8 @@ from router import global_router
 
 logging.basicConfig(
     level=logging.INFO,
-    datefmt=config.LOG_DATE_FORMAT,
-    format=config.LOG_DEFAULT_FORMAT,
+    datefmt=config.LOGGING_DATE_FORMAT,
+    format=config.LOGGING_DEFAULT_FORMAT,
 )
 
 translations.DEFAULT_LOCALE = config.DEFAULT_LOCALE
