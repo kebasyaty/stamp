@@ -31,9 +31,9 @@ from utils import get_session_secret_key
 # Production -> False
 DEBUG: bool = True
 # Language by default.
-DEFAULT_LOCALE: str = "en"
+I18N_DEFAULT_LOCALE: str = "en"
 # List of supported languages.
-LANGUAGES: frozenset[str] = frozenset(("en", "ru"))
+I18N_LANGUAGES: frozenset[str] = frozenset(("en", "ru"))
 # URI Scheme
 URI_SCHEME: str = f"http{'s' if not DEBUG else ''}"
 # URI Host
