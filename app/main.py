@@ -3,11 +3,12 @@
 app > main
 """
 
+__all__ = ("app",)
+
 import logging
 from contextlib import asynccontextmanager
 from typing import Any
 
-import anyio
 from fastapi import FastAPI
 from fastapi.responses import ORJSONResponse
 from fastapi.staticfiles import StaticFiles
@@ -17,16 +18,15 @@ from ramifice import Migration, translations
 import config
 from models import *
 from router import global_router
-from server import run_server
 
 logging.basicConfig(
     level=logging.INFO,
-    datefmt=config.LOG_DATE_FORMAT,
-    format=config.LOG_DEFAULT_FORMAT,
+    datefmt=config.LOGGING_DATE_FORMAT,
+    format=config.LOGGING_DEFAULT_FORMAT,
 )
 
-translations.DEFAULT_LOCALE = config.DEFAULT_LOCALE
-translations.LANGUAGES = config.LANGUAGES
+translations.DEFAULT_LOCALE = config.I18N_DEFAULT_LOCALE
+translations.LANGUAGES = config.I18N_LANGUAGES
 
 
 client: AsyncMongoClient = AsyncMongoClient(
@@ -67,12 +67,3 @@ app.mount(
     name="media",
 )
 app.include_router(global_router)
-
-
-async def main() -> None:
-    """Run Application."""
-    await run_server()
-
-
-if __name__ == "__main__":
-    anyio.run(main)

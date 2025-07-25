@@ -3,7 +3,7 @@
 app > config
 """
 
-import asyncio
+from multiprocessing import cpu_count
 
 from fastapi.templating import Jinja2Templates
 from ramifice.utils.constants import (
@@ -31,9 +31,9 @@ from utils import get_session_secret_key
 # Production -> False
 DEBUG: bool = True
 # Language by default.
-DEFAULT_LOCALE: str = "en"
+I18N_DEFAULT_LOCALE: str = "en"
 # List of supported languages.
-LANGUAGES: frozenset[str] = frozenset(("en", "ru"))
+I18N_LANGUAGES: frozenset[str] = frozenset(("en", "ru"))
 # URI Scheme
 URI_SCHEME: str = f"http{'s' if not DEBUG else ''}"
 # URI Host
@@ -58,8 +58,8 @@ SESSION_SECRET_KEY: str | None = get_session_secret_key(
 )
 
 # Logging
-LOG_DATE_FORMAT: str = "%Y-%m-%d %H:%M:%S"
-LOG_DEFAULT_FORMAT: str = (
+LOGGING_DATE_FORMAT: str = "%Y-%m-%d %H:%M:%S"
+LOGGING_DEFAULT_FORMAT: str = (
     "[%(asctime)s.%(msecs)03d] %(module)10s:%(lineno)-3d %(levelname)-7s - %(message)s"
 )
 
@@ -69,6 +69,7 @@ UVICORN_HOST: str = URI_HOST
 UVICORN_PORT: int = URI_PORT
 UVICORN_RELOAD: bool = DEBUG
 UVICORN_LOG_LEVEL: str = "info"
+UVICORN_WORKERS: int = cpu_count() if not UVICORN_RELOAD else None
 
 # MongoDB
 MONGO_HOST: str = "127.0.0.1"
