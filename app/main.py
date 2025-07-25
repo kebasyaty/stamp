@@ -3,6 +3,8 @@
 app > main
 """
 
+__all__ = ("app",)
+
 import logging
 from contextlib import asynccontextmanager
 from typing import Any
@@ -16,7 +18,6 @@ from ramifice import Migration, translations
 import config
 from models import *
 from router import global_router
-from server import run_server
 
 logging.basicConfig(
     level=logging.INFO,
