@@ -17,6 +17,8 @@ from config import (
     UVICORN_WORKERS,
 )
 
+print(UVICORN_WORKERS)
+
 
 async def run_server() -> None:
     """Run Server."""

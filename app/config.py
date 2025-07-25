@@ -3,7 +3,7 @@
 app > config
 """
 
-import asyncio
+from multiprocessing import cpu_count
 
 from fastapi.templating import Jinja2Templates
 from ramifice.utils.constants import (
@@ -69,7 +69,7 @@ UVICORN_HOST: str = URI_HOST
 UVICORN_PORT: int = URI_PORT
 UVICORN_RELOAD: bool = DEBUG
 UVICORN_LOG_LEVEL: str = "info"
-UVICORN_WORKERS: int = 1
+UVICORN_WORKERS: int = cpu_count() if not UVICORN_RELOAD else None
 
 # MongoDB
 MONGO_HOST: str = "127.0.0.1"
