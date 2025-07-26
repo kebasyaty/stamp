@@ -25,9 +25,10 @@ logging.basicConfig(
     format=config.LOGGING_DEFAULT_FORMAT,
 )
 
-translations.DEFAULT_LOCALE = config.I18N_DEFAULT_LOCALE
-translations.LANGUAGES = config.I18N_LANGUAGES
-
+translations.add_languages(
+    default_locale=config.I18N_DEFAULT_LOCALE,
+    languages=config.I18N_LANGUAGES,
+)
 
 client: AsyncMongoClient = AsyncMongoClient(
     host=config.MONGO_HOST,
