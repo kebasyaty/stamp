@@ -3,6 +3,7 @@
 app > config
 """
 
+import logging
 from multiprocessing import cpu_count
 
 from fastapi.templating import Jinja2Templates
@@ -62,14 +63,15 @@ LOGGING_DATE_FORMAT: str = "%Y-%m-%d %H:%M:%S"
 LOGGING_DEFAULT_FORMAT: str = (
     "[%(asctime)s.%(msecs)03d] %(module)10s:%(lineno)-3d %(levelname)-7s - %(message)s"
 )
+LOGGING_LEVEL: str | int = logging.CRITICAL if not DEBUG else logging.INFO
 
 # Uvicorn
 UVICORN_APP: str = "main:app"
 UVICORN_HOST: str = URI_HOST
 UVICORN_PORT: int = URI_PORT
 UVICORN_RELOAD: bool = DEBUG
-UVICORN_LOG_LEVEL: str = "info"
-UVICORN_WORKERS: int = cpu_count() if not UVICORN_RELOAD else None
+UVICORN_LOG_LEVEL: str | int = LOGGING_LEVEL
+UVICORN_WORKERS: int | None = cpu_count() if not UVICORN_RELOAD else None
 
 # MongoDB
 MONGO_HOST: str = "127.0.0.1"
