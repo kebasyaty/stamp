@@ -1,4 +1,4 @@
-"""FastAPI Application.
+"""Init (FastAPI) Application.
 
 app > main
 """
@@ -20,7 +20,7 @@ from models import *
 from router import global_router
 
 logging.basicConfig(
-    level=logging.INFO,
+    level=config.LOGGING_LEVEL,
     datefmt=config.LOGGING_DATE_FORMAT,
     format=config.LOGGING_DEFAULT_FORMAT,
 )

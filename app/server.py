@@ -1,4 +1,4 @@
-"""Uvicorn Server.
+"""Run (Uvicorn) Server.
 
 app > server
 """
