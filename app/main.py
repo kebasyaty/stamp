@@ -1,4 +1,4 @@
-"""FastAPI Application.
+"""Init (FastAPI) Application.
 
 app > main
 """
