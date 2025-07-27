@@ -15,5 +15,5 @@ def add_middleware(app: FastAPI) -> None:
     """Add middleware to app."""
     app.add_middleware(
         SessionMiddleware,
-        secret_key=SESSION_SECRET_KEY,
+        secret_key=str(SESSION_SECRET_KEY),
     )
