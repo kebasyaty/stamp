@@ -24,7 +24,6 @@ logging.basicConfig(
     level=config.LOGGING_LEVEL,
     datefmt=config.LOGGING_DATE_FORMAT,
     format=config.LOGGING_DEFAULT_FORMAT,
-    force=config.LOGGING_FORCE,
 )
 
 translations.add_languages(
