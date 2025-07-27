@@ -59,7 +59,9 @@ app = FastAPI(
     default_response_class=ORJSONResponse,
     lifespan=lifespan,
 )
+
 add_middleware(app)
+
 app.mount(
     path=config.STATIC_URL,
     app=StaticFiles(directory=config.STATIC_ROOT),
@@ -70,4 +72,5 @@ app.mount(
     app=StaticFiles(directory=config.MEDIA_ROOT),
     name="media",
 )
+
 app.include_router(global_router)
