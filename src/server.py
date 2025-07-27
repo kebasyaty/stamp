@@ -8,7 +8,7 @@ __all__ = ("run_server",)
 import anyio
 import uvicorn
 
-from config import (
+from app.config import (
     UVICORN_APP,
     UVICORN_HOST,
     UVICORN_LOG_LEVEL,

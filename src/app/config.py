@@ -26,7 +26,7 @@ from ramifice.utils.constants import (
     STATIC_URL,
 )
 
-from utils import get_session_secret_key
+from app.utils import get_session_secret_key
 
 # Development -> True
 # Production -> False
@@ -66,7 +66,7 @@ LOGGING_DEFAULT_FORMAT: str = (
 LOGGING_LEVEL: str | int = logging.CRITICAL if not DEBUG else logging.INFO
 
 # Uvicorn
-UVICORN_APP: str = "main:app"
+UVICORN_APP: str = "app.main:app"
 UVICORN_HOST: str = URI_HOST
 UVICORN_PORT: int = URI_PORT
 UVICORN_RELOAD: bool = DEBUG

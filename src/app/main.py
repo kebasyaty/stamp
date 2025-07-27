@@ -15,9 +15,9 @@ from fastapi.staticfiles import StaticFiles
 from pymongo import AsyncMongoClient
 from ramifice import Migration, translations
 
-import config
-from models import *
-from router import global_router
+from app import config
+from app.models import *
+from app.router import global_router
 
 logging.basicConfig(
     level=config.LOGGING_LEVEL,

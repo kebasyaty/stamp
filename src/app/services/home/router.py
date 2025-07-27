@@ -11,7 +11,7 @@ from fastapi import APIRouter, Request
 from fastapi.responses import HTMLResponse
 from ramifice import translations
 
-from config import TEMPLATES
+from app.config import TEMPLATES
 
 router = APIRouter(tags=["home"])
 
