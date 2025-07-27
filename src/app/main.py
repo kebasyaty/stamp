@@ -1,6 +1,6 @@
 """Init (FastAPI) Application.
 
-app > main
+src > app > main
 """
 
 __all__ = ("app",)

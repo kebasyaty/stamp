@@ -1,6 +1,6 @@
 """Model of Site Parameters.
 
-app > services > admin > models > site
+src > app > services > admin > models > site
 """
 
 __all__ = ("SiteParameters",)

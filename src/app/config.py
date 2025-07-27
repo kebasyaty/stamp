@@ -1,6 +1,6 @@
 """Global Settings.
 
-app > config
+src > app > config
 """
 
 import logging

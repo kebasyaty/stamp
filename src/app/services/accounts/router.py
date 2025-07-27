@@ -1,6 +1,6 @@
 """Local Hub of routers.
 
-app > services > accounts > router
+src > app > services > accounts > router
 """
 
 __all__ = ("router",)

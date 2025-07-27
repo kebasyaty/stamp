@@ -1,4 +1,4 @@
 """Service of Home Page.
 
-app > services > home
+src > app > services > home
 """

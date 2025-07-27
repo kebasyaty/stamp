@@ -1,6 +1,6 @@
 """Middleware.
 
-app > middleware
+src > app > middleware
 """
 
 __all__ = ("add_middleware",)

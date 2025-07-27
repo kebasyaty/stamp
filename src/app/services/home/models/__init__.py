@@ -1,4 +1,4 @@
 """Local Hub of models.
 
-app > services > home > models
+src > app > services > home > models
 """

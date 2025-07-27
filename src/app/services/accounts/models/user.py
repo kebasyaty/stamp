@@ -1,6 +1,6 @@
 """Model of User.
 
-app > services > accounts > models > user
+src > app > services > accounts > models > user
 """
 
 __all__ = ("User",)

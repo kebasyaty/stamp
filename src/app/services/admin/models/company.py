@@ -1,6 +1,6 @@
 """Model of Company Parameters.
 
-app > services > admin > models > company
+src > app > services > admin > models > company
 """
 
 __all__ = ("CompanyParameters",)

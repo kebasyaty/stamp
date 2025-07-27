@@ -1,6 +1,6 @@
 """Global Hub of models.
 
-app > models
+src > app > models
 """
 
 # Accounts

@@ -1,6 +1,6 @@
 """Global Utils.
 
-app > utils
+src > app > utils
 """
 
 __all__ = ("get_session_secret_key",)

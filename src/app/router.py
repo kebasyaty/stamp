@@ -1,6 +1,6 @@
 """Global Hub of routers.
 
-app > router
+src > app > router
 """
 
 __all__ = ("global_router",)

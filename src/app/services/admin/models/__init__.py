@@ -1,6 +1,6 @@
 """Local Hub of models.
 
-app > services > admin > models
+src > app > services > admin > models
 """
 
 __all__ = (

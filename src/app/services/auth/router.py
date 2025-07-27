@@ -1,6 +1,6 @@
 """Local Hub of routes.
 
-app > services > auth > router
+src > app > services > auth > router
 """
 
 __all__ = ("router",)

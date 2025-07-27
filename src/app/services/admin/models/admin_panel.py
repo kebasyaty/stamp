@@ -1,6 +1,6 @@
 """Model of Admin Panel Parameters.
 
-app > services > admin > models > admin_panel
+src > app > services > admin > models > admin_panel
 """
 
 __all__ = ("AdminPanelParameters",)
