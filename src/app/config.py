@@ -37,15 +37,12 @@ I18N_DEFAULT_LOCALE: str = "en"
 # List of supported languages.
 I18N_LANGUAGES: frozenset[str] = frozenset(("en", "ru"))
 
-# URI Scheme
-URI_SCHEME: str = f"http{'s' if not DEBUG else ''}"
-# URI Host
-URI_HOST: str = "www.your-domain-name.net" if not DEBUG else "127.0.0.1"
+# Host name
+HOST_NAME: str = "www.example.com" if not DEBUG else "127.0.0.1"
 
-# URI Port
-URI_PORT: int = 3000 if not DEBUG else 8000
-# Application URL
-APP_URL: str = f"{URI_SCHEME}://{URI_HOST}"
+
+# Middleware
+MIDDLEWARE_ALLOWED_HOSTS: list[str] = [HOST_NAME]
 
 # Absolute filesystem path to the
 # directory that will hold templates.
@@ -53,7 +50,6 @@ TEMPLATES: Jinja2Templates = Jinja2Templates(directory="templates")
 
 # The URL, where requests are redirected for login.
 LOGIN_URL: str = "/accounts/login/"
-
 # The URL, where requests are redirected for login.
 LOGOUT_REDIRECT_URL: str = "/"
 
@@ -71,12 +67,11 @@ LOGGING_DEFAULT_FORMAT: str = (
     "[%(asctime)s.%(msecs)03d] %(module)10s:%(lineno)-3d %(levelname)-7s - %(message)s"
 )
 LOGGING_LEVEL: str | int = logging.CRITICAL if not DEBUG else logging.INFO
-LOGGING_FORCE: bool = True
 
 # Uvicorn
 UVICORN_APP: str = "app.main:app"
-UVICORN_HOST: str = URI_HOST
-UVICORN_PORT: int = URI_PORT
+UVICORN_HOST: str = HOST_NAME
+UVICORN_PORT: int = 8000
 UVICORN_RELOAD: bool = DEBUG
 UVICORN_LOG_LEVEL: str | int = LOGGING_LEVEL
 UVICORN_WORKERS: int | None = cpu_count() if not UVICORN_RELOAD else None
