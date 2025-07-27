@@ -43,8 +43,6 @@ URI_SCHEME: str = f"http{'s' if not DEBUG else ''}"
 URI_HOST: str = "www.example.com" if not DEBUG else "127.0.0.1"
 # URI Port
 URI_PORT: int = 8000
-# Application URL
-APP_URL: str = f"{URI_SCHEME}://{URI_HOST}"
 
 # Middleware
 MIDDLEWARE_ALLOWED_HOSTS: list[str] = [URI_HOST]
