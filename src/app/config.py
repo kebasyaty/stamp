@@ -37,15 +37,12 @@ I18N_DEFAULT_LOCALE: str = "en"
 # List of supported languages.
 I18N_LANGUAGES: frozenset[str] = frozenset(("en", "ru"))
 
-# URI Scheme
-URI_SCHEME: str = f"http{'s' if not DEBUG else ''}"
-# URI Host
-URI_HOST: str = "www.example.com" if not DEBUG else "127.0.0.1"
-# URI Port
-URI_PORT: int = 8000
+# Host name
+HOST_NAME: str = "www.example.com" if not DEBUG else "127.0.0.1"
+
 
 # Middleware
-MIDDLEWARE_ALLOWED_HOSTS: list[str] = [URI_HOST]
+MIDDLEWARE_ALLOWED_HOSTS: list[str] = [HOST_NAME]
 
 # Absolute filesystem path to the
 # directory that will hold templates.
@@ -74,8 +71,8 @@ LOGGING_FORCE: bool = True
 
 # Uvicorn
 UVICORN_APP: str = "app.main:app"
-UVICORN_HOST: str = URI_HOST
-UVICORN_PORT: int = URI_PORT
+UVICORN_HOST: str = HOST_NAME
+UVICORN_PORT: int = 8000
 UVICORN_RELOAD: bool = DEBUG
 UVICORN_LOG_LEVEL: str | int = LOGGING_LEVEL
 UVICORN_WORKERS: int | None = cpu_count() if not UVICORN_RELOAD else None

@@ -17,8 +17,6 @@ from fastapi.responses import (
 from app.config import (
     STATIC_ROOT,
     TEMPLATES,
-    URI_HOST,
-    URI_SCHEME,
 )
 from app.services.accounts.router import router as accounts_router
 from app.services.admin.router import router as admin_router
@@ -45,10 +43,11 @@ async def get_favicon() -> Any:
 )
 async def get_robots(request: Request) -> Any:
     """Get robots."""
+    url = request.url
     context = {
         "request": request,
-        "host": URI_HOST,
-        "scheme": URI_SCHEME,
+        "scheme": url.scheme,
+        "host": url.hostname,
     }
     return TEMPLATES.TemplateResponse("robots.txt", context)
 
