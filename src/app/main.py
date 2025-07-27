@@ -16,6 +16,7 @@ from pymongo import AsyncMongoClient
 from ramifice import Migration, translations
 
 from app import config
+from app.middleware import add_middleware
 from app.models import *
 from app.router import global_router
 
@@ -58,6 +59,7 @@ app = FastAPI(
     default_response_class=ORJSONResponse,
     lifespan=lifespan,
 )
+add_middleware(app)
 app.mount(
     path=config.STATIC_URL,
     app=StaticFiles(directory=config.STATIC_ROOT),
