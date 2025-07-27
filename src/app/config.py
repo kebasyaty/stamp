@@ -40,12 +40,21 @@ I18N_LANGUAGES: frozenset[str] = frozenset(("en", "ru"))
 # URI Scheme
 URI_SCHEME: str = f"http{'s' if not DEBUG else ''}"
 # URI Host
-URI_HOST: str = "www.your-domain-name.net" if not DEBUG else "127.0.0.1"
-
+URI_HOST: str = "www.example.com" if not DEBUG else "127.0.0.1"
 # URI Port
 URI_PORT: int = 3000 if not DEBUG else 8000
 # Application URL
 APP_URL: str = f"{URI_SCHEME}://{URI_HOST}"
+
+# Middleware
+MIDDLEWARE_ALLOWED_HOSTS: list[str] = (
+    [
+        "example.com",
+        "*.example.com",
+    ]
+    if not DEBUG
+    else ["127.0.0.1"]
+)
 
 # Absolute filesystem path to the
 # directory that will hold templates.
@@ -53,7 +62,6 @@ TEMPLATES: Jinja2Templates = Jinja2Templates(directory="templates")
 
 # The URL, where requests are redirected for login.
 LOGIN_URL: str = "/accounts/login/"
-
 # The URL, where requests are redirected for login.
 LOGOUT_REDIRECT_URL: str = "/"
 
