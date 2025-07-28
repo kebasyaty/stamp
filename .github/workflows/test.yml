@@ -50,7 +50,7 @@ jobs:
           version: ${{ matrix.uv-version }}
           python-version: ${{ matrix.python-version }}
 
-      - name: Install dependencies of project
+      - name: Install dependencies
         run: uv sync --locked --dev --group test
 
       - name: Run check
