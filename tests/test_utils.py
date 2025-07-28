@@ -3,8 +3,6 @@
 src > app > utils
 """
 
-import pytest
-
 from app.utils import generate_token
 
 
