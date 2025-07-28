@@ -60,7 +60,7 @@ jobs:
 
       - name: Run unittest
         run: |
-          uv run pytest -v src/tests/
+          uv run pytest -v tests/
 
   success:
     permissions:
