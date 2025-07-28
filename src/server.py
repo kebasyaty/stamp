@@ -1,6 +1,6 @@
-"""Run (Uvicorn) Server.
+"""Run Uvicorn Server.
 
-src > server
+src > app > server
 """
 
 __all__ = ("run_server",)
