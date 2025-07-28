@@ -5,6 +5,7 @@ src > app > config
 
 import logging
 from multiprocessing import cpu_count
+from typing import Literal
 
 from fastapi.templating import Jinja2Templates
 from ramifice.utils.constants import (
@@ -51,9 +52,12 @@ LOGOUT_REDIRECT_URL: str = "/"
 
 # Middleware
 MIDDLEWARE_ALLOWED_HOSTS: list[str] = [HOST_NAME]
-# A secret key.
-# This is used to provide cryptographic signing,
-# and should be set to a unique, unpredictable value.
+SESSION_COOKIE: str = "session"
+SESSION_MAX_AGE: int | None = None
+SESSION_SAME_SITE: Literal["lax", "strict", "none"] = "lax"
+SESSION_PATH: str = "/"
+SESSION_HTTPS_ONLY: bool = not DEBUG
+SESSION_DOMAIN: str | None = None
 SESSION_SECRET_KEY: str | None = get_session_secret_key(
     dotenv_path=".env",
     length=64,
