@@ -11,6 +11,8 @@ import secrets
 
 from dotenv import dotenv_values
 
+from app.router import NotAvailableSessionSecretKeyError
+
 logger = logging.getLogger(__name__)
 
 
@@ -29,9 +31,12 @@ def get_session_secret_key(
     dotenv_path: str = ".env",
     length: int = 64,
 ) -> str | None:
-    """Get secret key from dotenv file."""
+    """Get secret key from dotenv file.
+
+    If the key is absent, generate it.
+    """
     кey: str = "SESSION_SECRET_KEY"
-    token: str | None = ""
+    token: str | None = None
     try:
         if os.path.exists(dotenv_path):
             config: dict[str, str | None] = dotenv_values(dotenv_path)
@@ -51,6 +56,7 @@ def get_session_secret_key(
         raise err
 
     if token is None:
-        logger.critical("The secret key to the session was not generated!")
+        logger.critical("Session Secret Key is not available!")
+        raise NotAvailableSessionSecretKeyError()
 
     return token
