@@ -40,8 +40,15 @@ test = [
 fix = true
 line-length = 100
 required-version = ">=0.12.0"
-src = ["src"]
-include = ["*.py", "*.pyi", "*.ipynb", "**/pyproject.toml", "src/**/*.py"]
+src = ["src", "tests"]
+include = [
+    "*.py",
+    "*.pyi",
+    "*.ipynb",
+    "**/pyproject.toml",
+    "src/**/*.py",
+    "tests/**/*.py",
+]
 
 [tool.ruff.lint]
 select = ["D"]
@@ -58,11 +65,11 @@ docstring-code-line-length = 80
 strict = true
 show_error_codes = true
 pretty = true
-files = ["src/**/*.py"]
+files = ["src/**/*.py", "tests/**/*.py"]
 disable_error_code = ["type-arg", "no-any-return", "attr-defined", "index"]
 
 [[tool.mypy.overrides]]
-module = ["src/tests.*"]
+module = ["tests.*"]
 disable_error_code = [
     "arg-type",
     "no-untyped-def",
@@ -72,4 +79,4 @@ disable_error_code = [
 ]
 
 [tool.pytest.ini_options]
-testpaths = ["src/tests"]
+testpaths = ["tests"]
