@@ -58,9 +58,9 @@ jobs:
           uv run ruff check --fix --config pyproject.toml
           uv run mypy --config-file pyproject.toml
 
-      # - name: Run unittest
-        # run: |
-          # uv run pytest -v tests/
+      - name: Run unittest
+        run: |
+          uv run pytest -v src/tests/
 
   success:
     permissions:

@@ -28,10 +28,7 @@ compile-bytecode = true
 default-groups = ["dev", "test"]
 
 [dependency-groups]
-dev = [
-    "mypy>=1.16.1",
-    "ruff>=0.12.0",
-]
+dev = ["mypy>=1.16.1", "ruff>=0.12.0"]
 test = [
     "pytest>=8.4.1",
     "pytest-asyncio>=1.1.0",
@@ -43,15 +40,8 @@ test = [
 fix = true
 line-length = 100
 required-version = ">=0.12.0"
-src = ["src", "tests"]
-include = [
-    "*.py",
-    "*.pyi",
-    "*.ipynb",
-    "**/pyproject.toml",
-    "src/**/*.py",
-    "tests/**/*.py",
-]
+src = ["src"]
+include = ["*.py", "*.pyi", "*.ipynb", "**/pyproject.toml", "src/**/*.py"]
 
 [tool.ruff.lint]
 select = ["D"]
@@ -68,11 +58,11 @@ docstring-code-line-length = 80
 strict = true
 show_error_codes = true
 pretty = true
-files = ["src/**/*.py", "tests/**/*.py"]
+files = ["src/**/*.py"]
 disable_error_code = ["type-arg", "no-any-return", "attr-defined", "index"]
 
 [[tool.mypy.overrides]]
-module = ["tests.*"]
+module = ["src/tests.*"]
 disable_error_code = [
     "arg-type",
     "no-untyped-def",
@@ -82,4 +72,4 @@ disable_error_code = [
 ]
 
 [tool.pytest.ini_options]
-testpaths = ["tests"]
+testpaths = ["src/tests"]

@@ -3,32 +3,63 @@
 src > app > utils
 """
 
-__all__ = ("get_session_secret_key",)
+__all__ = (
+    "get_session_secret_key",
+    "generate_token",
+)
 
+import logging
 import os
 import secrets
 
 from dotenv import dotenv_values
+
+from app.errors import NoSessionSecretKeyError
+
+logger = logging.getLogger(__name__)
+
+
+def generate_token(length: int) -> str:
+    """Generator of tokens."""
+    token: str = ""
+    try:
+        token = secrets.token_urlsafe(length)
+    except Exception as err:
+        logger.critical(err)
+        raise err
+    return token
 
 
 def get_session_secret_key(
     dotenv_path: str = ".env",
     length: int = 64,
 ) -> str | None:
-    """Get secret key from dotenv file."""
+    """Get secret key from dotenv file.
+
+    If the key is absent, generate it.
+    """
     кey: str = "SESSION_SECRET_KEY"
-    token: str | None = ""
-    if os.path.exists(dotenv_path):
-        config: dict[str, str | None] = dotenv_values(dotenv_path)
-        token = config.get(кey)
-        if token is None:
-            with open(dotenv_path, "a+") as env_file:
-                token = secrets.token_urlsafe(length)
-                content = f"\n{кey}={token}"
+    token: str | None = None
+    try:
+        if os.path.exists(dotenv_path):
+            config: dict[str, str | None] = dotenv_values(dotenv_path)
+            token = config.get(кey)
+            if token is None:
+                with open(dotenv_path, "a+") as env_file:
+                    token = generate_token(length)
+                    content = f"\n{кey}={token}"
+                    env_file.write(content)
+        else:
+            with open(dotenv_path, "w") as env_file:
+                token = generate_token(length)
+                content = f"{кey}={token}"
                 env_file.write(content)
-    else:
-        with open(dotenv_path, "w") as env_file:
-            token = secrets.token_urlsafe(length)
-            content = f"{кey}={token}"
-            env_file.write(content)
+    except Exception as err:
+        logger.critical(err)
+        raise err
+
+    if token is None:
+        logger.critical("Session Secret Key is not available!")
+        raise NoSessionSecretKeyError()
+
     return token
