@@ -3,7 +3,7 @@
 src > app > utils
 """
 
-from src.app.utils import generate_token
+from app.utils import generate_token
 
 
 class TestUtilsClass:
