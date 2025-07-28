@@ -41,8 +41,8 @@ I18N_LANGUAGES: frozenset[str] = frozenset(("en", "ru"))
 # Host name
 HOST_NAME: str = "www.example.com" if not DEBUG else "127.0.0.1"
 
-# Absolute filesystem path to the
-# directory that will hold templates.
+# Absolute filesystem path to
+# the directory that will hold templates.
 TEMPLATES: Jinja2Templates = Jinja2Templates(directory="templates")
 
 # The URL, where requests are redirected for login.
