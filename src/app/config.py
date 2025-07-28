@@ -52,6 +52,8 @@ LOGOUT_REDIRECT_URL: str = "/"
 
 # Middleware
 MIDDLEWARE_ALLOWED_HOSTS: list[str] = [HOST_NAME]
+MIDDLEWARE_GZIP_MINIMUM_SIZE: int = 1000
+MIDDLEWARE_GZIP_COMPRESS_LEVEL: int = 5
 SESSION_COOKIE: str = "session"
 SESSION_MAX_AGE: int | None = None
 SESSION_SAME_SITE: Literal["lax", "strict", "none"] = "lax"

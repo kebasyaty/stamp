@@ -14,6 +14,8 @@ from starlette.middleware.sessions import SessionMiddleware
 from app.config import (
     DEBUG,
     MIDDLEWARE_ALLOWED_HOSTS,
+    MIDDLEWARE_GZIP_COMPRESS_LEVEL,
+    MIDDLEWARE_GZIP_MINIMUM_SIZE,
     SESSION_COOKIE,
     SESSION_DOMAIN,
     SESSION_HTTPS_ONLY,
@@ -38,8 +40,8 @@ def add_middleware(app: FastAPI) -> None:
     )
     app.add_middleware(
         GZipMiddleware,
-        minimum_size=1000,
-        compresslevel=5,
+        minimum_size=MIDDLEWARE_GZIP_MINIMUM_SIZE,
+        compresslevel=MIDDLEWARE_GZIP_COMPRESS_LEVEL,
     )
     app.add_middleware(
         TrustedHostMiddleware,
