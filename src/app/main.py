@@ -1,4 +1,4 @@
-"""Init (FastAPI) Application.
+"""IInitialization of the FastAPI application.
 
 src > app > main
 """

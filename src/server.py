@@ -1,4 +1,4 @@
-"""Run (Uvicorn) Server.
+"""Run Uvicorn Server.
 
 src > server
 """

@@ -5,6 +5,7 @@ src > app > config
 
 import logging
 from multiprocessing import cpu_count
+from typing import Literal
 
 from fastapi.templating import Jinja2Templates
 from ramifice.utils.constants import (
@@ -40,12 +41,8 @@ I18N_LANGUAGES: frozenset[str] = frozenset(("en", "ru"))
 # Host name
 HOST_NAME: str = "www.example.com" if not DEBUG else "127.0.0.1"
 
-
-# Middleware
-MIDDLEWARE_ALLOWED_HOSTS: list[str] = [HOST_NAME]
-
-# Absolute filesystem path to the
-# directory that will hold templates.
+# Absolute filesystem path to
+# the directory that will hold templates.
 TEMPLATES: Jinja2Templates = Jinja2Templates(directory="templates")
 
 # The URL, where requests are redirected for login.
@@ -53,9 +50,16 @@ LOGIN_URL: str = "/accounts/login/"
 # The URL, where requests are redirected for login.
 LOGOUT_REDIRECT_URL: str = "/"
 
-# A secret key.
-# This is used to provide cryptographic signing,
-# and should be set to a unique, unpredictable value.
+# Middleware
+MIDDLEWARE_ALLOWED_HOSTS: list[str] = [HOST_NAME]
+MIDDLEWARE_GZIP_MINIMUM_SIZE: int = 1000
+MIDDLEWARE_GZIP_COMPRESS_LEVEL: int = 5
+SESSION_COOKIE: str = "session"
+SESSION_MAX_AGE: int | None = None
+SESSION_SAME_SITE: Literal["lax", "strict", "none"] = "lax"
+SESSION_PATH: str = "/"
+SESSION_HTTPS_ONLY: bool = not DEBUG
+SESSION_DOMAIN: str | None = None
 SESSION_SECRET_KEY: str | None = get_session_secret_key(
     dotenv_path=".env",
     length=64,
