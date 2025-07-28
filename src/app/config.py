@@ -4,7 +4,6 @@ src > app > config
 """
 
 import logging
-from multiprocessing import cpu_count
 
 from fastapi.templating import Jinja2Templates
 from ramifice.utils.constants import (
@@ -66,14 +65,6 @@ LOGGING_DEFAULT_FORMAT: str = (
     "[%(asctime)s.%(msecs)03d] %(module)10s:%(lineno)-3d %(levelname)-7s - %(message)s"
 )
 LOGGING_LEVEL: str | int = logging.CRITICAL if not DEBUG else logging.INFO
-
-# Uvicorn
-UVICORN_APP: str = "app.main:app"
-UVICORN_HOST: str = HOST_NAME
-UVICORN_PORT: int = 8000
-UVICORN_RELOAD: bool = DEBUG
-UVICORN_LOG_LEVEL: str | int = LOGGING_LEVEL
-UVICORN_WORKERS: int | None = cpu_count() if not UVICORN_RELOAD else None
 
 # MongoDB
 MONGO_HOST: str = "127.0.0.1"
