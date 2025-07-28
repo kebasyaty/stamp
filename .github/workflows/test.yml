@@ -50,7 +50,7 @@ jobs:
           version: ${{ matrix.uv-version }}
           python-version: ${{ matrix.python-version }}
 
-      - name: Install the project dependencies
+      - name: Install dependencies
         run: uv sync --locked --dev --group test
 
       - name: Run check
@@ -58,9 +58,9 @@ jobs:
           uv run ruff check --fix --config pyproject.toml
           uv run mypy --config-file pyproject.toml
 
-      - name: Run unittest
+      - name: Run pytest
         run: |
-          uv run pytest -v src/tests/
+          uv run pytest src/tests/
 
   success:
     permissions:
