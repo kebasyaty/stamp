@@ -4,15 +4,15 @@ src > app > errors
 """
 
 
-class StampException(Exception):
-    """Root Exception for Stamp."""
+class RootCustomException(Exception):
+    """Root Custom Exception."""
 
     def __init__(self, *args, **kwargs) -> None:  # type: ignore[no-untyped-def]# noqa: D107
         super().__init__(*args, **kwargs)
 
 
-class NotAvailableSessionSecretKeyError(StampException):
-    """Ramifice - Exception is raised if Session Secret Key is not available.
+class NoSessionSecretKeyError(RootCustomException):
+    """Exception is raised if Session Secret Key is not available.
 
     Attributes:
         message -- explanation of the error

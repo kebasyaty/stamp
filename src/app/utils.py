@@ -11,7 +11,7 @@ import secrets
 
 from dotenv import dotenv_values
 
-from app.router import NotAvailableSessionSecretKeyError
+from app.errors import NoSessionSecretKeyError
 
 logger = logging.getLogger(__name__)
 
@@ -57,6 +57,6 @@ def get_session_secret_key(
 
     if token is None:
         logger.critical("Session Secret Key is not available!")
-        raise NotAvailableSessionSecretKeyError()
+        raise NoSessionSecretKeyError()
 
     return token
