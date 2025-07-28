@@ -3,7 +3,10 @@
 src > app > utils
 """
 
-__all__ = ("get_session_secret_key",)
+__all__ = (
+    "get_session_secret_key",
+    "generate_token",
+)
 
 import logging
 import os
