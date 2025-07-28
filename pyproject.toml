@@ -80,4 +80,3 @@ disable_error_code = [
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-pythonpath = ["."]
