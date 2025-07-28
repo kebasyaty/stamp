@@ -40,15 +40,8 @@ test = [
 fix = true
 line-length = 100
 required-version = ">=0.12.0"
-src = ["src", "src/tests"]
-include = [
-    "*.py",
-    "*.pyi",
-    "*.ipynb",
-    "**/pyproject.toml",
-    "src/**/*.py",
-    "src/tests/**/*.py",
-]
+src = ["src"]
+include = ["*.py", "*.pyi", "*.ipynb", "**/pyproject.toml", "src/**/*.py"]
 
 [tool.ruff.lint]
 select = ["D"]
@@ -65,7 +58,7 @@ docstring-code-line-length = 80
 strict = true
 show_error_codes = true
 pretty = true
-files = ["src/**/*.py", "src/tests/**/*.py"]
+files = ["src/**/*.py"]
 disable_error_code = ["type-arg", "no-any-return", "attr-defined", "index"]
 
 [[tool.mypy.overrides]]
