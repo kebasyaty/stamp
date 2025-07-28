@@ -40,10 +40,6 @@ I18N_LANGUAGES: frozenset[str] = frozenset(("en", "ru"))
 # Host name
 HOST_NAME: str = "www.example.com" if not DEBUG else "127.0.0.1"
 
-
-# Middleware
-MIDDLEWARE_ALLOWED_HOSTS: list[str] = [HOST_NAME]
-
 # Absolute filesystem path to the
 # directory that will hold templates.
 TEMPLATES: Jinja2Templates = Jinja2Templates(directory="templates")
@@ -60,6 +56,9 @@ SESSION_SECRET_KEY: str | None = get_session_secret_key(
     dotenv_path=".env",
     length=64,
 )
+
+# Middleware
+MIDDLEWARE_ALLOWED_HOSTS: list[str] = [HOST_NAME]
 
 # Logging
 LOGGING_DATE_FORMAT: str = "%Y-%m-%d %H:%M:%S"
