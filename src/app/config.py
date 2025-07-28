@@ -49,6 +49,8 @@ LOGIN_URL: str = "/accounts/login/"
 # The URL, where requests are redirected for login.
 LOGOUT_REDIRECT_URL: str = "/"
 
+# Middleware
+MIDDLEWARE_ALLOWED_HOSTS: list[str] = [HOST_NAME]
 # A secret key.
 # This is used to provide cryptographic signing,
 # and should be set to a unique, unpredictable value.
@@ -56,9 +58,6 @@ SESSION_SECRET_KEY: str | None = get_session_secret_key(
     dotenv_path=".env",
     length=64,
 )
-
-# Middleware
-MIDDLEWARE_ALLOWED_HOSTS: list[str] = [HOST_NAME]
 
 # Logging
 LOGGING_DATE_FORMAT: str = "%Y-%m-%d %H:%M:%S"
