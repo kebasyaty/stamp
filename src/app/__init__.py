@@ -1,4 +1,1 @@
-"""FastAPI Application.
-
-src > app
-"""
+"""Application."""
