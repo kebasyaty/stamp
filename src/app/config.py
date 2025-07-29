@@ -73,7 +73,7 @@ LOGGING_DEFAULT_FORMAT: str = (
 LOGGING_LEVEL: str | int = logging.CRITICAL if not DEBUG else logging.INFO
 
 # Uvicorn
-UVICORN_APP: str = "app.main:app"
+UVICORN_APP: str = "app.main:fast_app"
 UVICORN_HOST: str = HOST_NAME
 UVICORN_PORT: int = 8000
 UVICORN_RELOAD: bool = DEBUG
