@@ -51,7 +51,9 @@ LOGIN_URL: str = "/accounts/login/"
 LOGOUT_REDIRECT_URL: str = "/"
 
 # MIDDLEWARE
+# Trusted Host
 MIDDLEWARE_ALLOWED_HOSTS: list[str] = [HOST_NAME]
+# GZip
 MIDDLEWARE_GZIP_MINIMUM_SIZE: int = 1000
 MIDDLEWARE_GZIP_COMPRESS_LEVEL: int = 5
 # Session
