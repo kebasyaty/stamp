@@ -1,16 +1,15 @@
-"""Run application.
+"""Run Application.
 
 src > app > main
 """
 
-__all__ = ("app",)
+__all__ = ("fast_app",)
 
 import logging
 
 from ramifice import translations
 
-from app import config
-from app.fast_app import app
+from app import config, fast_app
 from app.models import *
 
 logging.basicConfig(
