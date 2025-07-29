@@ -85,7 +85,7 @@ CORS_ALLOW_HEADERS: list[str] = [
     "Content-Language",
     "Content-Type",
 ]
-CORS_ALLOW_CREDENTIALS: bool = False
+CORS_ALLOW_CREDENTIALS: bool = True
 CORS_EXPOSE_HEADERS: list[str] = []
 CORS_MAX_AGE: int = 600
 
