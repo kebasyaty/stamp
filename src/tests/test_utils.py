@@ -1,7 +1,4 @@
-"""Testing a utils module.
-
-src > app > utils
-"""
+"""Testing a app.utils module."""
 
 from app.utils import (
     generate_token,
