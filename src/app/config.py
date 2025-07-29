@@ -40,6 +40,8 @@ I18N_LANGUAGES: frozenset[str] = frozenset(("en", "ru"))
 
 # Host name
 HOST_NAME: str = "www.example.com" if not DEBUG else "127.0.0.1"
+# Port number
+PORT_NUMBER: int = 8000
 
 # Absolute filesystem path to
 # the directory that will hold templates.
@@ -67,6 +69,25 @@ SESSION_SECRET_KEY: str | None = get_session_secret_key(
     dotenv_path=".env",
     length=64,
 )
+# CORS
+CORS_ALLOW_ORIGINS: list[str] = (
+    [f"https://{HOST_NAME}"]
+    if not DEBUG
+    else [
+        f"http://{HOST_NAME}",
+        f"http://{HOST_NAME}:{PORT_NUMBER}",
+    ]
+)
+CORS_ALLOW_METHODS: list[str] = ["GET"]
+CORS_ALLOW_HEADERS: list[str] = [
+    "Accept",
+    "Accept-Language",
+    "Content-Language",
+    "Content-Type",
+]
+CORS_ALLOW_CREDENTIALS: bool = False
+CORS_EXPOSE_HEADERS: list[str] = []
+CORS_MAX_AGE: int = 600
 
 # LOGGING
 LOGGING_DATE_FORMAT: str = "%Y-%m-%d %H:%M:%S"
@@ -78,7 +99,7 @@ LOGGING_LEVEL: str | int = logging.CRITICAL if not DEBUG else logging.INFO
 # UVICORN
 UVICORN_APP: str = "app.main:fast_app"
 UVICORN_HOST: str = HOST_NAME
-UVICORN_PORT: int = 8000
+UVICORN_PORT: int = PORT_NUMBER
 UVICORN_RELOAD: bool = DEBUG
 UVICORN_LOG_LEVEL: str | int = LOGGING_LEVEL
 UVICORN_WORKERS: int | None = cpu_count() if not UVICORN_RELOAD else None
