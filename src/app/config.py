@@ -50,7 +50,7 @@ LOGIN_URL: str = "/accounts/login/"
 # The URL, where requests are redirected for login.
 LOGOUT_REDIRECT_URL: str = "/"
 
-# Middleware
+# MIDDLEWARE
 MIDDLEWARE_ALLOWED_HOSTS: list[str] = [HOST_NAME]
 MIDDLEWARE_GZIP_MINIMUM_SIZE: int = 1000
 MIDDLEWARE_GZIP_COMPRESS_LEVEL: int = 5
@@ -65,14 +65,14 @@ SESSION_SECRET_KEY: str | None = get_session_secret_key(
     length=64,
 )
 
-# Logging
+# LOGGING
 LOGGING_DATE_FORMAT: str = "%Y-%m-%d %H:%M:%S"
 LOGGING_DEFAULT_FORMAT: str = (
     "[%(asctime)s.%(msecs)03d] %(module)10s:%(lineno)-3d %(levelname)-7s - %(message)s"
 )
 LOGGING_LEVEL: str | int = logging.CRITICAL if not DEBUG else logging.INFO
 
-# Uvicorn
+# UVICORN
 UVICORN_APP: str = "app.main:fast_app"
 UVICORN_HOST: str = HOST_NAME
 UVICORN_PORT: int = 8000
@@ -80,7 +80,7 @@ UVICORN_RELOAD: bool = DEBUG
 UVICORN_LOG_LEVEL: str | int = LOGGING_LEVEL
 UVICORN_WORKERS: int | None = cpu_count() if not UVICORN_RELOAD else None
 
-# MongoDB
+# MONGODB
 MONGO_HOST: str = "127.0.0.1"
 MONGO_PORT: int = 27017
 MONGO_USERNAME: str | None = None
