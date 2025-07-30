@@ -10,6 +10,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
 from fastapi.middleware.httpsredirect import HTTPSRedirectMiddleware
 from fastapi.middleware.trustedhost import TrustedHostMiddleware
+from secweb import SecWeb
 from starlette.middleware.sessions import SessionMiddleware
 
 from app.config import (
@@ -18,17 +19,20 @@ from app.config import (
     MIDDLEWARE_CORS_CONFIG,
     MIDDLEWARE_GZIP_CONFIG,
     MIDDLEWARE_SESSION_CONFIG,
+    SECWEB_OPTION,
+    SECWEB_ROUTES,
 )
 
 
 def add_middleware(app: FastAPI) -> None:
     """Add middleware to app."""
+    SecWeb(app=app, Option=SECWEB_OPTION, Routes=SECWEB_ROUTES)
+    if not DEBUG:
+        app.add_middleware(HTTPSRedirectMiddleware)
     app.add_middleware(SessionMiddleware, **MIDDLEWARE_SESSION_CONFIG)
     app.add_middleware(GZipMiddleware, **MIDDLEWARE_GZIP_CONFIG)
     app.add_middleware(
         TrustedHostMiddleware,
         allowed_hosts=MIDDLEWARE_ALLOWED_HOSTS,
     )
-    if not DEBUG:
-        app.add_middleware(HTTPSRedirectMiddleware)
     app.add_middleware(CORSMiddleware, **MIDDLEWARE_CORS_CONFIG)
