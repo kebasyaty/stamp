@@ -59,7 +59,7 @@ MIDDLEWARE_ALLOWED_HOSTS: list[str] = [HOST_NAME]
 MIDDLEWARE_GZIP_MINIMUM_SIZE: int = 1000
 MIDDLEWARE_GZIP_COMPRESS_LEVEL: int = 5
 # Session
-SESSION_CONFIG: dict[str, Any] = {
+MIDDLEWARE_SESSION_CONFIG: dict[str, Any] = {
     "secret_key": get_session_secret_key(
         dotenv_path=".env",
         length=64,
