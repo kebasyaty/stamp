@@ -784,6 +784,15 @@ wheels = [
 ]
 
 [[package]]
+name = "secweb"
+version = "1.25.2"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/12/98/25351cbe7740df7ecc95036903cbda125cf5bbcc35e2fc809713f2733fa0/secweb-1.25.2.tar.gz", hash = "sha256:d0b5325ecb5c1977aa296849530cf25f0517388ca12b98c4dcfe6cd65c22fbb0", size = 25721, upload-time = "2025-07-14T06:27:04.295Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/d3/24/18bce9dfe5ebea6c85b5ebb9db68c3b9ea53905603946ec631720e130354/secweb-1.25.2-py3-none-any.whl", hash = "sha256:73282af68d53e7f18d5ef9cd17b1d94cbb08271d8ab4fafba604978afa334114", size = 40932, upload-time = "2025-07-14T06:27:02.916Z" },
+]
+
+[[package]]
 name = "six"
 version = "1.17.0"
 source = { registry = "https://pypi.org/simple" }
@@ -817,6 +826,7 @@ dependencies = [
     { name = "python-multipart" },
     { name = "pyyaml" },
     { name = "ramifice" },
+    { name = "secweb" },
     { name = "tzdata" },
     { name = "uvicorn", extra = ["standard"] },
 ]
@@ -846,6 +856,7 @@ requires-dist = [
     { name = "python-multipart", specifier = ">=0.0.20" },
     { name = "pyyaml", specifier = ">=6.0.2" },
     { name = "ramifice", specifier = ">=0.5.9" },
+    { name = "secweb", specifier = ">=1.25.2" },
     { name = "tzdata", specifier = ">=2025.2" },
     { name = "uvicorn", extras = ["standard"], specifier = ">=0.35.0" },
 ]
