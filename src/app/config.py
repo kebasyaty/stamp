@@ -71,10 +71,11 @@ SESSION_SECRET_KEY: str | None = get_session_secret_key(
 )
 # CORS
 CORS_ALLOW_ORIGINS: list[str] = (
-    [f"https://{HOST_NAME}"]
+    [
+        f"https://{HOST_NAME}",
+    ]
     if not DEBUG
     else [
-        f"http://{HOST_NAME}",
         f"http://{HOST_NAME}:{PORT_NUMBER}",
     ]
 )
