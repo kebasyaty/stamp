@@ -10,7 +10,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
 from fastapi.middleware.httpsredirect import HTTPSRedirectMiddleware
 from fastapi.middleware.trustedhost import TrustedHostMiddleware
-from secweb import SecWeb
+from Secweb import SecWeb  # type: ignore[import-untyped]
 from starlette.middleware.sessions import SessionMiddleware
 
 from app.config import (
