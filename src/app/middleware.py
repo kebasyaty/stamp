@@ -23,28 +23,13 @@ from app.config import (
     MIDDLEWARE_ALLOWED_HOSTS,
     MIDDLEWARE_GZIP_COMPRESS_LEVEL,
     MIDDLEWARE_GZIP_MINIMUM_SIZE,
-    SESSION_COOKIE,
-    SESSION_DOMAIN,
-    SESSION_HTTPS_ONLY,
-    SESSION_MAX_AGE,
-    SESSION_PATH,
-    SESSION_SAME_SITE,
-    SESSION_SECRET_KEY,
+    SESSION_CONFIG,
 )
 
 
 def add_middleware(app: FastAPI) -> None:
     """Add middleware to app."""
-    app.add_middleware(
-        SessionMiddleware,
-        secret_key=str(SESSION_SECRET_KEY),
-        session_cookie=SESSION_COOKIE,
-        max_age=SESSION_MAX_AGE,
-        same_site=SESSION_SAME_SITE,
-        path=SESSION_PATH,
-        https_only=SESSION_HTTPS_ONLY,
-        domain=SESSION_DOMAIN,
-    )
+    app.add_middleware(SessionMiddleware, **SESSION_CONFIG)
     app.add_middleware(
         GZipMiddleware,
         minimum_size=MIDDLEWARE_GZIP_MINIMUM_SIZE,

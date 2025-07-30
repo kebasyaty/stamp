@@ -59,16 +59,18 @@ MIDDLEWARE_ALLOWED_HOSTS: list[str] = [HOST_NAME]
 MIDDLEWARE_GZIP_MINIMUM_SIZE: int = 1000
 MIDDLEWARE_GZIP_COMPRESS_LEVEL: int = 5
 # Session
-SESSION_COOKIE: str = "session"
-SESSION_MAX_AGE: int | None = None
-SESSION_SAME_SITE: Literal["lax", "strict", "none"] = "lax"
-SESSION_PATH: str = "/"
-SESSION_HTTPS_ONLY: bool = not DEBUG
-SESSION_DOMAIN: str | None = None
-SESSION_SECRET_KEY: str | None = get_session_secret_key(
-    dotenv_path=".env",
-    length=64,
-)
+SESSION_CONFIG: dict[str, Any] = {
+    "secret_key": get_session_secret_key(
+        dotenv_path=".env",
+        length=64,
+    ),
+    "session_cookie": "session",
+    "max_age": None,
+    "same_site": "lax",
+    "path": "/",
+    "https_only": not DEBUG,
+    "domain": None,
+}
 # CORS
 CORS_ALLOW_ORIGINS: list[str] = (
     [
