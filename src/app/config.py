@@ -97,12 +97,14 @@ LOGGING_CONFIG: dict[str, Any] = {
 }
 
 # UVICORN
-UVICORN_APP: str = "app.main:app"
-UVICORN_HOST: str = HOST_NAME
-UVICORN_PORT: int = PORT_NUMBER
-UVICORN_RELOAD: bool = DEBUG
-UVICORN_LOG_LEVEL: str | int = LOGGING_CONFIG["level"]
-UVICORN_WORKERS: int | None = cpu_count() if not UVICORN_RELOAD else None
+UVICORN_CONFIG: dict[str, Any] = {
+    "app": "app.main:app",
+    "host": HOST_NAME,
+    "port": PORT_NUMBER,
+    "reload": DEBUG,
+    "log_level": LOGGING_CONFIG["level"],
+    "workers": cpu_count() if not DEBUG else None,
+}
 
 # MONGODB
 MONGO_CONFIG: dict[str, Any] = {
