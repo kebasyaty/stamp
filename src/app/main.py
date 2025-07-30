@@ -10,7 +10,6 @@ from contextlib import asynccontextmanager
 from typing import Any
 
 from fastapi import FastAPI
-from fastapi.responses import ORJSONResponse
 from fastapi.staticfiles import StaticFiles
 from pymongo import AsyncMongoClient
 from ramifice import Migration, translations
@@ -45,8 +44,7 @@ async def lifespan(app: FastAPI) -> Any:
 
 
 app = FastAPI(
-    debug=config.DEBUG,
-    default_response_class=ORJSONResponse,
+    **config.FASTAPI_CONFIG,
     lifespan=lifespan,
 )
 
