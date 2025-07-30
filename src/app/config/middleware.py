@@ -8,6 +8,8 @@ __all__ = (
     "MIDDLEWARE_GZIP_CONFIG",
     "MIDDLEWARE_SESSION_CONFIG",
     "MIDDLEWARE_CORS_CONFIG",
+    "SECWEB_OPTION",
+    "SECWEB_ROUTES",
 )
 
 from typing import Any
@@ -65,3 +67,38 @@ MIDDLEWARE_CORS_CONFIG: dict[str, Any] = {
     "expose_headers": [],
     "max_age": 600,
 }
+
+# SecWeb
+# See: https://github.com/tmotagam/Secweb
+# See: https://github.com/tmotagam/Secweb#secweb-class
+SECWEB_OPTION: dict[str, Any] = {
+    # See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy
+    # See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy-Report-Only
+    "csp": {"default-src": ["'self'"]},
+    # See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy
+    "referrer": ["no-referrer"],
+    # See: https://github.com/tmotagam/Secweb?tab=readme-ov-file#x-dns-prefetch-control
+    "xdns": "on",
+    # See: https://github.com/tmotagam/Secweb?tab=readme-ov-file#x-permitted-cross-domain-policies
+    "xcdp": "all",
+    # See: https://github.com/tmotagam/Secweb?tab=readme-ov-file#http-strict-transport-security-hsts
+    "hsts": {"max-age": 4, "preload": True},
+    # See: https://github.com/tmotagam/Secweb?tab=readme-ov-file#http-strict-transport-security-hsts-for-websockets
+    "wshsts": {"max-age": 10, "preload": True},
+    # See: https://github.com/tmotagam/Secweb?tab=readme-ov-file#x-frame
+    "xframe": "SAMEORIGIN",
+    # See: https://github.com/tmotagam/Secweb?tab=readme-ov-file#cross-origin-embedder-policy
+    "coep": "require-corp",
+    # See: https://github.com/tmotagam/Secweb?tab=readme-ov-file#cross-origin-opener-policy
+    "coop": "same-origin-allow-popups",
+    # See: https://github.com/tmotagam/Secweb?tab=readme-ov-file#cross-origin-resource-policy
+    "corp": "same-site",
+    # See: https://github.com/tmotagam/Secweb?tab=readme-ov-file#clear-site-data
+    "clearSiteData": {"cache": True, "storage": True},
+    # See: https://github.com/tmotagam/Secweb?tab=readme-ov-file#cache-control
+    "cacheControl": {"public": True, "s-maxage": 600},
+    # See: https://github.com/tmotagam/Secweb?tab=readme-ov-file#x-xss-protection
+    "xss": False,
+}
+# See: https://github.com/tmotagam/Secweb?tab=readme-ov-file#clear-site-data
+SECWEB_ROUTES: list[str] = ["/login", "/logout/{id:string}"]
