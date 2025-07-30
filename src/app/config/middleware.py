@@ -20,13 +20,16 @@ from app.config.base import (
 from app.utils import get_session_secret_key
 
 # Trusted Host
+# See: https://fastapi.tiangolo.com/advanced/middleware/#trustedhostmiddleware
 MIDDLEWARE_ALLOWED_HOSTS: list[str] = [HOST_NAME]
 # GZip
+# See: https://fastapi.tiangolo.com/advanced/middleware/#gzipmiddleware
 MIDDLEWARE_GZIP_CONFIG: dict[str, Any] = {
     "minimum_size": 1000,
     "compresslevel": 5,
 }
 # Session
+# See: https://www.starlette.io/middleware/#sessionmiddleware
 MIDDLEWARE_SESSION_CONFIG: dict[str, Any] = {
     "secret_key": get_session_secret_key(
         dotenv_path=".env",
@@ -40,6 +43,7 @@ MIDDLEWARE_SESSION_CONFIG: dict[str, Any] = {
     "domain": None,
 }
 # CORS
+# See: https://fastapi.tiangolo.com/tutorial/cors/
 MIDDLEWARE_CORS_CONFIG: dict[str, Any] = {
     "allow_origins": (
         [

@@ -8,6 +8,7 @@ from typing import Any
 
 from app.config.base import DEBUG
 
+# See: https://docs.python.org/3/library/logging.html#logging.basicConfig
 LOGGING_CONFIG: dict[str, Any] = {
     "level": logging.CRITICAL if not DEBUG else logging.INFO,
     "datefmt": "%Y-%m-%d %H:%M:%S",

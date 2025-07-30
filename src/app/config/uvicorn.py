@@ -13,6 +13,7 @@ from app.config.base import (
 )
 from app.config.logging import LOGGING_CONFIG
 
+# See: https://www.uvicorn.org/settings/
 UVICORN_CONFIG: dict[str, Any] = {
     "app": "app.main:app",
     "host": HOST_NAME,
