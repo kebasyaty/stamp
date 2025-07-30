@@ -105,8 +105,10 @@ UVICORN_LOG_LEVEL: str | int = LOGGING_CONFIG["level"]
 UVICORN_WORKERS: int | None = cpu_count() if not UVICORN_RELOAD else None
 
 # MONGODB
-MONGO_HOST: str = "127.0.0.1"
-MONGO_PORT: int = 27017
-MONGO_USERNAME: str | None = None
-MONGO_PASSWORD: str | None = None
-MONGO_DATABASE: str = "stamp_db"
+MONGO_CONFIG: dict[str, Any] = {
+    "host": "127.0.0.1",
+    "port": 27017,
+    "username": None,
+    "password": None,
+}
+MONGO_DATABASE_NAME: str = "stamp_db"

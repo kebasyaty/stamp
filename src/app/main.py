@@ -27,13 +27,7 @@ translations.add_languages(
     languages=config.I18N_LANGUAGES,
 )
 
-
-client: AsyncMongoClient = AsyncMongoClient(
-    host=config.MONGO_HOST,
-    port=config.MONGO_PORT,
-    username=config.MONGO_USERNAME,
-    password=config.MONGO_PASSWORD,
-)
+client: AsyncMongoClient = AsyncMongoClient(**config.MONGO_CONFIG)
 
 
 @asynccontextmanager
@@ -42,7 +36,7 @@ async def lifespan(app: FastAPI) -> Any:
     # STARTUP
     # Migration of models to database.
     await Migration(
-        database_name=config.MONGO_DATABASE,
+        database_name=config.MONGO_DATABASE_NAME,
         mongo_client=client,
     ).migrate()
     yield
