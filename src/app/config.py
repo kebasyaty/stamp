@@ -56,8 +56,10 @@ LOGOUT_REDIRECT_URL: str = "/"
 # Trusted Host
 MIDDLEWARE_ALLOWED_HOSTS: list[str] = [HOST_NAME]
 # GZip
-MIDDLEWARE_GZIP_MINIMUM_SIZE: int = 1000
-MIDDLEWARE_GZIP_COMPRESS_LEVEL: int = 5
+MIDDLEWARE_GZIP_CONFIG: dict[str, Any] = {
+    "minimum_size": 1000,
+    "compresslevel": 5,
+}
 # Session
 MIDDLEWARE_SESSION_CONFIG: dict[str, Any] = {
     "secret_key": get_session_secret_key(

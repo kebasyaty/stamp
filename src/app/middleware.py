@@ -21,8 +21,7 @@ from app.config import (
     CORS_MAX_AGE,
     DEBUG,
     MIDDLEWARE_ALLOWED_HOSTS,
-    MIDDLEWARE_GZIP_COMPRESS_LEVEL,
-    MIDDLEWARE_GZIP_MINIMUM_SIZE,
+    MIDDLEWARE_GZIP_CONFIG,
     MIDDLEWARE_SESSION_CONFIG,
 )
 
@@ -30,11 +29,7 @@ from app.config import (
 def add_middleware(app: FastAPI) -> None:
     """Add middleware to app."""
     app.add_middleware(SessionMiddleware, **MIDDLEWARE_SESSION_CONFIG)
-    app.add_middleware(
-        GZipMiddleware,
-        minimum_size=MIDDLEWARE_GZIP_MINIMUM_SIZE,
-        compresslevel=MIDDLEWARE_GZIP_COMPRESS_LEVEL,
-    )
+    app.add_middleware(GZipMiddleware, **MIDDLEWARE_GZIP_CONFIG)
     app.add_middleware(
         TrustedHostMiddleware,
         allowed_hosts=MIDDLEWARE_ALLOWED_HOSTS,
