@@ -74,25 +74,27 @@ MIDDLEWARE_SESSION_CONFIG: dict[str, Any] = {
     "domain": None,
 }
 # CORS
-CORS_ALLOW_ORIGINS: list[str] = (
-    [
-        f"https://{HOST_NAME}",
-    ]
-    if not DEBUG
-    else [
-        f"http://{HOST_NAME}:{PORT_NUMBER}",
-    ]
-)
-CORS_ALLOW_METHODS: list[str] = ["GET"]
-CORS_ALLOW_HEADERS: list[str] = [
-    "Accept",
-    "Accept-Language",
-    "Content-Language",
-    "Content-Type",
-]
-CORS_ALLOW_CREDENTIALS: bool = True
-CORS_EXPOSE_HEADERS: list[str] = []
-CORS_MAX_AGE: int = 600
+MIDDLEWARE_CORS_CONFIG: dict[str, Any] = {
+    "allow_origins": (
+        [
+            f"https://{HOST_NAME}",
+        ]
+        if not DEBUG
+        else [
+            f"http://{HOST_NAME}:{PORT_NUMBER}",
+        ]
+    ),
+    "allow_methods": ["GET"],
+    "allow_headers": [
+        "Accept",
+        "Accept-Language",
+        "Content-Language",
+        "Content-Type",
+    ],
+    "allow_credentials": True,
+    "expose_headers": [],
+    "max_age": 600,
+}
 
 # LOGGING
 LOGGING_CONFIG: dict[str, Any] = {

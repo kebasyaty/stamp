@@ -13,14 +13,9 @@ from fastapi.middleware.trustedhost import TrustedHostMiddleware
 from starlette.middleware.sessions import SessionMiddleware
 
 from app.config import (
-    CORS_ALLOW_CREDENTIALS,
-    CORS_ALLOW_HEADERS,
-    CORS_ALLOW_METHODS,
-    CORS_ALLOW_ORIGINS,
-    CORS_EXPOSE_HEADERS,
-    CORS_MAX_AGE,
     DEBUG,
     MIDDLEWARE_ALLOWED_HOSTS,
+    MIDDLEWARE_CORS_CONFIG,
     MIDDLEWARE_GZIP_CONFIG,
     MIDDLEWARE_SESSION_CONFIG,
 )
@@ -36,12 +31,4 @@ def add_middleware(app: FastAPI) -> None:
     )
     if not DEBUG:
         app.add_middleware(HTTPSRedirectMiddleware)
-    app.add_middleware(
-        CORSMiddleware,
-        allow_origins=CORS_ALLOW_ORIGINS,
-        allow_methods=CORS_ALLOW_METHODS,
-        allow_headers=CORS_ALLOW_HEADERS,
-        allow_credentials=CORS_ALLOW_CREDENTIALS,
-        expose_headers=CORS_EXPOSE_HEADERS,
-        max_age=CORS_MAX_AGE,
-    )
+    app.add_middleware(CORSMiddleware, **MIDDLEWARE_CORS_CONFIG)
