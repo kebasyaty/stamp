@@ -20,11 +20,7 @@ from app.middleware import add_middleware
 from app.models import *
 from app.router import global_router
 
-logging.basicConfig(
-    level=config.LOGGING_LEVEL,
-    datefmt=config.LOGGING_DATE_FORMAT,
-    format=config.LOGGING_DEFAULT_FORMAT,
-)
+logging.basicConfig(**config.LOGGING_CONFIG)
 
 translations.add_languages(
     default_locale=config.I18N_DEFAULT_LOCALE,
