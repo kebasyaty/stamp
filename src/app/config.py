@@ -5,7 +5,7 @@ src > app > config
 
 import logging
 from multiprocessing import cpu_count
-from typing import Any, Literal
+from typing import Any
 
 from fastapi.templating import Jinja2Templates
 from ramifice.utils.constants import (
