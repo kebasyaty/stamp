@@ -26,13 +26,13 @@ from app.config import (
 
 def add_middleware(app: FastAPI) -> None:
     """Add middleware to app."""
-    SecWeb(
-        app=app,
-        Option=SECWEB_OPTION,
-        Routes=SECWEB_ROUTES,
-    )
     if not DEBUG:
         app.add_middleware(HTTPSRedirectMiddleware)
+        SecWeb(
+            app=app,
+            Option=SECWEB_OPTION,
+            Routes=SECWEB_ROUTES,
+        )
     app.add_middleware(SessionMiddleware, **MIDDLEWARE_SESSION_CONFIG)
     app.add_middleware(GZipMiddleware, **MIDDLEWARE_GZIP_CONFIG)
     app.add_middleware(
