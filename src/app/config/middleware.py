@@ -38,7 +38,7 @@ MIDDLEWARE_SESSION_CONFIG: dict[str, Any] = {
         length=64,
     ),
     "session_cookie": "session",
-    "max_age": 1209600 if not DEBUG else None,
+    "max_age": 1209600 if not DEBUG else None,  # by default = 2 week = 1209600 seconds
     "same_site": "lax",
     "path": "/",
     "https_only": not DEBUG,
