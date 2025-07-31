@@ -74,30 +74,37 @@ MIDDLEWARE_CORS_CONFIG: dict[str, Any] = {
 SECWEB_OPTION: dict[str, Any] = {
     # See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy
     # See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy-Report-Only
-    "csp": {"default-src": ["'self'"]},
+    "csp": {
+        "default-src": ["'self'"],
+        "form-action": ["'self'"],
+        "base-uri": ["'self'"],
+        "object-src": ["'none'"],
+        "frame-ancestors": ["'none'"],
+        "upgrade-insecure-requests": True,
+    },
     # See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy
     "referrer": ["no-referrer"],
-    # See: https://github.com/tmotagam/Secweb?tab=readme-ov-file#x-dns-prefetch-control
+    # See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-DNS-Prefetch-Control
     "xdns": "on",
-    # See: https://github.com/tmotagam/Secweb?tab=readme-ov-file#x-permitted-cross-domain-policies
-    "xcdp": "all",
-    # See: https://github.com/tmotagam/Secweb?tab=readme-ov-file#http-strict-transport-security-hsts
-    "hsts": {"max-age": 4, "preload": True},
-    # See: https://github.com/tmotagam/Secweb?tab=readme-ov-file#http-strict-transport-security-hsts-for-websockets
-    "wshsts": {"max-age": 10, "preload": True},
-    # See: https://github.com/tmotagam/Secweb?tab=readme-ov-file#x-frame
-    "xframe": "SAMEORIGIN",
-    # See: https://github.com/tmotagam/Secweb?tab=readme-ov-file#cross-origin-embedder-policy
+    # See: https://owasp.org/www-project-secure-headers/#x-permitted-cross-domain-policies
+    "xcdp": "none",
+    # See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security
+    "hsts": {"max-age": 31536000, "includeSubDomains": True},
+    # See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security
+    "wshsts": {"max-age": 31536000, "includeSubDomains": True},
+    # See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
+    "xframe": "deny",
+    # See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy
     "coep": "require-corp",
-    # See: https://github.com/tmotagam/Secweb?tab=readme-ov-file#cross-origin-opener-policy
-    "coop": "same-origin-allow-popups",
-    # See: https://github.com/tmotagam/Secweb?tab=readme-ov-file#cross-origin-resource-policy
-    "corp": "same-site",
-    # See: https://github.com/tmotagam/Secweb?tab=readme-ov-file#clear-site-data
-    "clearSiteData": {"cache": True, "storage": True},
-    # See: https://github.com/tmotagam/Secweb?tab=readme-ov-file#cache-control
-    "cacheControl": {"public": True, "s-maxage": 600},
-    # See: https://github.com/tmotagam/Secweb?tab=readme-ov-file#x-xss-protection
+    # See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Resource-Policy
+    "coop": "same-origin",
+    # See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Resource-Policy
+    "corp": "same-origin",
+    # See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Clear-Site-Data
+    "clearSiteData": {"cache": True, "cookies": True, "storage": True},
+    # See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control
+    "cacheControl": {"no-store": True, "max-age": 0},
+    # See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection
     "xss": False,
 }
 # See: https://github.com/tmotagam/Secweb?tab=readme-ov-file#clear-site-data
