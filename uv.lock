@@ -454,11 +454,11 @@ wheels = [
 
 [[package]]
 name = "phonenumbers"
-version = "9.0.10"
+version = "9.0.11"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/d0/b3/0092ef7813f663a06cc0474adfaee5e9c327a2fde416a7926d958fd6cd8a/phonenumbers-9.0.10.tar.gz", hash = "sha256:c2d15a6a9d0534b14a7764f51246ada99563e263f65b80b0251d1a760ac4a1ba", size = 2297752, upload-time = "2025-07-18T08:47:39.477Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/7b/54/367d3b262bb1505af1c2b164e6e31c87522e17c68095faa56e01f4dbbd57/phonenumbers-9.0.11.tar.gz", hash = "sha256:6573858dcf0a7a2753a071375e154d9fc11791546c699b575af95d2ba7d84a1d", size = 2297786, upload-time = "2025-08-07T15:42:47.807Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/93/44/4a200f2e06f6ece2de33ff09978cdccc03e2df8007fadcc706f846167dec/phonenumbers-9.0.10-py2.py3-none-any.whl", hash = "sha256:13b12d269be1f2b363c9bc2868656a7e2e8b50f1a1cef629c75005da6c374c6b", size = 2583494, upload-time = "2025-07-18T08:47:35.808Z" },
+    { url = "https://files.pythonhosted.org/packages/90/1a/cc7f1a81045cb4c1f5801082adf29c34b67c7193f0d29ae56ce68546137c/phonenumbers-9.0.11-py2.py3-none-any.whl", hash = "sha256:a8ebb2136f1f14dfdbadb98be01cb71b96f880dea011eb5e0921967fe3a23abf", size = 2583590, upload-time = "2025-08-07T15:42:44.048Z" },
 ]
 
 [[package]]
@@ -786,7 +786,7 @@ wheels = [
 
 [[package]]
 name = "ramifice"
-version = "0.8.25"
+version = "0.8.26"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "anyio" },
@@ -804,7 +804,7 @@ dependencies = [
     { name = "xloft" },
 ]
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/03/4c/88cc26f418f4cddf66bb80644921e2a36d85fe073668ce0669c085d48a9b/ramifice-0.8.25-py3-none-any.whl", hash = "sha256:b19f7efb67b21e115e169d00c4b7647b0d4cea65423ee8593e87bf00f4aab017", size = 91732, upload-time = "2025-08-07T08:24:30.232Z" },
+    { url = "https://files.pythonhosted.org/packages/78/ac/349b2d8a8caf8426888d9524ef3849c6999d857f63378327eca76db0c743/ramifice-0.8.26-py3-none-any.whl", hash = "sha256:99a6c50ce541cb9a0cc2e0c5f81e26e77a03e58159f3fd46138e0c212628abd1", size = 98112, upload-time = "2025-08-07T16:46:44.907Z" },
 ]
 
 [[package]]
