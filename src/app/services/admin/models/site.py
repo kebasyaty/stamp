@@ -29,7 +29,6 @@ class SiteParameters:
         """For adding fields."""
         # For custom translations.
         gettext = translations.gettext
-        # ngettext = translations.ngettext
         self.title = TextField(
             label=gettext("Title"),
             placeholder=gettext("Enter Title"),

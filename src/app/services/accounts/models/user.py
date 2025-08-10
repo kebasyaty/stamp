@@ -30,7 +30,6 @@ class User:
         """For adding fields."""
         # For custom translations.
         gettext = translations.gettext
-        # ngettext = translations.ngettext
         self.avatar = ImageField(
             label=gettext("Avatar"),
             placeholder=gettext("Upload your photo"),

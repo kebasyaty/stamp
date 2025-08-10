@@ -11,6 +11,7 @@ __all__ = (
 import logging
 import os
 import secrets
+from pathlib import Path
 
 from dotenv import dotenv_values
 
@@ -50,10 +51,9 @@ def get_session_secret_key(
                     content = f"\n{кey}={token}"
                     env_file.write(content)
         else:
-            with open(dotenv_path, "w") as env_file:
-                token = generate_token(length)
-                content = f"{кey}={token}"
-                env_file.write(content)
+            token = generate_token(length)
+            content = f"{кey}={token}"
+            Path(dotenv_path).write_text(content)
     except Exception as err:
         logger.critical(err)
         raise err
