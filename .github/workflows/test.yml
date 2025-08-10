@@ -55,7 +55,7 @@ jobs:
 
       - name: Run checking of code
         run: |
-          uv run ruff check --fix --config pyproject.toml
+          uv run ruff check --output-format=github --config pyproject.toml
           uv run mypy --config-file pyproject.toml
 
       - name: Run PyTest
