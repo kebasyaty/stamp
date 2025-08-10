@@ -22,23 +22,21 @@ from fastapi.templating import Jinja2Templates
 from ramifice.utils.constants import (
     # Absolute filesystem path to the
     # directory that will hold user-uploaded files.
-    # Hint: "public/media"
+    # Hint: "public/media"  # noqa: ERA001
     MEDIA_ROOT,
     # URL that handles the media served from MEDIA_ROOT,
     # used for managing stored files.
-    # Hinr: "/media"
+    # Hinr: "/media"  # noqa: ERA001
     MEDIA_URL,
     # The absolute path to the
     # directory where static files are located.
-    # Hint: "public/static"
+    # Hint: "public/static"  # noqa: ERA001
     STATIC_ROOT,
     # URL to use when referring to
     # static files located in STATIC_ROOT.
-    # Hint: "/static"
+    # Hint: "/static"  # noqa: ERA001
     STATIC_URL,
 )
-
-from app.utils import get_session_secret_key
 
 # Development -> True
 # Production -> False
