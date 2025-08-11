@@ -71,7 +71,9 @@ exclude = [
     "node_modules",
     "site-packages",
     "venv",
-    "src/tests/**/*.py",
+    ".github",
+    "assets",
+    "src/tests",
 ]
 
 [tool.ruff.lint]
