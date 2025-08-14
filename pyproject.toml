@@ -26,16 +26,19 @@ dependencies = [
 [tool.uv]
 package = false
 compile-bytecode = true
-default-groups = ["dev", "test"]
+default-groups = ["dev", "lint", "test", "docs", "types"]
 
 [dependency-groups]
-dev = ["mypy>=1.16.1", "ruff>=0.12.0"]
+dev = []
+lint = ["mypy>=1.16.1", "ruff>=0.12.0"]
 test = [
     "pytest>=8.4.1",
     "pytest-asyncio>=1.1.0",
     "pytest-httpx>=0.35.0",
     "pytest-mock>=3.14.1",
 ]
+docs = []
+types = []
 
 [tool.ruff]
 fix = true
