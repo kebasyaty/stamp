@@ -1,4 +1,4 @@
-# Fedora >= 40
+## Fedora >= 40
 
 **Your processor must support AVX/AVX2 instructions.**
 
@@ -7,7 +7,7 @@
 grep -qm1 '^flags.*avx' /proc/cpuinfo && echo OK || echo NOT OK
 ```
 
-### Add repository:
+### Add Repository
 
 ```shell
 sudo tee /etc/yum.repos.d/mongodb-org.repo << "EOF" > /dev/null
@@ -20,7 +20,7 @@ gpgkey=https://pgp.mongodb.com/server-8.0.asc
 EOF
 ```
 
-### Install:
+### Install
 
 ```shell
 sudo dnf install mongodb-org

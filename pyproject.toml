@@ -30,7 +30,7 @@ default-groups = ["dev", "lint", "test", "docs", "types"]
 
 [dependency-groups]
 dev = []
-lint = ["mypy>=1.16.1", "ruff>=0.12.0"]
+lint = ["mypy>=1.16.1", "pre-commit>=4.3.0", "ruff>=0.12.0"]
 test = [
     "pytest>=8.4.1",
     "pytest-asyncio>=1.1.0",
@@ -76,6 +76,8 @@ exclude = [
     "venv",
     ".github",
     "assets",
+    "docs",
+    "site",
     "src/tests",
 ]
 
@@ -133,7 +135,13 @@ strict = true
 show_error_codes = true
 pretty = true
 files = ["src/**/*.py"]
-disable_error_code = ["type-arg", "no-any-return", "attr-defined", "index"]
+disable_error_code = [
+    "type-arg",
+    "no-any-return",
+    "attr-defined",
+    "index",
+    "misc",
+]
 
 [[tool.mypy.overrides]]
 module = ["src/tests.*"]

@@ -65,7 +65,7 @@ async def get_sitemap(request: Request) -> Any:
             "lastmod": "test_lastmod",
             "changefreq": "test_changefreq",
             "priority": 0.5,
-        }
+        },
     ]
     context = {
         "request": request,
