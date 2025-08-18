@@ -3,6 +3,8 @@
 src > server
 """
 
+from __future__ import annotations
+
 __all__ = ("run_server",)
 
 import anyio

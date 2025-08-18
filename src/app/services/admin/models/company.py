@@ -3,6 +3,8 @@
 src > app > services > admin > models > company
 """
 
+from __future__ import annotations
+
 __all__ = ("CompanyParameters",)
 
 from ramifice import model, translations

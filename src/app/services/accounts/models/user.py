@@ -3,6 +3,8 @@
 src > app > services > accounts > models > user
 """
 
+from __future__ import annotations
+
 __all__ = ("User",)
 
 import re

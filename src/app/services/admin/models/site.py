@@ -3,6 +3,8 @@
 src > app > services > admin > models > site
 """
 
+from __future__ import annotations
+
 __all__ = ("SiteParameters",)
 
 from ramifice import model, translations

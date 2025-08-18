@@ -3,13 +3,14 @@
 src > app > utils
 """
 
+from __future__ import annotations
+
 __all__ = (
     "get_session_secret_key",
     "generate_token",
 )
 
 import logging
-import os
 import secrets
 from pathlib import Path
 
@@ -39,21 +40,21 @@ def get_session_secret_key(
 
     If the key is absent, generate it.
     """
-    кey: str = "SESSION_SECRET_KEY"
+    key: str = "SESSION_SECRET_KEY"
     token: str | None = None
     try:
-        if os.path.exists(dotenv_path):
+        if Path.exists(Path(dotenv_path)):
             config: dict[str, str | None] = dotenv_values(dotenv_path)
-            token = config.get(кey)
+            token = config.get(key)
             if token is None:
-                with open(dotenv_path, "a+") as env_file:
+                with Path.open(Path(dotenv_path), "a+", encoding="utf-8") as env_file:
                     token = generate_token(length)
-                    content = f"\n{кey}={token}"
+                    content = f"\n{key}={token}"
                     env_file.write(content)
         else:
             token = generate_token(length)
-            content = f"{кey}={token}"
-            Path(dotenv_path).write_text(content)
+            content = f"{key}={token}"
+            Path(dotenv_path).write_text(data=content, encoding="utf-8")
     except Exception as err:
         logger.critical(err)
         raise err

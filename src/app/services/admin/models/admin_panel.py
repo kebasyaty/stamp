@@ -3,6 +3,8 @@
 src > app > services > admin > models > admin_panel
 """
 
+from __future__ import annotations
+
 __all__ = ("AdminPanelParameters",)
 
 from ramifice import model, translations

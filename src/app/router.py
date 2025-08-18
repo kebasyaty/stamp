@@ -3,6 +3,8 @@
 src > app > router
 """
 
+from __future__ import annotations
+
 __all__ = ("global_router",)
 
 from typing import Any

@@ -3,6 +3,8 @@
 src > app > services > home > router
 """
 
+from __future__ import annotations
+
 __all__ = ("router",)
 
 from typing import Any
