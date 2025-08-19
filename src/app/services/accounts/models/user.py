@@ -9,7 +9,7 @@ __all__ = ("User",)
 
 import re
 
-from ramifice import model, translations
+from ramifice import model, to_human_size, translations
 from ramifice.fields import (
     BooleanField,
     DateField,
@@ -21,7 +21,6 @@ from ramifice.fields import (
     SlugField,
     TextField,
 )
-from ramifice.utils.tools import to_human_size
 
 
 @model(service_name="Accounts")
@@ -45,7 +44,7 @@ class User:
             # Hint: By default = 2 MB
             max_size=524288,  # 0.5 MB = 512 KB = 524288 Bytes (in binary)
             warning=[
-                gettext("Maximum size: %s") % to_human_size(524288),
+                gettext("Maximum size: {}").format(to_human_size(524288)),
             ],
         )
         self.username = TextField(
@@ -55,7 +54,7 @@ class User:
             required=True,
             unique=True,
             warning=[
-                gettext("Allowed chars: %s") % "a-z A-Z 0-9 _",
+                gettext("Allowed chars: {}").format("a-z A-Z 0-9 _"),
             ],
         )
         self.first_name = TextField(
@@ -132,7 +131,7 @@ class User:
 
         # Check username
         if re.match(r"^[a-zA-Z0-9_]+$", cd["username"]) is None:
-            err_map["username"] = gettext("Allowed chars: %s") % "a-z A-Z 0-9 _"
+            err_map["username"] = gettext("Allowed chars: {}").format("a-z A-Z 0-9 _")
 
         # Check password
         if cd["_id"] is None and (cd["password"] != cd["сonfirm_password"]):

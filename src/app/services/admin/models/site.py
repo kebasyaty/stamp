@@ -7,7 +7,7 @@ from __future__ import annotations
 
 __all__ = ("SiteParameters",)
 
-from ramifice import model, translations
+from ramifice import model, to_human_size, translations
 from ramifice.fields import (
     BooleanField,
     EmailField,
@@ -15,7 +15,6 @@ from ramifice.fields import (
     PhoneField,
     TextField,
 )
-from ramifice.utils.tools import to_human_size
 
 
 @model(
@@ -57,7 +56,7 @@ class SiteParameters:
             warning=[
                 gettext("Banner for site design."),
                 gettext("It is recommended to optimize the image, 100 KB or less (if possible)."),
-                gettext("Maximum size: %s") % to_human_size(1048576),
+                gettext("Maximum size: {}").format(to_human_size(1048576)),
             ],
         )
         self.contact_email = EmailField(

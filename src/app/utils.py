@@ -43,11 +43,11 @@ def get_session_secret_key(
     key: str = "SESSION_SECRET_KEY"
     token: str | None = None
     try:
-        if Path.exists(Path(dotenv_path)):
+        if Path(dotenv_path).exists():
             config: dict[str, str | None] = dotenv_values(dotenv_path)
             token = config.get(key)
             if token is None:
-                with Path.open(Path(dotenv_path), "a+", encoding="utf-8") as env_file:
+                with Path(dotenv_path).open("a+", encoding="utf-8") as env_file:
                     token = generate_token(length)
                     content = f"\n{key}={token}"
                     env_file.write(content)
