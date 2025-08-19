@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-07-05 09:30+0300\n"
+"POT-Creation-Date: 2025-08-19 12:39+0300\n"
 "PO-Revision-Date: 2025-06-30 20:00+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ru\n"
@@ -19,118 +19,271 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
 
-#: services/accounts/src/accounts/models/user.py:30
+#: src/app/services/accounts/models/user.py:35
 msgid "Avatar"
 msgstr "Аватар"
 
-#: services/accounts/src/accounts/models/user.py:31
+#: src/app/services/accounts/models/user.py:36
 msgid "Upload your photo"
 msgstr "Загрузите свою фотографию"
 
-#: services/accounts/src/accounts/models/user.py:45
-#, python-format
-msgid "Maximum size: %s"
-msgstr "Максимальный размер: %s"
+#: src/app/services/accounts/models/user.py:47
+#: src/app/services/admin/models/admin_panel.py:80
+#: src/app/services/admin/models/company.py:54
+#: src/app/services/admin/models/site.py:59
+#, python-brace-format
+msgid "Maximum size: {}"
+msgstr "Максимальный размер: {}"
 
-#: services/accounts/src/accounts/models/user.py:49
+#: src/app/services/accounts/models/user.py:51
 msgid "Username"
 msgstr "Никнейм"
 
-#: services/accounts/src/accounts/models/user.py:50
+#: src/app/services/accounts/models/user.py:52
 msgid "Enter your username"
 msgstr "Введите свое имя пользователя"
 
-#: services/accounts/src/accounts/models/user.py:55
-#: services/accounts/src/accounts/models/user.py:137
-#, python-format
-msgid "Allowed chars: %s"
-msgstr "Разрешенные символы: %s"
+#: src/app/services/accounts/models/user.py:57
+#: src/app/services/accounts/models/user.py:134
+#, python-brace-format
+msgid "Allowed chars: {}"
+msgstr "Разрешенные символы: {}"
 
-#: services/accounts/src/accounts/models/user.py:59
+#: src/app/services/accounts/models/user.py:61
 msgid "First name"
 msgstr "Имя"
 
-#: services/accounts/src/accounts/models/user.py:60
+#: src/app/services/accounts/models/user.py:62
 msgid "Enter your First name"
 msgstr "Введите свое имя"
 
-#: services/accounts/src/accounts/models/user.py:66
+#: src/app/services/accounts/models/user.py:68
 msgid "Last name"
 msgstr "Фамилия"
 
-#: services/accounts/src/accounts/models/user.py:67
+#: src/app/services/accounts/models/user.py:69
 msgid "Enter your Last name"
 msgstr "Введите свою фамилию"
 
-#: services/accounts/src/accounts/models/user.py:73
+#: src/app/services/accounts/models/user.py:75
 msgid "Email"
 msgstr "Электронная почта"
 
-#: services/accounts/src/accounts/models/user.py:74
+#: src/app/services/accounts/models/user.py:76
 msgid "Enter your email"
 msgstr "Введите свою электронную почту"
 
-#: services/accounts/src/accounts/models/user.py:79
+#: src/app/services/accounts/models/user.py:81
 msgid "Phone number"
 msgstr "Номер телефона"
 
-#: services/accounts/src/accounts/models/user.py:80
+#: src/app/services/accounts/models/user.py:82
 msgid "Enter your phone number"
 msgstr "Введите свой номер телефона"
 
-#: services/accounts/src/accounts/models/user.py:84
+#: src/app/services/accounts/models/user.py:86
 msgid "Birthday"
 msgstr "День рождения"
 
-#: services/accounts/src/accounts/models/user.py:85
+#: src/app/services/accounts/models/user.py:87
 msgid "Enter your date of birth"
 msgstr "Введите дату рождения"
 
-#: services/accounts/src/accounts/models/user.py:88
+#: src/app/services/accounts/models/user.py:90
 msgid "Password"
 msgstr "Пароль"
 
-#: services/accounts/src/accounts/models/user.py:89
+#: src/app/services/accounts/models/user.py:91
 msgid "Enter your password"
 msgstr "Введите свой пароль"
 
-#: services/accounts/src/accounts/models/user.py:92
+#: src/app/services/accounts/models/user.py:94
 msgid "Confirm password"
 msgstr "Повторите пароль"
 
-#: services/accounts/src/accounts/models/user.py:93
+#: src/app/services/accounts/models/user.py:95
 msgid "Repeat your password"
 msgstr "Повторите свой пароль"
 
-#: services/accounts/src/accounts/models/user.py:98
+#: src/app/services/accounts/models/user.py:100
 msgid "Is Administrator?"
 msgstr "Администратор?"
 
-#: services/accounts/src/accounts/models/user.py:100
+#: src/app/services/accounts/models/user.py:102
 msgid "Can this user access the admin panel?"
 msgstr "Может ли этот пользователь получить доступ к панели администратора?"
 
-#: services/accounts/src/accounts/models/user.py:104
+#: src/app/services/accounts/models/user.py:106
 msgid "Is active?"
 msgstr "Активный?"
 
-#: services/accounts/src/accounts/models/user.py:106
+#: src/app/services/accounts/models/user.py:108
 msgid "Is this an active account?"
 msgstr "Это активный аккаунт?"
 
-#: services/accounts/src/accounts/models/user.py:110
+#: src/app/services/accounts/models/user.py:112
 msgid "Slug"
 msgstr "Слаг"
 
-#: services/accounts/src/accounts/models/user.py:116
+#: src/app/services/accounts/models/user.py:118
 msgid "Last login"
 msgstr "Последний логин"
 
-#: services/accounts/src/accounts/models/user.py:120
+#: src/app/services/accounts/models/user.py:122
 msgid "Date and time of user last login."
 msgstr "Дата и время последнего входа в аккаунт"
 
-#: services/accounts/src/accounts/models/user.py:140
+#: src/app/services/accounts/models/user.py:138
 msgid "Passwords do not match!"
 msgstr "Пароли не совпадают!"
+
+#: src/app/services/admin/models/admin_panel.py:34
+#: src/app/services/admin/models/company.py:31
+#: src/app/services/admin/models/site.py:34
+msgid "Title"
+msgstr "Заголовок"
+
+#: src/app/services/admin/models/admin_panel.py:35
+#: src/app/services/admin/models/company.py:32
+#: src/app/services/admin/models/site.py:35
+msgid "Enter Title"
+msgstr "Введите заголовок"
+
+#: src/app/services/admin/models/admin_panel.py:41
+#: src/app/services/admin/models/company.py:38
+#: src/app/services/admin/models/site.py:41
+msgid "It is recommended not to change this Title."
+msgstr "Рекомендуется не менять этот заголовок"
+
+#: src/app/services/admin/models/admin_panel.py:45
+msgid "Dark theme?"
+msgstr "Темная тема?"
+
+#: src/app/services/admin/models/admin_panel.py:48
+msgid "Dark or Light theme."
+msgstr "Темная или Светлая тема."
+
+#: src/app/services/admin/models/admin_panel.py:52
+msgid "Color Theme"
+msgstr "Цветовая тема"
+
+#: src/app/services/admin/models/admin_panel.py:55
+msgid "Grey"
+msgstr "Серый"
+
+#: src/app/services/admin/models/admin_panel.py:56
+msgid "Blue"
+msgstr "Синий"
+
+#: src/app/services/admin/models/admin_panel.py:57
+msgid "Teal"
+msgstr "Turquoise"
+
+#: src/app/services/admin/models/admin_panel.py:58
+msgid "Pink"
+msgstr "Розовый"
+
+#: src/app/services/admin/models/admin_panel.py:59
+msgid "Green"
+msgstr "Зеленый"
+
+#: src/app/services/admin/models/admin_panel.py:60
+msgid "Purple"
+msgstr "Фиолетовый"
+
+#: src/app/services/admin/models/admin_panel.py:61
+msgid "Orange"
+msgstr "Оранжевый"
+
+#: src/app/services/admin/models/admin_panel.py:62
+msgid "Brown"
+msgstr "Коричневый"
+
+#: src/app/services/admin/models/admin_panel.py:66
+msgid "Background image"
+msgstr "Фоновое изображение"
+
+#: src/app/services/admin/models/admin_panel.py:67
+#: src/app/services/admin/models/site.py:46
+msgid "Upload image"
+msgstr "Загрузить изображение"
+
+#: src/app/services/admin/models/admin_panel.py:78
+msgid "Background image for administrator panel."
+msgstr "Фоновое изображение для панели администратора."
+
+#: src/app/services/admin/models/admin_panel.py:79
+#: src/app/services/admin/models/admin_panel.py:92
+#: src/app/services/admin/models/company.py:61
+#: src/app/services/admin/models/company.py:69
+msgid "To apply the change, after saving, restart the browser tab."
+msgstr "Чтобы применить изменение после сохранения, перезапустите вкладку браузера."
+
+#: src/app/services/admin/models/admin_panel.py:84
+msgid "Level of transparency"
+msgstr "Уровень прозрачности"
+
+#: src/app/services/admin/models/admin_panel.py:91
+msgid "level of transparency for background image for administrator panel."
+msgstr "Уровень прозрачности для фонового изображения для панели администратора."
+
+#: src/app/services/admin/models/company.py:42
+msgid "Logo"
+msgstr "Логотип"
+
+#: src/app/services/admin/models/company.py:43
+msgid "Upload Logo"
+msgstr "Загрузите логотип"
+
+#: src/app/services/admin/models/company.py:58
+msgid "Brand"
+msgstr "Бренд"
+
+#: src/app/services/admin/models/company.py:59
+msgid "Enter your Company Name"
+msgstr "Введите название вашей компании"
+
+#: src/app/services/admin/models/company.py:65
+msgid "Slogan"
+msgstr "Слоган"
+
+#: src/app/services/admin/models/company.py:66
+msgid "Enter your company slogan"
+msgstr "Введите слоган компании"
+
+#: src/app/services/admin/models/site.py:45
+msgid "Banner"
+msgstr "Баннер"
+
+#: src/app/services/admin/models/site.py:57
+msgid "Banner for site design."
+msgstr "Баннер для дизайна сайта."
+
+#: src/app/services/admin/models/site.py:58
+msgid "It is recommended to optimize the image, 100 KB or less (if possible)."
+msgstr "Рекомендуется оптимизировать изображение, 100 КБ или меньше (если возможно)."
+
+#: src/app/services/admin/models/site.py:63
+msgid "Feedback Email"
+msgstr "Электронная почта обратной связи"
+
+#: src/app/services/admin/models/site.py:64
+msgid "Enter a public email"
+msgstr "Введите публичную электронную почту"
+
+#: src/app/services/admin/models/site.py:67
+msgid "Feedback Phone"
+msgstr "Телефон обратной связи"
+
+#: src/app/services/admin/models/site.py:68
+msgid "Enter a public phone number"
+msgstr "Введите публичный номер телефона"
+
+#: src/app/services/admin/models/site.py:71
+msgid "Site in the repair?"
+msgstr "Сайт в ремонте?"
+
+#: src/app/services/admin/models/site.py:73
+msgid "Set the site activity."
+msgstr "Установите активность сайта."
 
