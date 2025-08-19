@@ -3,9 +3,11 @@
 src > app > services > admin > models > admin_panel
 """
 
+from __future__ import annotations
+
 __all__ = ("AdminPanelParameters",)
 
-from ramifice import model, translations
+from ramifice import model, to_human_size, translations
 from ramifice.fields import (
     BooleanField,
     ChoiceTextField,
@@ -13,7 +15,6 @@ from ramifice.fields import (
     ImageField,
     TextField,
 )
-from ramifice.utils.tools import to_human_size
 
 
 @model(
@@ -76,7 +77,7 @@ class AdminPanelParameters:
             warning=[
                 gettext("Background image for administrator panel."),
                 gettext("To apply the change, after saving, restart the browser tab."),
-                gettext("Maximum size: %s") % to_human_size(1048576),
+                gettext("Maximum size: {}").format(to_human_size(1048576)),
             ],
         )
         self.bg_opacity = FloatField(

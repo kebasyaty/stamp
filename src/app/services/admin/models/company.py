@@ -3,14 +3,15 @@
 src > app > services > admin > models > company
 """
 
+from __future__ import annotations
+
 __all__ = ("CompanyParameters",)
 
-from ramifice import model, translations
+from ramifice import model, to_human_size, translations
 from ramifice.fields import (
     ImageField,
     TextField,
 )
-from ramifice.utils.tools import to_human_size
 
 
 @model(
@@ -50,7 +51,7 @@ class CompanyParameters:
             # Hint: By default = 2 MB
             max_size=524288,  # 0.5 MB = 512 KB = 524288 Bytes (in binary)
             warning=[
-                gettext("Maximum size: %s") % to_human_size(524288),
+                gettext("Maximum size: {}").format(to_human_size(524288)),
             ],
         )
         self.brand = TextField(

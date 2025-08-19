@@ -3,6 +3,8 @@
 src > app > middleware
 """
 
+from __future__ import annotations
+
 __all__ = ("add_middleware",)
 
 from fastapi import FastAPI

@@ -3,6 +3,8 @@
 src > app > main
 """
 
+from __future__ import annotations
+
 __all__ = ("app",)
 
 import logging
@@ -16,7 +18,7 @@ from ramifice import Migration, translations
 
 from app import config
 from app.middleware import add_middleware
-from app.models import *
+from app.models import *  # noqa: F403
 from app.router import global_router
 
 logging.basicConfig(**config.LOGGING_CONFIG)
@@ -30,7 +32,7 @@ client: AsyncMongoClient = AsyncMongoClient(**config.MONGO_CONFIG)
 
 
 @asynccontextmanager
-async def lifespan(app: FastAPI) -> Any:
+async def lifespan(app: FastAPI) -> Any:  # noqa: ARG001
     """The lifespan context manager."""
     # STARTUP
     # Migration of models to database.

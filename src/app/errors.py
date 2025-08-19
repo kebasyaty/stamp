@@ -3,6 +3,8 @@
 src > app > errors
 """
 
+from __future__ import annotations
+
 
 class RootCustomException(Exception):
     """Root Custom Exception."""

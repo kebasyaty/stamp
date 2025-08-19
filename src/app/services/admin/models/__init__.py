@@ -3,6 +3,8 @@
 src > app > services > admin > models
 """
 
+from __future__ import annotations
+
 __all__ = (
     "AdminPanelParameters",
     "CompanyParameters",
