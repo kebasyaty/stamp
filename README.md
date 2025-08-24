@@ -25,6 +25,8 @@ _Supports MongoDB 3.6, 4.0, 4.2, 4.4, 5.0, 6.0, 7.0, and 8.0._
 <br>
 _For more information see [PyMongo](https://pypi.org/project/pymongo/ "PyMongo")_.
 
+<br>
+
 <p>
   <a href="https://github.com/kebasyaty/stamp" alt="Project Status">
     <img src="https://raw.githubusercontent.com/kebasyaty/stamp/dev/assets/project_status/project-status-pre-alpha.svg"
@@ -32,7 +34,6 @@ _For more information see [PyMongo](https://pypi.org/project/pymongo/ "PyMongo")
   </a>
 </p>
 
-<br>
 <br>
 
 ## Install for work with Stamp
