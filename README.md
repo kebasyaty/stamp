@@ -26,8 +26,8 @@ _Supports MongoDB 3.6, 4.0, 4.2, 4.4, 5.0, 6.0, 7.0, and 8.0._
 _For more information see [PyMongo](https://pypi.org/project/pymongo/ "PyMongo")_.
 
 <p>
-  <a href="https://github.com/kebasyaty/<REPOSITORY-NAME>" alt="Project Status">
-    <img src="https://raw.githubusercontent.com/kebasyaty/<REPOSITORY-NAME>/v0/assets/project_status/project-status-pre-alpha.svg"
+  <a href="https://github.com/kebasyaty/stamp" alt="Project Status">
+    <img src="https://raw.githubusercontent.com/kebasyaty/stamp/v0/assets/project_status/project-status-pre-alpha.svg"
       alt="Project Status">
   </a>
 </p>
