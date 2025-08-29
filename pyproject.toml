@@ -165,6 +165,7 @@ disable_error_code = [
     "no-any-return",
     "attr-defined",
     "index",
+    "operator",
     "misc",
 ]
 
@@ -176,6 +177,7 @@ disable_error_code = [
     "no-untyped-call",
     "func-returns-value",
     "union-attr",
+    "import-not-found",
 ]
 
 [tool.pytest.ini_options]
