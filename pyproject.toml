@@ -166,6 +166,7 @@ disable_error_code = [
     "attr-defined",
     "index",
     "operator",
+    "misc",
 ]
 
 [[tool.mypy.overrides]]
@@ -177,7 +178,6 @@ disable_error_code = [
     "func-returns-value",
     "union-attr",
     "import-not-found",
-    "misc",
 ]
 
 [tool.pytest.ini_options]
