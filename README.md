@@ -80,10 +80,14 @@ uv python install
 cd stamp
 # Install all dependencies:
 uv sync
-# Run:
+#
+# Run for dev:
 uv run python src/run_server.py
 # Open the browser on:
 http://127.0.0.1:8000
+#
+# Run for prod:
+uv run python -O src/run_server.py
 ```
 
 ### How to create custom translations ?
