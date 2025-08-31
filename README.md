@@ -87,7 +87,7 @@ uv run python src/run_server.py
 http://127.0.0.1:8000
 #
 # Run for prod:
-uv run python -O src/run_server.py
+uv run python -OO src/run_server.py
 ```
 
 ### How to create custom translations ?
