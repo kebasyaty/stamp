@@ -34,7 +34,7 @@ MIDDLEWARE_GZIP_CONFIG: dict[str, Any] = {
 # See: https://www.starlette.io/middleware/#sessionmiddleware
 MIDDLEWARE_SESSION_CONFIG: dict[str, Any] = {
     "secret_key": get_session_secret_key(
-        dotenv_path=".env",
+        dotenv_path="src/.env",
         length=64,
     ),
     "session_cookie": "session",
