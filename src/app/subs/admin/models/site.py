@@ -1,6 +1,6 @@
 """Model of Site Parameters.
 
-src > app > services > admin > models > site
+src > app > subs > admin > models > site
 """
 
 from __future__ import annotations

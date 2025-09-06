@@ -13,10 +13,10 @@ __all__ = (
 )
 
 # Accounts
-from app.services.accounts.models import User
+from app.subs.accounts.models import User
 
 # Admin Panel
-from app.services.admin.models import (
+from app.subs.admin.models import (
     AdminPanelParameters,
     CompanyParameters,
     SiteParameters,
