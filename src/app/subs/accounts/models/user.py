@@ -1,6 +1,6 @@
 """Model of User.
 
-src > app > services > accounts > models > user
+src > app > subs > accounts > models > user
 """
 
 from __future__ import annotations

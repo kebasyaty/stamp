@@ -1,6 +1,6 @@
 """Local Hub of routes.
 
-src > app > services > home > router
+src > app > subs > home > router
 """
 
 from __future__ import annotations

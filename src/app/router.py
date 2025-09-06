@@ -20,10 +20,10 @@ from app.config import (
     STATIC_ROOT,
     TEMPLATES,
 )
-from app.services.accounts.router import router as accounts_router
-from app.services.admin.router import router as admin_router
-from app.services.auth.router import router as auth_router
-from app.services.home.router import router as home_router
+from app.subs.accounts.router import router as accounts_router
+from app.subs.admin.router import router as admin_router
+from app.subs.auth.router import router as auth_router
+from app.subs.home.router import router as home_router
 
 global_router = APIRouter(tags=["global"])
 global_router.include_router(accounts_router)

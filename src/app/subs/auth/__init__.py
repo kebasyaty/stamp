@@ -1,4 +1,4 @@
 """Service of Authentication.
 
-src > app > services > auth
+src > app > subs > auth
 """

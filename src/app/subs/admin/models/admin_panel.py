@@ -1,6 +1,6 @@
 """Model of Admin Panel Parameters.
 
-src > app > services > admin > models > admin_panel
+src > app > subs > admin > models > admin_panel
 """
 
 from __future__ import annotations
