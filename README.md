@@ -3,7 +3,7 @@
   <p align="center">
     <a href="https://github.com/kebasyaty/stamp">
       <img
-        height="120"
+        height="80"
         alt="Logo"
         src="https://raw.githubusercontent.com/kebasyaty/stamp/main/assets/logo.svg">
     </a>
