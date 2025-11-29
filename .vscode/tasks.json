@@ -60,9 +60,11 @@
       "type": "shell",
       "command": [
         "uv run python remove_pycache.py;",
-        "uv run pytest -v tests/;",
+        "uv run pytest -v src/tests/;",
         "uv run python remove_pycache.py"
       ],
+      "problemMatcher": []
+    },
     {
       "label": "Uvicorn: Run App",
       "type": "shell",
