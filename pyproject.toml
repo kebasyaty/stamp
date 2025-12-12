@@ -45,8 +45,15 @@ fix = true
 line-length = 120
 indent-width = 4
 required-version = ">=0.7.11"
-src = ["src"]
-include = ["*.py", "*.pyi", "*.ipynb", "**/pyproject.toml", "src/**/*.py"]
+src = ["app", "tests"]
+include = [
+    "*.py",
+    "*.pyi",
+    "*.ipynb",
+    "**/pyproject.toml",
+    "app/**/*.py",
+    "tests/**/*.py",
+]
 exclude = [
     ".bzr",
     ".direnv",
@@ -159,7 +166,7 @@ line-ending = "auto"
 strict = true
 show_error_codes = true
 pretty = true
-files = ["src/**/*.py"]
+files = ["*.py", "app/**/*.py", "tests/**/*.py"]
 disable_error_code = [
     "type-arg",
     "no-any-return",
@@ -170,7 +177,7 @@ disable_error_code = [
 ]
 
 [[tool.mypy.overrides]]
-module = ["src/tests.*"]
+module = ["tests.*"]
 disable_error_code = [
     "arg-type",
     "no-untyped-def",
@@ -181,4 +188,4 @@ disable_error_code = [
 ]
 
 [tool.pytest.ini_options]
-testpaths = ["src/tests"]
+testpaths = ["tests"]

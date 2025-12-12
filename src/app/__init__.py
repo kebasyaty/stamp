@@ -1,4 +1,0 @@
-"""Application.
-
-src > app
-"""
