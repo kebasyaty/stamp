@@ -44,7 +44,6 @@ types = []
 fix = true
 line-length = 120
 indent-width = 4
-required-version = ">=0.7.11"
 src = ["app", "tests"]
 include = [
     "*.py",
@@ -170,6 +169,7 @@ files = ["*.py", "app/**/*.py", "tests/**/*.py"]
 disable_error_code = [
     "type-arg",
     "no-any-return",
+    "untyped-decorator",
     "attr-defined",
     "index",
     "operator",

@@ -42,4 +42,4 @@ jobs:
       - uses: pre-commit/action@v3.0.1
 
       - name: Run tests
-        run: uv run pytest -v src/tests/
+        run: uv run pytest -v tests/
