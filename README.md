@@ -90,6 +90,8 @@ http://127.0.0.1:8000
 #
 # Run for prod:
 uv run python -OO main.py
+# or
+uv run python -OOP main.py
 ```
 
 ### How to create custom translations ?
