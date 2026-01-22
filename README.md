@@ -29,7 +29,7 @@ _For more information see [PyMongo](https://pypi.org/project/pymongo/ "PyMongo")
 
 <p>
   <a href="https://github.com/kebasyaty/stamp" alt="Project Status">
-    <img src="https://raw.githubusercontent.com/kebasyaty/stamp/dev/assets/project_status/project-status-pre-alpha.svg"
+    <img src="https://raw.githubusercontent.com/kebasyaty/stamp/dev/assets/project_status/pre-alpha.svg"
       alt="Project Status">
   </a>
 </p>
