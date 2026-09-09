@@ -32,6 +32,7 @@ def add_middleware(app: FastAPI) -> None:
         app.add_middleware(HTTPSRedirectMiddleware)
         SecWeb(
             app=app,
+            # pyrefly: ignore [bad-argument-type]
             Option=SECWEB_OPTION,
             Routes=SECWEB_ROUTES,
         )

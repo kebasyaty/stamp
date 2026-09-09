@@ -3,6 +3,8 @@
 app > config > fastapi
 """
 
+from __future__ import annotations
+
 from typing import Any
 
 from fastapi.responses import ORJSONResponse

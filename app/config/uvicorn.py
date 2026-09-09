@@ -3,6 +3,8 @@
 app > config > uvicorn
 """
 
+from __future__ import annotations
+
 from multiprocessing import cpu_count
 from typing import Any
 
@@ -15,7 +17,7 @@ from app.config.logging import LOGGING_CONFIG
 
 # See: https://www.uvicorn.org/settings/
 UVICORN_CONFIG: dict[str, Any] = {
-    "app": "app:app",
+    "app": "app:run",
     "host": HOST_NAME,
     "port": PORT_NUMBER,
     "reload": DEBUG,

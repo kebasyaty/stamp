@@ -64,7 +64,7 @@
       "problemMatcher": []
     },
     {
-      "label": "Uvicorn: Run App",
+      "label": "FastAPI: Run App",
       "type": "shell",
       "command": ["uv run python main.py"],
       "problemMatcher": []
