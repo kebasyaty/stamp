@@ -8,6 +8,7 @@ import logging
 from multiprocessing import cpu_count
 from typing import Any, ClassVar
 
+from fastapi.responses import ORJSONResponse
 from fastapi.templating import Jinja2Templates
 from ramifice.config import Config as RamificeConfig
 
@@ -62,6 +63,7 @@ class Config:
     # See: https://fastapi.tiangolo.com/reference/fastapi/
     FASTAPI_CONFIG: ClassVar[dict[str, Any]] = {
         "debug": DEBUG,
+        "default_response_class": ORJSONResponse,
     }
 
     # Logging
