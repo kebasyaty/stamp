@@ -1,7 +1,4 @@
-"""Global Hub of routers.
-
-app > router
-"""
+"""Global Hub of routers."""
 
 from __future__ import annotations
 
@@ -51,7 +48,11 @@ async def get_robots(request: Request) -> Any:
         "scheme": url.scheme,
         "host": url.hostname,
     }
-    return TEMPLATES.TemplateResponse("robots.txt", context)
+    return TEMPLATES.TemplateResponse(
+        request=request,
+        name="robots.txt",
+        context=context,
+    )
 
 
 @global_router.get(
@@ -74,7 +75,8 @@ async def get_sitemap(request: Request) -> Any:
         "items": items,
     }
     return TEMPLATES.TemplateResponse(
-        "sitemap.xml.j2",
-        context,
+        request=request,
+        name="sitemap.xml.j2",
+        context=context,
         media_type="application/xml",
     )

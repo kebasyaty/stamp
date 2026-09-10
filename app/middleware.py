@@ -1,7 +1,4 @@
-"""Middleware.
-
-app > middleware
-"""
+"""Middleware."""
 
 from __future__ import annotations
 
@@ -21,8 +18,7 @@ from app.config import (
     MIDDLEWARE_CORS_CONFIG,
     MIDDLEWARE_GZIP_CONFIG,
     MIDDLEWARE_SESSION_CONFIG,
-    SECWEB_OPTION,
-    SECWEB_ROUTES,
+    SECWEB_OPTIONS,
 )
 
 
@@ -33,8 +29,7 @@ def add_middleware(app: FastAPI) -> None:
         SecWeb(
             app=app,
             # pyrefly: ignore [bad-argument-type]
-            Option=SECWEB_OPTION,
-            Routes=SECWEB_ROUTES,
+            options=SECWEB_OPTIONS,
         )
     app.add_middleware(SessionMiddleware, **MIDDLEWARE_SESSION_CONFIG)
     app.add_middleware(GZipMiddleware, **MIDDLEWARE_GZIP_CONFIG)

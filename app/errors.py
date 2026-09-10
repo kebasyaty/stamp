@@ -1,7 +1,4 @@
-"""Custom Exceptions.
-
-app > errors
-"""
+"""Custom Exceptions."""
 
 from __future__ import annotations
 

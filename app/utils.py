@@ -1,7 +1,4 @@
-"""Global Utils.
-
-app > utils
-"""
+"""Global Utils."""
 
 from __future__ import annotations
 
@@ -42,7 +39,7 @@ def get_session_secret_key(
     """
     key: str = "SESSION_SECRET_KEY"
     token: str | None = None
-    try:
+    try:  # ruff: ignore[too-many-statements-in-try-clause]
         if Path(dotenv_path).exists():
             config: dict[str, str | None] = dotenv_values(dotenv_path)
             token = config.get(key)
