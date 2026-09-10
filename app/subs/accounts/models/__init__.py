@@ -1,7 +1,4 @@
-"""Local Hub of models.
-
-app > subs > accounts > models
-"""
+"""Local Hub of models."""
 
 from __future__ import annotations
 

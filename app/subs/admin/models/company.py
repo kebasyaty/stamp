@@ -1,7 +1,4 @@
-"""Model of Company Parameters.
-
-app > subs > admin > models > company
-"""
+"""Model of Company Parameters."""
 
 from __future__ import annotations
 

@@ -1,4 +1,1 @@
-"""Service of Home Page.
-
-app > subs > home
-"""
+"""Service of Home Page."""

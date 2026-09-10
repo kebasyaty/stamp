@@ -1,7 +1,4 @@
-"""Model of Admin Panel Parameters.
-
-app > subs > admin > models > admin_panel
-"""
+"""Model of Admin Panel Parameters."""
 
 from __future__ import annotations
 

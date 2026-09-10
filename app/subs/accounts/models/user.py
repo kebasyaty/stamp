@@ -1,7 +1,4 @@
-"""Model of User.
-
-app > subs > accounts > models > user
-"""
+"""Model of User."""
 
 from __future__ import annotations
 

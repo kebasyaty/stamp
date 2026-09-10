@@ -1,7 +1,4 @@
-"""Model of Site Parameters.
-
-app > subs > admin > models > site
-"""
+"""Model of Site Parameters."""
 
 from __future__ import annotations
 
