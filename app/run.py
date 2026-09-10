@@ -12,12 +12,12 @@ from fastapi.staticfiles import StaticFiles
 from pymongo import AsyncMongoClient
 from ramifice import Migration
 
-from app import config
+from app.config import Config
 from app.middleware import add_middleware
 from app.models import *  # ruff: ignore[undefined-local-with-import-star]
 from app.router import global_router
 
-client: AsyncMongoClient = AsyncMongoClient(**config.MONGO_CONFIG)
+client: AsyncMongoClient = AsyncMongoClient(**Config.MONGO_CONFIG)
 
 
 @asynccontextmanager
@@ -26,7 +26,7 @@ async def lifespan(app: FastAPI) -> Any:  # ruff: ignore[unused-function-argumen
     # STARTUP
     # Migration of models to database.
     await Migration(
-        database_name=config.MONGO_DATABASE_NAME,
+        database_name=Config.MONGO_DATABASE_NAME,
         mongo_client=client,
     ).migrate()
     yield  # ruff: ignore[fallible-context-manager]
@@ -35,20 +35,20 @@ async def lifespan(app: FastAPI) -> Any:  # ruff: ignore[unused-function-argumen
 
 
 app = FastAPI(
-    **config.FASTAPI_CONFIG,
+    **Config.FASTAPI_CONFIG,
     lifespan=lifespan,
 )
 
 add_middleware(app)
 
 app.mount(
-    path=config.STATIC_URL,
-    app=StaticFiles(directory=config.STATIC_ROOT),
+    path=Config.STATIC_URL,
+    app=StaticFiles(directory=Config.STATIC_ROOT),
     name="static",
 )
 app.mount(
-    path=config.MEDIA_URL,
-    app=StaticFiles(directory=config.MEDIA_ROOT),
+    path=Config.MEDIA_URL,
+    app=StaticFiles(directory=Config.MEDIA_ROOT),
     name="media",
 )
 

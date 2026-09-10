@@ -8,14 +8,13 @@ import asyncio
 import logging
 
 import uvicorn
-from app import config
 from app.config import Config
 from ramifice import Translator
 from ramifice.config import Config as RamificeConfig
 
 RamificeConfig.DEBUG = Config.DEBUG
-logging.basicConfig(**config.LOGGING_CONFIG)
-Translator.add_new_languages(config.I18N_LANGUAGES)
+logging.basicConfig(**Config.LOGGING_CONFIG)
+Translator.add_new_languages(Config.I18N_LANGUAGES)
 
 
 async def run_server() -> None:
