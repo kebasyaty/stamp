@@ -92,7 +92,7 @@ class Config:
     # ----------------------------------------------------------------------------------------------
     # See: https://www.uvicorn.org/settings/
     UVICORN_CONFIG: ClassVar[dict[str, Any]] = {
-        "app": "app:run",
+        "app": "app:app",
         "host": HOST_NAME,
         "port": PORT_NUMBER,
         "reload": DEBUG,

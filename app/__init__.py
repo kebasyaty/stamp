@@ -2,6 +2,6 @@
 
 from __future__ import annotations
 
-__all__ = ("run",)
+__all__ = ("app",)
 
-from app import run
+from app.run import app
