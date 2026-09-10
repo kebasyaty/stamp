@@ -1,7 +1,4 @@
-"""Run Application.
-
-app > run
-"""
+"""Run FastAPI Application."""
 
 from __future__ import annotations
 
@@ -17,14 +14,14 @@ from ramifice import Migration
 
 from app import config
 from app.middleware import add_middleware
-from app.models import *  # noqa: F403
+from app.models import *  # ruff: ignore[undefined-local-with-import-star]
 from app.router import global_router
 
 client: AsyncMongoClient = AsyncMongoClient(**config.MONGO_CONFIG)
 
 
 @asynccontextmanager
-async def lifespan(app: FastAPI) -> Any:  # noqa: ARG001
+async def lifespan(app: FastAPI) -> Any:  # ruff: ignore[unused-function-argument]
     """The lifespan context manager."""
     # STARTUP
     # Migration of models to database.
@@ -32,7 +29,7 @@ async def lifespan(app: FastAPI) -> Any:  # noqa: ARG001
         database_name=config.MONGO_DATABASE_NAME,
         mongo_client=client,
     ).migrate()
-    yield
+    yield  # ruff: ignore[fallible-context-manager]
     # SHUTDOWN
     await client.close()
 
