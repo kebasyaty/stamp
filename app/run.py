@@ -28,7 +28,7 @@ client: AsyncMongoClient = AsyncMongoClient(**Config.MONGO_CONFIG)
 async def lifespan(app: FastAPI) -> Any:  # ruff: ignore[unused-function-argument]
     """The lifespan context manager."""
     # STARTUP
-    logger.info("Run migration of models to database.")
+    logger.info("Run migration of models to the database.")
     await Migration(
         database_name=Config.MONGO_DATABASE_NAME,
         mongo_client=client,
