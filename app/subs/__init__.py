@@ -1,1 +1,1 @@
-"""Sub Apps."""
+"""Sub applications."""
