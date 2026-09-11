@@ -2,7 +2,7 @@ exclude: "^(dist|site|.git|.venv|.pytest_cache|.ruff_cache|.mypy_cache)$"
 
 repos:
   - repo: https://github.com/astral-sh/uv-pre-commit
-    rev: 0.12.11
+    rev: 0.12.13
     hooks:
       - id: uv-lock
 
@@ -63,7 +63,7 @@ repos:
       - id: pyupgrade
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.16.6
+    rev: v0.16.7
     hooks:
       - id: ruff-check
         types_or: [python, pyi]
