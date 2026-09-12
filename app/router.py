@@ -1,7 +1,4 @@
-"""Global Hub of routers.
-
-app > router
-"""
+"""Global Hub of routers."""
 
 from __future__ import annotations
 
@@ -16,10 +13,7 @@ from fastapi.responses import (
     Response,
 )
 
-from app.config import (
-    STATIC_ROOT,
-    TEMPLATES,
-)
+from app.config import Config
 from app.subs.accounts.router import router as accounts_router
 from app.subs.admin.router import router as admin_router
 from app.subs.auth.router import router as auth_router
@@ -35,7 +29,7 @@ global_router.include_router(home_router)
 @global_router.get("/favicon.ico", include_in_schema=False)
 async def get_favicon() -> Any:
     """Get favicon."""
-    return FileResponse(f"{STATIC_ROOT}/favicons/favicon.ico")
+    return FileResponse(f"{Config.STATIC_ROOT}/favicons/favicon.ico")
 
 
 @global_router.get(
@@ -51,7 +45,11 @@ async def get_robots(request: Request) -> Any:
         "scheme": url.scheme,
         "host": url.hostname,
     }
-    return TEMPLATES.TemplateResponse("robots.txt", context)
+    return Config.TEMPLATES.TemplateResponse(
+        request=request,
+        name="robots.txt",
+        context=context,
+    )
 
 
 @global_router.get(
@@ -73,8 +71,9 @@ async def get_sitemap(request: Request) -> Any:
         "request": request,
         "items": items,
     }
-    return TEMPLATES.TemplateResponse(
-        "sitemap.xml.j2",
-        context,
+    return Config.TEMPLATES.TemplateResponse(
+        request=request,
+        name="sitemap.xml.j2",
+        context=context,
         media_type="application/xml",
     )

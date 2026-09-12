@@ -1,4 +1,1 @@
-"""Service of Accounts Management.
-
-app > subs > accounts
-"""
+"""Service of Accounts Management."""

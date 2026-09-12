@@ -1,4 +1,1 @@
-"""Service of Admin Panel.
-
-app > subs > admin
-"""
+"""Service of Admin Panel."""

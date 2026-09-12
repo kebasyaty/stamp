@@ -1,7 +1,4 @@
-"""Custom Exceptions.
-
-app > errors
-"""
+"""Custom Exceptions."""
 
 from __future__ import annotations
 
@@ -9,7 +6,8 @@ from __future__ import annotations
 class RootCustomException(Exception):
     """Root Custom Exception."""
 
-    def __init__(self, *args, **kwargs) -> None:  # type: ignore[no-untyped-def]# noqa: D107
+    def __init__(self, *args, **kwargs) -> None:
+        """Init RootCustomException."""
         super().__init__(*args, **kwargs)
 
 
@@ -20,6 +18,7 @@ class NoSessionSecretKeyError(RootCustomException):
         message -- explanation of the error
     """
 
-    def __init__(self, message: str = "Session Secret Key is not available!") -> None:  # noqa: D107
+    def __init__(self, message: str = "Session Secret Key is not available!") -> None:
+        """Init NoSessionSecretKeyError."""
         self.message = message
         super().__init__(self.message)

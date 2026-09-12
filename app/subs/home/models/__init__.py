@@ -1,4 +1,1 @@
-"""Local Hub of models.
-
-app > subs > home > models
-"""
+"""Local Hub of models."""

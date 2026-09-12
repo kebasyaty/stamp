@@ -1,7 +1,4 @@
-"""Local Hub of routes.
-
-app > subs > admin > router
-"""
+"""Local Hub of routes."""
 
 from __future__ import annotations
 

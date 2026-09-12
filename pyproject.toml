@@ -3,46 +3,109 @@ name = "stamp"
 version = "0.1.0"
 description = "A template project for creating web applications."
 readme = "README.md"
+requires-python = ">=3.12"
 license = "MIT"
 license-files = ["LICENSE"]
-requires-python = ">=3.12"
 dependencies = [
-    "email-validator>=2.2.0",
-    "fastapi>=0.115.14",
-    "httpx>=0.28.1",
-    "itsdangerous>=2.2.0",
-    "jinja2>=3.1.6",
-    "orjson>=3.10.18",
-    "pydantic>=2.11.7",
-    "pydantic-settings>=2.10.1",
-    "python-multipart>=0.0.20",
-    "pyyaml>=6.0.2",
-    "ramifice>=0.5.9",
-    "secweb>=1.25.2",
-    "tzdata>=2025.2",
-    "uvicorn[standard]>=0.35.0",
+  "email-validator>=2.2.0",
+  "fastapi>=0.115.14",
+  "httpx>=0.28.1",
+  "itsdangerous>=2.2.0",
+  "jinja2>=3.1.6",
+  "orjson>=3.10.18",
+  "pydantic>=2.11.7",
+  "pydantic-settings>=2.10.1",
+  "python-multipart>=0.0.20",
+  "pyyaml>=6.0.2",
+  "ramifice>=0.5.9",
+  "secweb>=1.25.2",
+  "tzdata>=2025.2",
+  "uvicorn[standard]>=0.35.0",
 ]
-
-[tool.uv]
-package = false
-compile-bytecode = true
-default-groups = ["dev", "lint", "test", "docs", "types"]
 
 [dependency-groups]
 dev = []
+docs = []
 lint = [
- "pre-commit>=4.3.0",
- "pyrefly>=0.46.0",
- "ruff>=0.12.0",
+  "pre-commit>=4.3.0",
+  "pyrefly>=0.46.0",
+  "ruff>=0.12.0",
 ]
 test = [
-    "pytest>=8.4.1",
-    "pytest-asyncio>=1.1.0",
-    "pytest-httpx>=0.35.0",
-    "pytest-mock>=3.14.1",
+  "pytest>=8.4.1",
+  "pytest-asyncio>=1.1.0",
+  "pytest-httpx>=0.35.0",
+  "pytest-mock>=3.14.1",
 ]
-docs = []
 types = []
+
+[tool.pyrefly]
+project-includes = ["*.py", "app", "tests"]
+search-path = ["main.py", "app", "tests"]
+project-excludes = [
+  "**/node_modules",
+  "**/__pycache__",
+  "**/.[!/.]*/**",
+  "*.py[cod]",
+  ".bzr",
+  ".direnv",
+  ".eggs",
+  ".git",
+  ".git-rewrite",
+  ".hg",
+  ".ipynb_checkpoints",
+  ".nox",
+  ".pants.d",
+  ".pyenv",
+  ".pytest_cache",
+  ".pytype",
+  ".ruff_cache",
+  ".mypy_cache",
+  ".svn",
+  ".tox",
+  ".venv",
+  "venv",
+  "env",
+  ".env",
+  ".idea",
+  ".vscode",
+  ".zed",
+  "__pypackages__",
+  "_build",
+  "buck-out",
+  "build",
+  "dist",
+  ".flet",
+  "storage",
+  "site-packages",
+  "examples",
+  ".github",
+  "assets",
+  "public",
+  "templates",
+  "docs",
+  "site",
+]
+site-package-path = [".venv/lib/python3.14/site-packages"]
+ignore-errors-in-generated-code = true
+untyped_def_behavior = "check-and-infer-return-any"
+
+[tool.pyrefly.errors]
+missing-attribute = false
+
+[[tool.pyrefly.sub-config]]
+matches = "tests/**"
+
+[tool.pyrefly.sub-config.errors]
+missing-attribute = false
+
+[tool.pytest]
+addopts = ["--strict-markers"]
+log_cli = true
+log_cli_date_format = "%Y-%m-%d %H:%M:%S"
+log_cli_format = "%(levelname)s  %(name)s:%(filename)s:%(lineno)s %(message)s"
+log_cli_level = "DEBUG"
+testpaths = ["tests"]
 
 [tool.ruff]
 fix = true
@@ -50,102 +113,113 @@ line-length = 120
 indent-width = 4
 src = ["app", "tests"]
 include = [
-    "*.py",
-    "*.pyi",
-    "*.ipynb",
-    "**/pyproject.toml",
-    "app/**/*.py",
-    "tests/**/*.py",
+  "*.py",
+  "*.pyi",
+  "*.ipynb",
+  "**/pyproject.toml",
+  "app/**/*.py",
+  "tests/**/*.py",
 ]
 exclude = [
-    ".bzr",
-    ".direnv",
-    ".eggs",
-    ".git",
-    ".git-rewrite",
-    ".hg",
-    ".ipynb_checkpoints",
-    ".mypy_cache",
-    ".nox",
-    ".pants.d",
-    ".pyenv",
-    ".pytest_cache",
-    ".pytype",
-    ".ruff_cache",
-    ".svn",
-    ".tox",
-    ".venv",
-    ".vscode",
-    "__pypackages__",
-    "_build",
-    "buck-out",
-    "build",
-    "dist",
-    "node_modules",
-    "site-packages",
-    "venv",
-    ".github",
-    "assets",
-    "config",
-    "public",
-    "docs",
-    "site",
+  "**/node_modules",
+  "**/__pycache__",
+  "**/.[!/.]*/**",
+  "*.py[cod]",
+  ".bzr",
+  ".direnv",
+  ".eggs",
+  ".git",
+  ".git-rewrite",
+  ".hg",
+  ".ipynb_checkpoints",
+  ".nox",
+  ".pants.d",
+  ".pyenv",
+  ".pytest_cache",
+  ".pytype",
+  ".ruff_cache",
+  ".mypy_cache",
+  ".svn",
+  ".tox",
+  ".venv",
+  "venv",
+  "env",
+  ".env",
+  ".idea",
+  ".vscode",
+  ".zed",
+  "__pypackages__",
+  "_build",
+  "buck-out",
+  "build",
+  "dist",
+  ".flet",
+  "storage",
+  "site-packages",
+  "examples",
+  ".github",
+  "assets",
+  "public",
+  "templates",
+  "docs",
+  "site",
 ]
 
 [tool.ruff.lint]
 preview = true
 select = [
-    "D",     # pydocstyle
-    "I",     # isort
-    "E",     # flake8-errors
-    "W",     # flake8-warnings
-    "F",     # flake8-pyflakes
-    "B",     # flake8-bugbear
-    "C4",    # flake8-comprehensions
-    "S",     # flake8-bandit
-    "BLE",   # flake8-blind-except
-    "T20",   # flake8-print
-    "T10",   # flake8-debugger
-    "PT",    # flake8-pytest-style
-    "RUF",   # Ruff-specific
-    "DTZ",   # flake8-datetimez
-    "ERA",   # eradicate
-    "FURB",  # refurb
-    "ARG",   # flake8-unused-arguments
-    "EM",    # flake8-errmsg
-    "ICN",   # flake8-import-conventions
-    "G",     # flake8-logging-format
-    "PGH",   # pygrep-hooks
-    "PIE",   # flake8-pie
-    "PL",    # pylint
-    "PTH",   # flake8-use-pathlib
-    "RET",   # flake8-return
-    "SIM",   # flake8-simplify
-    "UP",    # pyupgrade
-    "YTT",   # flake8-2020
-    "EXE",   # flake8-executable
-    "ASYNC", # flake8-async
+  "D",  # pydocstyle
+  "I",  # isort
+  "E",  # flake8-errors
+  "W",  # flake8-warnings
+  "F",  # flake8-pyflakes
+  "B",  # flake8-bugbear
+  "C4",  # flake8-comprehensions
+  "S",  # flake8-bandit
+  "BLE",  # flake8-blind-except
+  "T20",  # flake8-print
+  "T10",  # flake8-debugger
+  "PT",  # flake8-pytest-style
+  "RUF",  # Ruff-specific
+  "DTZ",  # flake8-datetimez
+  "ERA",  # eradicate
+  "FURB",  # refurb
+  "ARG",  # flake8-unused-arguments
+  "EM",  # flake8-errmsg
+  "ICN",  # flake8-import-conventions
+  "G",  # flake8-logging-format
+  "PGH",  # pygrep-hooks
+  "PIE",  # flake8-pie
+  "PL",  # pylint
+  "PTH",  # flake8-use-pathlib
+  "RET",  # flake8-return
+  "SIM",  # flake8-simplify
+  "UP",  # pyupgrade
+  "YTT",  # flake8-2020
+  "EXE",  # flake8-executable
+  "ASYNC",  # flake8-async
 ]
 ignore = [
-    "D417",   # Missing argument descriptions in the docstring
-    "D206",   # Docstring should be indented with spaces, not tabs
-    "C408",   # Unnecessary `dict` call (rewrite as a literal)
-    "RUF001", # ambiguous-unicode-character-docstring
-    "RUF002", # ambiguous-unicode-character-docstring
-    "RUF003", # ambiguous-unicode-character-docstring
-    "RUF022", # unsorted-dunder-all
-    "E722",   # Do not use bare except
-    "S110",   # try-except-pass detected, consider logging the exception
-    "S101",   # Use of `assert` detected
-    "PLR",    # Design related pylint codes
-    "EM101",  # Exception must not use a string literal, assign to variable first
-    "EM102",  # Exception must not use an f-string literal, assign to variable first
+  "undocumented-param",  # Missing argument descriptions in the docstring
+  "docstring-tab-indentation",  # Docstring should be indented with spaces, not tabs
+  "unnecessary-collection-call",  # Unnecessary `dict` call (rewrite as a literal)
+  "ambiguous-unicode-character-string",  # ambiguous-unicode-character-docstring
+  "ambiguous-unicode-character-docstring",  # ambiguous-unicode-character-docstring
+  "ambiguous-unicode-character-comment",  # ambiguous-unicode-character-docstring
+  "unsorted-dunder-all",
+  "bare-except",  # Do not use bare except
+  "try-except-pass",  # try-except-pass detected, consider logging the exception
+  "assert",  # Use of `assert` detected
+  "PLR",  # Design related pylint codes
+  "raw-string-in-exception",  # Exception must not use a string literal, assign to variable first
+  "f-string-in-exception",  # Exception must not use an f-string literal, assign to variable first
+  "unused-method-argument",
 ]
 fixable = ["I"]
 unfixable = [
-    "RUF100", # Unused noqa
-    "T20",    # Removes print statements
-    "F841",   # Removes unused variables
+  "unused-noqa",
+  "T20",  # Removes print statements
+  "unused-variable",
 ]
 flake8-unused-arguments.ignore-variadic-names = true
 isort.required-imports = ["from __future__ import annotations"]
@@ -165,20 +239,7 @@ docstring-code-line-length = 120
 skip-magic-trailing-comma = false
 line-ending = "auto"
 
-[tool.pyrefly]
-project-includes = ["*.py", "app", "tests"]
-search-path = ["main.py", "app", "tests"]
-ignore-errors-in-generated-code = true
-untyped_def_behavior = "check-and-infer-return-any"
-
-[tool.pyrefly.errors]
-missing-attribute = false
-
-[[tool.pyrefly.sub-config]]
-matches = "tests/**"
-
-[tool.pyrefly.sub-config.errors]
-missing-attribute = false
-
-[tool.pytest.ini_options]
-testpaths = ["tests"]
+[tool.uv]
+package = false
+compile-bytecode = true
+default-groups = ["dev", "lint", "test", "docs", "types"]

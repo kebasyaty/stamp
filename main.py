@@ -1,20 +1,26 @@
-"""Run Application."""
+"""Run Server."""
 
 from __future__ import annotations
 
-__all__ = ("run_server",)
+import asyncio
+import logging
 
-import anyio
 import uvicorn
-from app.config import UVICORN_CONFIG
+from app.config import Config
+from ramifice import Translator
+from ramifice.config import Config as RamificeConfig
+
+RamificeConfig.DEBUG = Config.DEBUG
+logging.basicConfig(**Config.LOGGING_CONFIG)
+Translator.add_new_languages(Config.I18N_LANGUAGES)
 
 
 async def run_server() -> None:
     """Run Uvicorn Server."""
-    config_server = uvicorn.Config(**UVICORN_CONFIG)
+    config_server = uvicorn.Config(**Config.UVICORN_CONFIG)
     server = uvicorn.Server(config_server)
     await server.serve()
 
 
 if __name__ == "__main__":
-    anyio.run(run_server)
+    asyncio.run(run_server())

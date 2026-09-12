@@ -1,7 +1,4 @@
-"""Global Hub of models.
-
-app > models
-"""
+"""Global Hub of models."""
 
 from __future__ import annotations
 

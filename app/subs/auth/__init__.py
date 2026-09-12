@@ -1,4 +1,1 @@
-"""Service of Authentication.
-
-app > subs > auth
-"""
+"""Service of Authentication."""
