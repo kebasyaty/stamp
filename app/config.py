@@ -80,11 +80,10 @@ class Config:
     # See: https://pymongo.readthedocs.io/en/stable/async-tutorial.html#making-a-connection-with-asyncmongoclient
     # See: https://pymongo.readthedocs.io/en/latest/api/pymongo/client_options.html#pymongo.client_options.ClientOptions
     MONGO_CONFIG: ClassVar[dict[str, Any]] = {
-        "host": "mongodb+srv://kebasyaty:pV89ZXdJ9V7mhobD@cluster0.fc2sa1h.mongodb.net/?appName=Cluster0",
-        # "host": "127.0.0.1",  # ruff: ignore[commented-out-code]
-        # "port": 27017,  # ruff: ignore[commented-out-code]
-        # "username": None,  # ruff: ignore[commented-out-code]
-        # "password": None,  # ruff: ignore[commented-out-code]
+        "host": "127.0.0.1",
+        "port": 27017,
+        "username": None,
+        "password": None,
     }
     MONGO_DATABASE_NAME: ClassVar[str] = "stamp_db"
 
